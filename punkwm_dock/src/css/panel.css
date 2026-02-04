@@ -1,0 +1,17 @@
+.Panel{
+    display: none;
+    grid-column: 2;
+    background-color: #161e23;
+    width: calc(100% + 10vw);
+    padding: calc(5 * var(--panel_vw));
+    margin: 0;
+    box-sizing: border-box;
+    padding-left: calc( 10vw + 5 * var(--panel_vw));
+    transform: translatex(-10vw);
+    position: relative;
+    height: 100vh;
+}
+
+.Panel img{
+    user-select: none;
+}

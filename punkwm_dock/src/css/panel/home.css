@@ -1,0 +1,733 @@
+#Panel_Home {
+    grid-template-columns: 100%;
+    grid-template-rows: 37vh 58vh;
+    row-gap: 2vh;
+}
+
+body[data-panel="Open-Home"] #Panel_Home {
+    display: grid;
+}
+
+#Panel_Home .Up {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-gap: calc(5 * var(--panel_vw));
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: repeat(2, calc(50% - 2.5 * var(--panel_vw)));
+    grid-template-rows: 100%;
+}
+
+#Panel_Home .Up .Left {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: calc(5 * var(--panel_vw));
+    grid-template-rows: calc(45 * var(--panel_vw)) 1fr;
+    position: relative;
+}
+
+#Panel_Home .Up .Left #User_image {
+    display: flex;
+    width: 100%;
+    border-radius: calc(5 * var(--panel_vw));
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: #1f333e;
+
+}
+
+
+#Panel_Home .Up .Left #User_image img {
+    width: 80%;
+    position: relative;
+}
+
+#Panel_Home .Up .Left #stats {
+    width: 100%;
+    border-radius: calc(5 * var(--panel_vw));
+    height: 100%;
+    grid-column: 1;
+    grid-row: 2;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #1f333e;
+    display: grid;
+    grid-template-rows: 3vh 1fr;
+    grid-template-columns: repeat(4, 25%);
+    justify-items: center;
+    align-items: center;
+}
+
+#Panel_Home .Up .Left #stats span {
+    color: #999;
+    grid-row: 1;
+    grid-column: 1/5;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding-left: calc(4 * var(--panel_vw));
+    font-weight: 900;
+
+}
+
+#Panel_Home .Up .Left #stats .stat_out {
+    grid-row: 2;
+    width: calc(1 * var(--panel_vw));
+    background-color: #484f5a;
+    height: 90%;
+    position: relative;
+
+}
+
+#Panel_Home .Up .Left #stats .stat_out .stat {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#Panel_Home .Up .Left #stats .stat_out #stat_CPU.stat {
+    height: var(--stats_CPU);
+    background-color: #6791c9;
+}
+
+#Panel_Home .Up .Left #stats .stat_out #stat_RAM.stat {
+    height: var(--stats_RAM);
+    background-color: #bc83e3;
+}
+
+#Panel_Home .Up .Left #stats .stat_out #stat_SSD.stat {
+    height: var(--stats_SSD);
+    background-color: #78b892;
+}
+
+#Panel_Home .Up .Left #stats .stat_out #stat_GPU.stat {
+    height: var(--stats_GPU);
+    background-color: #f2c38f;
+}
+
+#Panel_Home .Up .Rigth {
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: calc(5 * var(--panel_vw));
+    grid-template-rows: calc(20 * var(--panel_vw)) calc(45 * var(--panel_vw)) calc(45 * var(--panel_vw)) 1fr;
+    position: relative;
+
+}
+
+#Panel_Home .Up .Rigth .date {
+    display: flex;
+    width: 100%;
+    border-radius: calc(5 * var(--panel_vw));
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    justify-content: center;
+    align-items: start;
+    box-sizing: border-box;
+    flex-direction: column;
+    background-color: #1f333e;
+    padding-left: calc(3 * var(--panel_vw));
+    color: #fff;
+
+}
+
+#Panel_Home .Up .Rigth .date #date-Day {
+    font-size: calc(4 * var(--panel_vw));
+    font-weight: 700;
+}
+
+#Panel_Home .Up .Rigth .date #date-Date {
+    font-size: calc(5.5 * var(--panel_vw));
+    font-weight: 700;
+    text-overflow: clip;
+    word-wrap: break-word;
+}
+
+#Panel_Home .Up .Rigth .weather {
+    width: 100%;
+    height: 100%;
+    grid-row: 2;
+    grid-column: 1;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #1f333e;
+    border-radius: calc(5 * var(--panel_vw));
+    padding: calc(2 * var(--panel_vw));
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 20% 50% 30%;
+    justify-items: center;
+    align-items: center;
+}
+
+#Panel_Home .Up .Rigth .weather #weather-phrase {
+    grid-row: 1;
+    width: 100%;
+    padding-left: calc(3 * var(--panel_vw));
+    grid-column: 1/3;
+    font-size: calc(5 * var(--panel_vw));
+    font-weight: 700;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    align-items: end;
+}
+
+#Panel_Home .Up .Rigth .weather #weather-temp {
+    grid-row: 2;
+    grid-column: 1;
+    font-size: calc(7 * var(--panel_vw));
+    font-weight: 900;
+    color: #fff;
+}
+
+#Panel_Home .Up .Rigth .weather #weather-icon {
+    width: 75%;
+}
+
+#Panel_Home .Up .Rigth .weather #weather-wind {
+    grid-row: 3;
+    grid-column: 1;
+    font-size: calc(5 * var(--panel_vw));
+    font-weight: 700;
+    color: #fff;
+}
+
+#Panel_Home .Up .Rigth .weather #weather-wind-icon {
+    grid-row: 3;
+    grid-column: 2;
+    fill: #fff;
+    height: 70%;
+}
+
+#Panel_Home .Up .Rigth .quick_asses {
+    width: 100%;
+    height: 100%;
+    grid-row: 3;
+    grid-column: 1;
+    position: relative;
+    box-sizing: border-box;
+    background-color: #1f333e;
+    border-radius: calc(5 * var(--panel_vw));
+    padding: calc(2 * var(--panel_vw));
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 50%;
+    justify-items: center;
+    align-items: center;
+    grid-gap: calc(2 * var(--panel_vw));
+}
+
+#Panel_Home .Up .Rigth .quick_asses button {
+    width: calc(100% - 4 * var(--panel_vw));
+    height: calc(100% - 4 * var(--panel_vw));
+    padding: calc(2 * var(--panel_vw));
+    box-sizing: border-box;
+    border-radius: 50vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #484f5a;
+    fill: #4f7fc4;
+    border: none;
+    outline: none;
+}
+
+#Panel_Home .Up .Rigth .quick_asses #Poweroff:hover{
+    background-color: #8f0000;
+    fill: #fff;
+}
+
+#Panel_Home .Up .Rigth .quick_asses #Reboot:hover{
+    background-color: #bd7e02;
+    fill: #fff;
+
+}
+#Panel_Home .Up .Rigth .quick_asses #Lock:hover{
+    background-color: #087485;
+    fill: #fff;
+
+}
+
+#Panel_Home .Up .Rigth .quick_asses #LogOut:hover{
+    background-color: #088542;
+    fill: #fff;
+
+}
+
+#Panel_Home .Up .Rigth .quick_asses button svg {
+    width: 70%;
+}
+
+#Panel_Home .Down {
+    grid-row: 2;
+    grid-column: 1;
+    display: grid;
+    grid-gap: calc(5 * var(--panel_vw));
+    position: relative;
+    box-sizing: border-box;
+    grid-template-rows: 15vh calc(100% - 15vh - 5 * var(--panel_vw));
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#Panel_Home .Down .Music {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-gap: calc(5 * var(--panel_vw));
+    grid-template-rows: 100%;
+    grid-template-columns: 1fr 5vh;
+    justify-items: center;
+}
+
+#Panel_Home .Down .Music .controls {
+    grid-row: 1;
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    padding: calc(4 * var(--panel_vw)) calc(3 * var(--panel_vw));
+    background-color: #1f333e;
+    border-radius: calc(5 * var(--panel_vw));
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#Panel_Home .Down .Music .controls button {
+    width: 100%;
+    height: 100%;
+    background-color: #111111aa;
+    outline: none;
+    border: none;
+    margin: 0;
+    box-sizing: border-box;
+    fill: #fff;
+    padding: calc(1 * var(--panel_vw));
+}
+
+#Panel_Home .Down .Music .controls button svg {
+    width: 100%;
+}
+
+#Panel_Home .Down .Music .controls button#Music-Pre {
+    border-top-left-radius: calc(3 * var(--panel_vw));
+    border-top-right-radius: calc(3 * var(--panel_vw));
+}
+
+#Panel_Home .Down .Music .controls button#Music-Nxt {
+    border-bottom-left-radius: calc(3 * var(--panel_vw));
+    border-bottom-right-radius: calc(3 * var(--panel_vw));
+}
+
+#Panel_Home .Down .Music .controls button .pause {
+    display: none;
+}
+
+#Panel_Home .Down .Music .controls button.pause .pause {
+    display: block;
+}
+
+#Panel_Home .Down .Music .controls button.pause .play {
+    display: none;
+}
+
+#Panel_Home .Down .Music .Music-info {
+    grid-row: 1;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #1f333e;
+    border-radius: calc(5 * var(--panel_vw));
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 12vh;
+    grid-template-rows: 100%;
+    overflow: hidden;
+}
+
+#Panel_Home .Down .Music .Music-info #Music-image {
+    grid-row: 1;
+    grid-column: 2;
+    height: 100%;
+    mask-image: linear-gradient(to right,
+            transparent 0%,
+            transparent 10%,
+            black 60%,
+            black 100%);
+
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+
+}
+
+#Panel_Home .Down .Music .Music-info #Music-time {
+    grid-row: 1;
+    grid-column: 2;
+    position: absolute;
+    bottom: calc(2 * var(--panel_vw));
+    right: calc(2 * var(--panel_vw));
+    font-weight: 900;
+    color: #999;
+    font-size: calc(4 * var(--panel_vw));
+}
+
+#Panel_Home .Down .Music .Music-info .Music-data {
+    grid-row: 1;
+    grid-column: 1;
+    height: 100;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 4fr 3fr 3fr;
+    row-gap: calc(2 * var(--panel_vw));
+    font-size: calc(5 * var(--panel_vw));
+    color: #999;
+    padding: calc(3 * var(--panel_vw)) 0 calc(3 * var(--panel_vw)) calc(3 * var(--panel_vw));
+
+}
+
+#Panel_Home .Down .Music .Music-info .Music-data span {
+    display: flex;
+    align-items: start;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    line-height: 1.2em;
+    max-height: 2.4em;
+    /* line-height × 2 */
+}
+
+#Panel_Home .Down .diary {
+    grid-row: 2;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    background-color: #1f333e;
+    border-radius: calc(5 * var(--panel_vw));
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: calc(10 * var(--panel_vw)) 1fr;
+    grid-template-columns: 100%;
+    overflow: hidden;
+}
+
+#Panel_Home .Down .diary .header {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    grid-template-columns: 1fr calc(10 * var(--panel_vw));
+    grid-template-rows: 100%;
+    padding: 0 calc(4 * var(--panel_vw));
+    align-items: center;
+    color: #999;
+    fill: #999;
+    font-weight: 900;
+}
+
+#Panel_Home .Down .diary .header button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#Panel_Home .Down .diary .header button svg {
+    width: 80%;
+}
+
+
+#Panel_Home .Down .diary .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* display: grid; */
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    position: relative;
+    height: 100%;
+    /* grid-auto-rows:auto; */
+    padding: 0 calc(4 * var(--panel_vw));
+    color: #999;
+    fill: #999;
+    font-weight: 900;
+    box-sizing: border-box;
+    overflow-y: scroll;
+}
+
+#Panel_Home .Down .diary .content .day {
+    display: grid;
+    grid-template-columns: calc(15 * var(--panel_vw)) 1fr;
+    grid-auto-rows: calc(25 * var(--panel_vw));
+    width: 100%;
+    position: relative;
+    column-gap: calc(3 * var(--panel_vw));
+    row-gap: calc(2 * var(--panel_vw));
+    margin-bottom: calc(4 * var(--panel_vw));
+}
+
+#Panel_Home .Down .diary .content .day .day-view {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    row-gap: calc(1 * var(--panel_vw));
+    grid-template-rows: repeat(2, calc(6 * var(--panel_vw)));
+}
+
+#Panel_Home .Down .diary .content .day .day-view span {
+    display: flex;
+    align-items: center;
+    font-size: calc(4.5 * var(--panel_vw));
+}
+
+#Panel_Home .Down .diary .content .day .event {
+    display: grid;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: 100%;
+    grid-template-rows: 60% 40%;
+    border-radius: calc(3 * var(--panel_vw));
+    grid-column: 2;
+    padding: calc(1 * var(--panel_vw));
+}
+
+#Panel_Home .Down .diary .content .day .event span {
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2em;
+    max-height: 2.4em;
+
+}
+
+
+#Panel_Home .Down .diary .content::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+}
+
+/* fondo */
+#Panel_Home .Down .diary .content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* barra */
+#Panel_Home .Down .diary .content::-webkit-scrollbar-thumb {
+    background: #484f5a;
+    border-radius: 6px;
+}
+
+/* hover */
+#Panel_Home .Down .diary .content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.calendar-colorid-1 {
+    background-color: #ac725e;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-2 {
+    background-color: #d06b64;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-3 {
+    background-color: #f83a22;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-4 {
+    background-color: #fa573c;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-5 {
+    background-color: #ff7537;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-6 {
+    background-color: #ffad46;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-7 {
+    background-color: #42d692;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-8 {
+    background-color: #16a765;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-9 {
+    background-color: #7bd148;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-10 {
+    background-color: #b3dc6c;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-11 {
+    background-color: #fbe983;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-12 {
+    background-color: #fad165;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-13 {
+    background-color: #92e1c0;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-14 {
+    background-color: #9fe1e7;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-15 {
+    background-color: #9fc6e7;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-16 {
+    background-color: #4986e7;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-17 {
+    background-color: #9a9cff;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-18 {
+    background-color: #b99aff;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-19 {
+    background-color: #c2c2c2;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-20 {
+    background-color: #cabdbf;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-21 {
+    background-color: #cca6ac;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-22 {
+    background-color: #f691b2;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-23 {
+    background-color: #cd74e6;
+    color: #1d1d1d;
+}
+
+.calendar-colorid-24 {
+    background-color: #a47ae2;
+    color: #1d1d1d;
+}
+
+[data-mode="loader"] {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    flex-direction: row !important;
+}
+
+.loader {
+    border: 5px solid #999;
+    border-radius: 50%;
+    margin: 8px;
+}
+
+.loader:nth-child(1) {
+    animation: loader 0.8s ease-in-out alternate infinite;
+}
+
+.loader:nth-child(2) {
+    animation: loader 0.8s ease-in-out .3s alternate infinite;
+}
+
+.loader:nth-child(3) {
+    animation: loader 0.8s ease-in-out 0.6s alternate infinite;
+}
+
+@keyframes loader {
+    to {
+        transform: scale(1.8);
+    }
+}
+
+#diary-content[data-mode="login"] {
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+#diary-content[data-mode="login"] button {
+    outline: none;
+    border: none;
+    width: 80%;
+    position: relative;
+    height: calc(15 * var(--panel_vw));
+    border-radius: calc(2 * var(--panel_vw));
+    display: grid;
+    grid-template-columns: calc(10 * var(--panel_vw)) 1fr;
+    grid-template-rows: 100%;
+    position: relative;
+    align-items: center;
+    justify-items: center;
+    color: black;
+    font-weight: 700;
+    font-size: calc(5 * var(--panel_vw));
+    font-family: "Roboto";
+}
+
+#diary-content[data-mode="login"] button svg {
+    width: 80%;
+}

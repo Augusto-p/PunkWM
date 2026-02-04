@@ -1,0 +1,7 @@
+target/*
+make.sh
+punkwm_dock/src-tauri/target/*
+dock
+sudo.sh
+credentials.json
+errors.log
