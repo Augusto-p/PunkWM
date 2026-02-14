@@ -1,0 +1,11 @@
+#Layout {
+    grid-row: 7;
+    fill: #fff;
+}
+
+#Layout>svg {
+    width: 40%;
+    background-color: #1d242c;
+    padding: calc(14 * var(--dock_vw));
+    border-radius: calc(10 * var(--dock_vw));
+}

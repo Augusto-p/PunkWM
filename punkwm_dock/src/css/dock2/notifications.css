@@ -1,0 +1,29 @@
+#Notyfi{
+    grid-row: 6;
+    fill: #fff;
+}
+#Notyfi>svg{
+    width: 70%;
+    background-color: #1d242c;
+    border-radius: calc(10 * var(--dock_vw));
+
+}
+
+.Dock #Notify_bubble{
+    width: calc(30 * var(--dock_vw));
+    height: calc(30 * var(--dock_vw));
+    position: absolute;
+    background-color: #8f0000;
+    border-radius: 50vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    right: calc(10 * var(--dock_vw));
+    font-weight: 900;
+    color: #fff;
+    border: 1px solid transparent;
+    padding: calc(3 * var(--dock_vw));
+    font-size: calc(12 * var(--dock_vw));
+    box-sizing: border-box;
+}
