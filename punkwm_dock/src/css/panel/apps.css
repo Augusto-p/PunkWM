@@ -1,0 +1,138 @@
+body[data-panel="Open-Apps"] #Panel_Apps {
+    display: grid;
+}
+
+#Panel_Apps {
+    grid-template-columns: 100%;
+    grid-template-rows: 5vh 94vh;
+    row-gap: 1vh;
+    overflow: hidden;
+    position: relative;
+    padding-right: 0 !important;
+}
+
+#Panel_Apps .header {
+    grid-column: 1;
+    grid-row: 1;
+    width: calc(100% - 5 * var(--panel_vw) );
+    height: 100%;
+    background-color: #1f333e;
+    color: #ffffff;
+    border-radius: calc(10 * var(--panel_vw));
+    display: grid;
+    grid-template-columns: 4vh 1fr;
+    grid-template-rows: 100%;
+    column-gap: calc(0 * var(--panel_vw));
+    align-items: center;
+    justify-items: center;
+    margin-right: calc(5 * var(--panel_vw));
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#Panel_Apps .header:focus, #Panel_Apps .header:active, #Panel_Apps .header:hover{
+    border: 1px solid #78c9f4;
+}
+
+#Panel_Apps .header .icon{
+    fill: #ffffff;
+    grid-column: 1;
+    grid-row: 1;
+    width: 75%;
+}
+
+#Panel_Apps .header input{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    grid-row: 1;
+    grid-column: 2;
+    width: 90%;
+    height: 100%;
+    font-size: calc(7 * var(--panel_vw));
+    color: #ffffff;
+    padding: 0;
+    font-weight: 400;
+}
+
+#Panel_Apps .header input::placeholder {
+        font-weight: 800;
+        cursor: pointer;
+}
+
+
+#Panel_Apps #Apps_grid{
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: calc(94vh - 10 * var(--panel_vw));
+    background-color: transparent;   
+    grid-gap: calc(5 * var(--panel_vw));
+    overflow: hidden;
+    padding: 0;
+    padding-right: calc(5 * var(--panel_vw));
+    overflow-y: auto;
+    display: grid;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 15vh;
+}
+
+#Panel_Apps #Apps_grid .app{
+    position: relative;
+    background-color: #1f333e;
+    border-radius: calc(5 * var(--panel_vw));
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10vh 5vh;
+    justify-items: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 calc(2 * var(--panel_vw));
+    color: #ffffff;
+    cursor: pointer;
+
+}
+
+#Panel_Apps #Apps_grid .app img{
+    grid-row: 1;
+    grid-column: 1;
+    height: 80%;
+}
+
+#Panel_Apps #Apps_grid .app span{
+    color: #ffffff;
+    font-weight: 800;
+    font-size: calc(5 * var(--panel_vw));
+    display: -webkit-box;
+    -webkit-line-clamp: 2;      /* máximo de líneas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    user-select: none;
+    text-align: center;
+}
+#Panel_Apps #Apps_grid .app:hover{
+    border: 1px solid #78c9f4;
+}
+
+#Panel_Apps #Apps_grid::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+/* fondo */
+#Panel_Apps #Apps_grid::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* barra */
+#Panel_Apps #Apps_grid::-webkit-scrollbar-thumb {
+    background: #484f5a;
+    border-radius: 10px;
+}
+
+/* hover */
+#Panel_Apps #Apps_grid::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.55);
+}

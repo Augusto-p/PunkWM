@@ -26,11 +26,11 @@ impl Dock {
         }
     }
 
-    pub fn make(&self) {
+    pub fn make(&self, path: String) {
         let gap = self.vh(1, self.height);
         let command = format!(
-            "/home/augus/punk_wm/dock --width={} --height={} --title=\"{}\"",
-            self.width, (self.height as u32 - 2*gap), self.name
+            "{} --width={} --height={} --title=\"{}\"",
+            path, self.width, (self.height as u32 - 2*gap), self.name
         );
         spawn(&command);
     }
@@ -91,10 +91,10 @@ impl Dock {
         let _ = conn.flush();
     }
 
-    pub fn width(&self) -> u16{
-        self.width
+    // pub fn width(&self) -> u16{
+    //     self.width
 
-    }
+    // }
 
     pub fn vh(&self, count: u16, screen_height: u16) -> u32 {
         (count * screen_height / 100) as u32

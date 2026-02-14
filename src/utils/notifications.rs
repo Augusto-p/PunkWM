@@ -31,24 +31,16 @@ impl NotificationServer {
     fn notify(
         &self,
         app_name: &str,
-        replaces_id: u32,
+        _replaces_id: u32,
         app_icon: &str,
         summary: &str,
         body: &str,
         _actions: Vec<&str>,
         _hints: HashMap<&str, Value>,
-        expire_timeout: i32,
+        _expire_timeout: i32,
     ) -> u32 {
 
-        // let _ = print_in_tty(&format!("🔔 NOTIFICACIÓN"));
-        // let _ = print_in_tty(&format!("App: {}", app_name));
-        // let _ = print_in_tty(&format!("ID: {}", replaces_id));
-        // let _ = print_in_tty(&format!("Icon: {}", app_icon));
-        // let _ = print_in_tty(&format!("Título: {}", summary));
-        // let _ = print_in_tty(&format!("Mensaje: {}", body));
-        // let _ = print_in_tty(&format!("Timeout: {}", expire_timeout));
-        // let _ = print_in_tty(&format!("------------------------"));
-        let time = match SystemTime::now().duration_since(UNIX_EPOCH) {
+                let time = match SystemTime::now().duration_since(UNIX_EPOCH) {
             Ok(n) => n.as_secs(), // Devuelve u64
             Err(_) => 0,          // Devuelve u64 (ahora sí coinciden)
         };

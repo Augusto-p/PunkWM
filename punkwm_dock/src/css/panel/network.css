@@ -1,0 +1,191 @@
+body[data-panel="Open-WiFi"] #Panel_WiFi {
+    display: grid;
+}
+
+#Panel_WiFi {
+    grid-template-columns: 100%;
+    grid-template-rows: 5vh 94vh;
+    row-gap: 1vh;
+    overflow: hidden;
+    position: relative;
+    padding-right: 0 !important;
+
+}
+
+#Panel_WiFi .header {
+    grid-column: 1;
+    grid-row: 1;
+    width: calc(100% - 5 * var(--panel_vw) );
+    height: 100%;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 5vh 5vh;
+    grid-template-rows: 100%;
+    column-gap: calc(4 * var(--panel_vw));
+    align-items: center;
+    justify-items: center;
+    margin-right: calc(5 * var(--panel_vw));
+    box-sizing: border-box;
+}
+
+#Panel_WiFi .header button{
+    width: 100%;
+    height: 100%;
+    background-color: #1f333e;
+    border: none;
+    outline: none;
+    fill: #999;
+    border-radius: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#Panel_WiFi .header button:hover{
+    fill: #ffffff;
+    background-color: #0b1418;
+}
+#Panel_WiFi .header button svg{
+    width: 80%;
+}
+#Panel_WiFi .header span{
+    font-size: calc(6.5 * var(--panel_vw));
+    font-weight: 900;
+}
+
+
+
+#Panel_WiFi .share{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 10vw - 10 * var(--panel_vw));
+    height: calc(100 * var(--panel_vw));
+    background-color: #1f333e;
+    margin-left: calc(10vw + 5 * var(--panel_vw));
+    margin-right: calc(5 * var(--panel_vw));
+    border-top-left-radius: calc(5 * var(--panel_vw));   
+    border-top-right-radius: calc(5 * var(--panel_vw));  
+    display: flex;
+    flex-direction: column;
+    padding: calc(10 * var(--panel_vw)) calc(10 * var(--panel_vw)) calc(5 * var(--panel_vw)) calc(10 * var(--panel_vw));
+    box-sizing: border-box; 
+    justify-content:space-around ;
+    align-items: center;
+    transform: translateY(calc(105 * var(--panel_vw)));
+    transition: transform 1s;
+}
+
+#Panel_WiFi .share span{
+    width: 100%;
+    font-size: calc(7 * var(--panel_vw));
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    /* margin-top: calc(5 * var(--panel_vw)) ; */
+}
+#Panel_WiFi .share.view{
+    transform: translateY(0);
+}
+
+#Panel_WiFi #Panel_wifi_list{
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: 100%;
+    grid-auto-rows: 4vh;
+    row-gap: calc(3 * var(--panel_vw));
+    overflow-y: auto;
+    padding-right: calc(5 * var(--panel_vw));
+}
+
+#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+/* fondo */
+#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* barra */
+#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar-thumb {
+    background: #484f5a;
+    border-radius: 10px;
+}
+
+/* hover */
+#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+
+#Panel_WiFi #Panel_wifi_list .wifi{
+    display: grid;
+    grid-template-columns: 4vh 1fr 4vh;
+    grid-template-rows: 100%;
+    fill: #ffffff;
+    --front:#ffffff;
+    --back:#999;
+    color: #ffffff;
+    align-items: center;
+    justify-items: center;
+    background-color: #1f333e;
+}
+
+#Panel_WiFi #Panel_wifi_list .wifi button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+#Panel_WiFi #Panel_wifi_list .wifi svg{
+    width: 70%;
+}
+#Panel_WiFi #Panel_wifi_list .wifi button svg {
+    transform: rotateZ(-45deg);
+
+}
+#Panel_WiFi #Panel_wifi_list .wifi.connected{
+    background-color: #95ffc6;
+}
+
+#Panel_WiFi #Panel_wifi_list .wifi button .ulinked{
+    display: none;
+}
+
+#Panel_WiFi #Panel_wifi_list .wifi.connected button .ulinked{
+    display: block;
+}
+#Panel_WiFi #Panel_wifi_list .wifi.connected button .linked{
+    display: none;
+}
+
+
+#Panel_WiFi .connected{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 10vw - 10 * var(--panel_vw));
+    height: calc(50 * var(--panel_vw));
+    background-color: #1f333e;
+    margin-left: calc(10vw + 5 * var(--panel_vw));
+    margin-right: calc(5 * var(--panel_vw));
+    border-top-left-radius: calc(5 * var(--panel_vw));   
+    border-top-right-radius: calc(5 * var(--panel_vw));  
+    display: flex;
+    flex-direction: column;
+    padding: calc(5 * var(--panel_vw)) calc(10 * var(--panel_vw));
+    box-sizing: border-box; 
+    justify-content:space-around ;
+    align-items: center;
+    color: #ffffff;
+    /* transform: translateY(calc(105 * var(--panel_vw))); */
+    transition: transform 1s;
+}

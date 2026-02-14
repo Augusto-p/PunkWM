@@ -25,9 +25,9 @@ impl PanelOptions {
         self.open
     }
 
-    pub fn width(&self) -> u16 {
-        self.width
-    }
+    // pub fn width(&self) -> u16 {
+    //     self.width
+    // }
 
     pub fn current_width(&self) -> u16 {
         self.current_width
@@ -87,7 +87,7 @@ impl WorkspaceManager {
     //     &mut self.conn
     // }
 
-    pub fn init_dock(&mut self, width: u16, height: u16) {
+    pub fn init_dock(&mut self, width: u16, height: u16, path: String) {
         let screen = &self.conn.setup().roots[0];
         self.panel.set_current_width(width + screen.height_in_pixels/50);
 
@@ -95,7 +95,7 @@ impl WorkspaceManager {
             return;
         }
         let dock = Dock::new(width, height, self.panel.width);
-        dock.make();          // lanza el proceso
+        dock.make(path);          // lanza el proceso
         self.dock = Some(dock); // guarda el estado
     }
     

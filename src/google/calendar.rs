@@ -20,7 +20,7 @@ pub struct CalenderList {
 pub struct CalenderListEntry {
     pub id: String,
     pub color_id: Option<String>,
-    pub time_zone: String,
+    pub _time_zone: String,
 }
 
 #[derive(Debug, Deserialize, Clone)]
@@ -37,7 +37,7 @@ pub struct EventDateTime {
     #[serde(rename = "dateTime")]
     pub date_time: Option<String>, // algunos eventos son all-day
     pub date: Option<String>,
-    pub time_zone: Option<String>,
+    pub _time_zone: Option<String>,
 }
 
 

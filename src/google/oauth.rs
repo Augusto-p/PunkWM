@@ -4,11 +4,6 @@ use serde::{Serialize, Deserialize};
 use std::error::Error;
 use std::fs::File;
 use std::io::BufReader;
-use hyper::service::{make_service_fn, service_fn};
-use hyper::{Body, Request, Response, Server};
-use std::convert::Infallible;
-use std::sync::{Arc, Mutex};
-use tokio::sync::oneshot;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use crate::google::credentials::Credentials;
@@ -33,9 +28,7 @@ pub fn get_auth_url(credentials: &Credentials, scope: Vec<String> ) -> String {
     )
 }
 
-fn extract_code_from_url(url: &str) -> Option<String> {
-    url.split("?code=").nth(1).map(|s| s.to_string())
-}
+
 
 pub async fn exchange_code_for_token(received_code: String, credentials: &Credentials) -> Result<(), Box<dyn std::error::Error>> {
     let client = Client::new();
@@ -78,75 +71,6 @@ pub fn read_access_token() -> Option<TokenResponse> {
 }
 
 
-pub async fn wait_for_code(redirect_url: String) -> String {
-    // Variable compartida para almacenar el código
-    let received_code = Arc::new(Mutex::new(None::<String>));
-    let received_code_for_closure = Arc::clone(&received_code);
-
-    // Canal para notificar cuando se recibe el código
-    let (tx, rx) = oneshot::channel::<()>();
-    let tx = Arc::new(Mutex::new(Some(tx)));
-
-    let make_svc = make_service_fn(move |_| {
-        let code_clone = Arc::clone(&received_code_for_closure);
-        let tx = Arc::clone(&tx);
-
-        async move {
-            Ok::<_, Infallible>(service_fn(move |req: Request<Body>| {
-                let code_clone = Arc::clone(&code_clone);
-                let tx = Arc::clone(&tx);
-
-                async move {
-                    if let Some(query) = req.uri().query() {
-                        for pair in query.split('&') {
-                            let mut split = pair.split('=');
-                            if let (Some(key), Some(value)) = (split.next(), split.next()) {
-                                if key == "code" {
-                                    // Guardamos el código
-                                    *code_clone.lock().unwrap() = Some(value.to_string());
-
-                                    // Notificamos que llegó el código
-                                    if let Some(tx_inner) = tx.lock().unwrap().take() {
-                                        let _ = tx_inner.send(());
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    Ok::<_, Infallible>(Response::new(Body::from(
-                        "Código recibido. Puedes cerrar esta ventana.",
-                    )))
-                }
-            }))
-        }
-    });
-    
-
-    // Bind al redirect_url recibido como String
-    let addr_str = extract_host_port(&redirect_url);
-    let addr = addr_str.parse().expect("URL inválida");
-    let server = Server::bind(&addr).serve(make_svc);
-
-    let server_handle = tokio::spawn(server);
-
-    // Esperamos a que llegue el código
-    let _ = rx.await;
-
-    // Apagamos el servidor
-    server_handle.abort();
-
-    // Retornamos el código
-    let x = received_code.lock().unwrap().clone().unwrap();
-    x
-}
-fn extract_host_port(url: &str) -> String {
-    let url = url.trim_start_matches("http://")
-                 .trim_start_matches("https://");
-
-    // Reemplazamos "localhost" por "127.0.0.1"
-    url.replace("localhost", "127.0.0.1")
-}
 
 pub async fn refresh_token(
     refresh_token: String,

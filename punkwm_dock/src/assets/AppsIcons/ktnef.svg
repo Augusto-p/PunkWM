@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="j" version="1.1" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs id="k"><linearGradient id="b" x1="399.57" x2="399.57" y1="545.8" y2="517.8" gradientTransform="matrix(2.1429 0 0 2.1429 -738.64 -1103.9)" gradientUnits="userSpaceOnUse"><stop id="l" stop-color="#3889e9" offset="0"/><stop id="m" stop-color="#5ea5fb" offset="1"/></linearGradient><linearGradient id="g" x1="8.4665" x2="8.4665" y1="11.641" y2="5.2916" gradientTransform="matrix(3.7796 0 0 3.7796 65.86 -3.8594)" gradientUnits="userSpaceOnUse"><stop id="n" stop-color="#0a62ff" offset="0"/><stop id="o" stop-color="#70beff" offset="1"/></linearGradient><linearGradient id="f" x1="14.503" x2="12.722" y1="23.921" y2="26.439" gradientTransform="matrix(1 0 0 -1 0 64)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><linearGradient id="a"><stop id="p" offset="0"/><stop id="q" stop-opacity="0" offset="1"/></linearGradient><linearGradient id="c" x1="14.503" x2="12.163" y1="23.921" y2="27.102" gradientTransform="translate(0 -1.9583e-6)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><linearGradient id="e" x1="14.503" x2="12.722" y1="23.921" y2="26.439" gradientTransform="matrix(-1 0 0 -1 64 64)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><linearGradient id="d" x1="14.503" x2="12.163" y1="23.921" y2="27.102" gradientTransform="matrix(-1 0 0 1 64 -1.9583e-6)" gradientUnits="userSpaceOnUse" xlink:href="#a"/><style id="r" type="text/css">.ColorScheme-Text {
+        color:#31363b;
+      }
+      .ColorScheme-Background{
+        color:#eff0f1;
+      }
+      .ColorScheme-ViewText {
+        color:#31363b;
+      }
+      .ColorScheme-ViewBackground{
+        color:#fcfcfc;
+      }
+      .ColorScheme-ViewHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonText {
+        color:#31363b;
+      }
+      .ColorScheme-ButtonBackground{
+        color:#eff0f1;
+      }
+      .ColorScheme-ButtonHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#3daee9;
+      }</style><style id="s" type="text/css">.ColorScheme-Text {
+        color:#31363b;
+      }
+      .ColorScheme-Background{
+        color:#eff0f1;
+      }
+      .ColorScheme-ViewText {
+        color:#31363b;
+      }
+      .ColorScheme-ViewBackground{
+        color:#fcfcfc;
+      }
+      .ColorScheme-ViewHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonText {
+        color:#31363b;
+      }
+      .ColorScheme-ButtonBackground{
+        color:#eff0f1;
+      }
+      .ColorScheme-ButtonHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#3daee9;
+      }</style><style id="t" type="text/css">.ColorScheme-Text {
+        color:#31363b;
+      }
+      .ColorScheme-Background{
+        color:#eff0f1;
+      }
+      .ColorScheme-ViewText {
+        color:#31363b;
+      }
+      .ColorScheme-ViewBackground{
+        color:#fcfcfc;
+      }
+      .ColorScheme-ViewHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonText {
+        color:#31363b;
+      }
+      .ColorScheme-ButtonBackground{
+        color:#eff0f1;
+      }
+      .ColorScheme-ButtonHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#3daee9;
+      }</style><style id="u" type="text/css">.ColorScheme-Text {
+        color:#31363b;
+      }
+      .ColorScheme-Background{
+        color:#eff0f1;
+      }
+      .ColorScheme-ViewText {
+        color:#31363b;
+      }
+      .ColorScheme-ViewBackground{
+        color:#fcfcfc;
+      }
+      .ColorScheme-ViewHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonText {
+        color:#31363b;
+      }
+      .ColorScheme-ButtonBackground{
+        color:#eff0f1;
+      }
+      .ColorScheme-ButtonHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#3daee9;
+      }</style><style id="v" type="text/css">.ColorScheme-Text {
+        color:#31363b;
+      }
+      .ColorScheme-Background{
+        color:#eff0f1;
+      }
+      .ColorScheme-ViewText {
+        color:#31363b;
+      }
+      .ColorScheme-ViewBackground{
+        color:#fcfcfc;
+      }
+      .ColorScheme-ViewHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonText {
+        color:#31363b;
+      }
+      .ColorScheme-ButtonBackground{
+        color:#eff0f1;
+      }
+      .ColorScheme-ButtonHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#3daee9;
+      }</style><style id="w" type="text/css">.ColorScheme-Text {
+        color:#31363b;
+      }
+      .ColorScheme-Background{
+        color:#eff0f1;
+      }
+      .ColorScheme-ViewText {
+        color:#31363b;
+      }
+      .ColorScheme-ViewBackground{
+        color:#fcfcfc;
+      }
+      .ColorScheme-ViewHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ViewFocus{
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonText {
+        color:#31363b;
+      }
+      .ColorScheme-ButtonBackground{
+        color:#eff0f1;
+      }
+      .ColorScheme-ButtonHover {
+        color:#3daee9;
+      }
+      .ColorScheme-ButtonFocus{
+        color:#3daee9;
+      }</style><style id="x" type="text/css"/><style id="y" type="text/css"/><style id="z" type="text/css"/><style id="aa" type="text/css"/><style id="ab" type="text/css"/><style id="ac" type="text/css"/><style id="ad" type="text/css"/><style id="ae" type="text/css"/><style id="af" type="text/css"/><style id="ag" type="text/css"/><style id="ah" type="text/css"/><style id="ai" type="text/css"/><style id="aj" type="text/css"/><style id="ak" type="text/css"/><linearGradient id="h" x1="-100.09" x2="-100.09" y1="6.4084" y2="58.079" gradientTransform="translate(131.5 -.51)" gradientUnits="userSpaceOnUse"><stop id="al" stop-color="#fcfdfe" stop-opacity=".98824" offset="0"/><stop id="am" stop-color="#e4eef1" offset="1"/></linearGradient><style id="an" type="text/css"/><style id="ao" type="text/css"/><filter id="i" x="-.027" y="-.027" width="1.054" height="1.054" color-interpolation-filters="sRGB"><feGaussianBlur id="ap" stdDeviation="0.61875"/></filter><style id="aq" type="text/css"/><style id="ar" type="text/css"/><style id="as" type="text/css"/><style id="at" type="text/css"/><style id="au" type="text/css"/><style id="av" type="text/css"/><style id="aw" type="text/css"/><style id="ax" type="text/css"/><style id="ay" type="text/css"/><style id="az" type="text/css"/><style id="ba" type="text/css"/><style id="bb" type="text/css"/><style id="bc" type="text/css"/><style id="bd" type="text/css"/><style id="be" type="text/css"/><style id="bf" type="text/css"/></defs><rect id="bg" x="4.5" y="4.5" width="55" height="55" ry="15" fill="#141414" filter="url(#i)" opacity=".3" stroke-linecap="round" stroke-width="2.7444"/><rect id="bh" x="4.5" y="4.5" width="55" height="55" ry="15" fill="url(#h)" image-rendering="optimizeSpeed" stroke-linecap="round" stroke-width="2.7444"/><path id="bi" d="m60.001 19v4.17l-18.615 11.555-5.3848-2.7245z" fill="url(#d)" opacity=".15" stroke-width="3.7794"/><path id="bj" d="m60.001 45v-4.17l-17.819-12.006-6.1815 3.1758z" fill="url(#e)" opacity=".15" stroke-width="3.7794"/><path id="bk" d="m4 19v4.17l18.66 11.461 5.3402-2.6303z" fill="url(#c)" opacity=".15" stroke-width="3.7794"/><path id="bl" d="m4 45v-4.17l18.889-11.438 5.1108 2.6078z" fill="url(#f)" opacity=".15" stroke-width="3.7794"/><g id="bm" stroke-linecap="round" stroke-linejoin="round"><circle id="bn" cx="32" cy="32" r="12" fill="url(#g)" stroke-width="2.88"/></g><circle id="bo" cx="119.72" cy="35.634" r="0" fill="url(#b)" stroke-width="1.5715"/><path id="bp" d="m39.56 25.939c1.175 1.175 1.175 3.067 0 4.243l-9.1682 9.1682c-1.567 1.567-4.0899 1.567-5.6569 0s-1.567-4.0899 0-5.6569l9.1682-9.1682 0.70701 0.70701-9.1682 9.1682c-1.175 1.175-1.175 3.067 0 4.243 1.175 1.175 3.067 1.175 4.243 0l9.1682-9.1682c0.78298-0.78298 0.78298-2.045 0-2.828-0.78298-0.78298-2.045-0.78298-2.828 0l-9.1682 9.1682c-0.39198 0.39198-0.39198 1.023 0 1.414 0.39198 0.39198 1.022 0.39198 1.414 0l8.461-8.461 0.70701 0.70701-8.461 8.461c-0.78298 0.78298-2.045 0.78298-2.828 0-0.78298-0.78298-0.78298-2.045 0-2.828l9.1682-9.1682c1.175-1.175 3.067-1.175 4.243 0" color-rendering="auto" image-rendering="auto" opacity=".15" shape-rendering="auto"/><path id="bq" d="m39.56 25.414c1.175 1.175 1.175 3.067 0 4.243l-9.1682 9.1682c-1.567 1.567-4.0899 1.567-5.6569 0s-1.567-4.0899 0-5.6569l9.1682-9.1682 0.70701 0.70701-9.1682 9.1682c-1.175 1.175-1.175 3.067 0 4.243 1.175 1.175 3.067 1.175 4.243 0l9.1682-9.1682c0.78298-0.78298 0.78298-2.045 0-2.828-0.78298-0.78298-2.045-0.78298-2.828 0l-9.1682 9.1682c-0.39198 0.39198-0.39198 1.023 0 1.414 0.39198 0.39198 1.022 0.39198 1.414 0l8.461-8.461 0.70701 0.70701-8.461 8.461c-0.78298 0.78298-2.045 0.78298-2.828 0-0.78298-0.78298-0.78298-2.045 0-2.828l9.1682-9.1682c1.175-1.175 3.067-1.175 4.243 0" color-rendering="auto" fill="#fff" image-rendering="auto" shape-rendering="auto"/><circle id="br" cx="-1310.7" cy="-1241.6" r="0" fill="#5e4aa6" image-rendering="optimizeSpeed"/><circle id="bs" cx="-211.19" cy="23.855" r="0" fill="#5e4aa6" fill-rule="evenodd" image-rendering="optimizeSpeed"/><circle id="bt" cx="-1397.8" cy="-1293.6" r="0" fill="#5e4aa6" image-rendering="optimizeSpeed"/><circle id="bu" cx="-298.29" cy="-28.178" r="0" fill="#5e4aa6" fill-rule="evenodd" image-rendering="optimizeSpeed"/><circle id="bv" cx="-1051.9" cy="-1279.3" r="0" fill="#5e4aa6"/><g id="bw" transform="matrix(3.7796 0 0 3.7796 196.7 -38.184)" fill="#5e4aa6" stroke-width=".26458"><circle id="bx" cx="-299.02" cy="-338.77" r="0"/><circle id="by" cx="-8.1062" cy="-3.9487" r="0" fill-rule="evenodd"/><circle id="bz" cx="-278.25" cy="-357.69" r="0"/><circle id="ca" cx="12.663" cy="-22.859" r="0" fill-rule="evenodd"/></g><circle id="cb" cx="-1071.4" cy="-1378.5" r="0" fill="#5e4aa6"/><circle id="cc" cx="28.157" cy="-113.04" r="0" fill="#5e4aa6" fill-rule="evenodd"/><circle id="cd" cx="-992.88" cy="-1450" r="0" fill="#5e4aa6"/><circle id="ce" cx="106.66" cy="-184.51" r="0" fill="#5e4aa6" fill-rule="evenodd"/><circle id="cf" cx="-1258.4" cy="-1241.6" r="0" fill="#5e4aa6"/><circle id="cg" cx="-158.86" cy="23.855" r="0" fill="#5e4aa6" fill-rule="evenodd"/><circle id="ch" cx="-1179.9" cy="-1313.1" r="0" fill="#5e4aa6"/><circle id="ci" cx="27.572" cy="-47.617" r="0" fill="#5e4aa6" fill-rule="evenodd"/><g id="cj" transform="matrix(3.7796 0 0 3.7796 -127.4 -42.305)" fill="#5e4aa6" image-rendering="optimizeSpeed" stroke-width=".26458"><circle id="ck" cx="-347.64" cy="-328.38" r="0"/><circle id="cl" cx="-56.726" cy="6.44" r="0" fill-rule="evenodd"/><g id="cm" transform="translate(-.0272 .0065001)"><circle id="cn" cx="-330.35" cy="-328.38" r="0"/><circle id="co" cx="-312.11" cy="-326.25" r="0"/><circle id="cp" cx="-306.02" cy="-333.07" r="0"/><circle id="cq" cx="-308.84" cy="-326.01" r="0"/></g></g><circle id="cr" cx="-1189.8" cy="-1339.2" r="0" fill="#5e4aa6"/><circle id="cs" cx="-1221.1" cy="-1279.3" r="0" fill="#5e4aa6"/><g id="ct" transform="matrix(3.7796 0 0 3.7796 27.511 -38.184)" fill="#5e4aa6" stroke-width=".26458"><circle id="cu" cx="-299.02" cy="-338.77" r="0"/><circle id="cv" cx="-8.1062" cy="-3.9487" r="0" fill-rule="evenodd"/><circle id="cw" cx="-278.25" cy="-357.69" r="0"/><circle id="cx" cx="12.663" cy="-22.859" r="0" fill-rule="evenodd"/></g><circle id="cy" cx="-1240.6" cy="-1378.5" r="0" fill="#5e4aa6"/><circle id="cz" cx="-141.03" cy="-113.04" r="0" fill="#5e4aa6" fill-rule="evenodd"/><circle id="da" cx="-1162.1" cy="-1450" r="0" fill="#5e4aa6"/><circle id="db" cx="-62.53" cy="-184.51" r="0" fill="#5e4aa6" fill-rule="evenodd"/><circle id="dc" cx="-1427.6" cy="-1241.6" r="0" fill="#5e4aa6"/><circle id="dd" cx="-328.05" cy="23.855" r="0" fill="#5e4aa6" fill-rule="evenodd"/><circle id="de" cx="-1349.1" cy="-1313.1" r="0" fill="#5e4aa6"/><circle id="df" cx="-141.62" cy="-47.617" r="0" fill="#5e4aa6" fill-rule="evenodd"/><g id="dg" transform="matrix(3.7796 0 0 3.7796 -296.59 -42.305)" fill="#5e4aa6" image-rendering="optimizeSpeed" stroke-width=".26458"><circle id="dh" cx="-347.64" cy="-328.38" r="0"/><circle id="di" cx="-56.726" cy="6.44" r="0" fill-rule="evenodd"/><g id="dj" transform="translate(-.0272 .0065001)"><circle id="dk" cx="-330.35" cy="-328.38" r="0"/><circle id="dl" cx="-312.11" cy="-326.25" r="0"/><circle id="dm" cx="-306.02" cy="-333.07" r="0"/><circle id="dn" cx="-308.84" cy="-326.01" r="0"/></g></g><circle id="do" cx="-1359" cy="-1339.2" r="0" fill="#5e4aa6"/></svg>

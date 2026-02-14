@@ -4,4 +4,5 @@ punkwm_dock/src-tauri/target/*
 dock
 sudo.sh
 credentials.json
+commands.txt
 errors.log

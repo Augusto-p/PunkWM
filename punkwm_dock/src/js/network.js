@@ -1,23 +1,26 @@
+
 function update_network(State, level=-1) {
     switch (State) {
         case "connected_ethernet":
-            network.firstElementChild.style.backgroundColor = "#0B1418"
             network.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M120-80v-280h120v-160h200v-80H320v-280h320v280H520v80h200v160h120v280H520v-280h120v-80H320v80h120v280H120Zm280-600h160v-120H400v120ZM200-160h160v-120H200v120Zm400 0h160v-120H600v120ZM480-680ZM360-280Zm240 0Z"/></svg>`    
+            network.firstElementChild.style.backgroundColor = "#0B1418"
             
             break;
         case "disconnected":
-            network.firstElementChild.style.backgroundColor = "#0B1418"
             network.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"> <path d="M819-28 701-146q-48 32-103.5 49T480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-62 17-117.5T146-701L27-820l57-57L876-85l-57 57ZM440-162v-78q-33 0-56.5-23.5T360-320v-40L168-552q-3 18-5.5 36t-2.5 36q0 121 79.5 212T440-162Zm374-99-58-58q21-37 32.5-77.5T800-480q0-98-54.5-179T600-776v16q0 33-23.5 56.5T520-680h-80v45L261-814q48-31 103-48.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 61-17.5 116T814-261Z"/></svg>`
+            network.firstElementChild.style.backgroundColor = "#0B1418"
             break;
 
         case "disconnected_with_wifi_available":
-            network.firstElementChild.style.backgroundColor = "#0B1418"
-            network.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M790-56 414-434q-47 11-87.5 33T254-346l-84-86q32-32 69-56t79-42l-90-90q-41 21-76.5 46.5T84-516L0-602q32-32 66.5-57.5T140-708l-84-84 56-56 736 736-58 56Zm-310-64q-42 0-71-29.5T380-220q0-42 29-71t71-29q42 0 71 29t29 71q0 41-29 70.5T480-120Zm236-238-29-29-29-29-144-144q81 8 151.5 41T790-432l-74 74Zm160-158q-77-77-178.5-120.5T480-680q-21 0-40.5 1.5T400-674L298-776q44-12 89.5-18t92.5-6q142 0 265 53t215 145l-84 86Z"/></svg>`    
+            network.innerHTML = `<svg onclick="ToogleWiFi()" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="M790-56 414-434q-47 11-87.5 33T254-346l-84-86q32-32 69-56t79-42l-90-90q-41 21-76.5 46.5T84-516L0-602q32-32 66.5-57.5T140-708l-84-84 56-56 736 736-58 56Zm-310-64q-42 0-71-29.5T380-220q0-42 29-71t71-29q42 0 71 29t29 71q0 41-29 70.5T480-120Zm236-238-29-29-29-29-144-144q81 8 151.5 41T790-432l-74 74Zm160-158q-77-77-178.5-120.5T480-680q-21 0-40.5 1.5T400-674L298-776q44-12 89.5-18t92.5-6q142 0 265 53t215 145l-84 86Z"/></svg>`    
+            network.firstElementChild.style.backgroundColor = "#1d242c"
             break;
 
         case "connected_wifi":
-            network.firstElementChild.style.backgroundColor = "#484F5A"
             network.innerHTML = WiFi_Icons[level];
+            network.firstElementChild.style.backgroundColor = "#1d242c"
+            network.firstElementChild.addEventListener("click", ()=> ToogleWiFi())
+
             break;
         default:
             break;
@@ -52,7 +55,7 @@ const WiFi_Icons = [`
                 <path fill="var(--front)" d="m183.9 106.9c-50.9 0-99.6 21.7-133.7 59.6-6.8 7.6-6.2 19.3 1.4 26.1 3.5 3.2 7.9 4.7 12.3 4.7 5 0 10.1-2.1 13.7-6.1 27.1-30.2 65.9-47.4 106.3-47.4 40.5 0 79.3 17.2 106.4 47.4 6.8 7.6 18.5 8.2 26 1.4 7.6-6.8 8.2-18.5 1.4-26.1-34.1-37.9-82.8-59.6-133.8-59.6z" />
                 <path fill="var(--back)" d="m360.6 112.3c-47.2-48.1-110.3-74.6-177.7-74.6-67.3 0-130.4 26.5-177.6 74.6-7.2 7.3-7 18.9 0.2 26.1 3.6 3.5 8.3 5.3 12.9 5.3 4.8 0 9.6-1.9 13.2-5.6 40.2-40.9 94-63.5 151.3-63.5 57.4 0 111.2 22.6 151.4 63.5 7.1 7.3 18.8 7.4 26.1 0.3 7.2-7.2 7.3-18.8 0.2-26.1z" />
             </g></svg>`,
-            `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366 366"><g>
+            `<svg  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 366 366"><g>
                 <path fill="var(--front)" d="m182.9 328.2c-22.9 0-41.4-18.6-41.4-41.5 0-23 18.5-41.5 41.4-41.5 23 0 41.5 18.5 41.5 41.5 0 22.9-18.5 41.5-41.5 41.5z" />
                 <path fill="var(--front)" d="m182.9 176c-35.6 0-69.3 17.4-90 46.4-6 8.3-4 19.8 4.2 25.8 3.3 2.3 7 3.4 10.7 3.4 5.8 0 11.5-2.7 15.1-7.7 13.8-19.4 36.3-31 60-31 23.8 0 46.3 11.6 60.1 31 5.9 8.3 17.5 10.2 25.7 4.3 8.3-6 10.3-17.5 4.3-25.8-20.7-29-54.4-46.4-90.1-46.4z" />
                 <path fill="var(--front)" d="m183.9 106.9c-50.9 0-99.6 21.7-133.7 59.6-6.8 7.6-6.2 19.3 1.4 26.1 3.5 3.2 7.9 4.7 12.3 4.7 5 0 10.1-2.1 13.7-6.1 27.1-30.2 65.9-47.4 106.3-47.4 40.5 0 79.3 17.2 106.4 47.4 6.8 7.6 18.5 8.2 26 1.4 7.6-6.8 8.2-18.5 1.4-26.1-34.1-37.9-82.8-59.6-133.8-59.6z" />

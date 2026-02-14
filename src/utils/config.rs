@@ -4,12 +4,13 @@ use std::{collections::HashMap, fs::{self, OpenOptions}, io::{self, Write},  syn
 
 use crate::utils::keys::{keycode_from_name, parse_mods};
 pub const TTY: &str = "/dev/pts/0";
-#[derive(Deserialize)]
+#[derive(Deserialize, Clone)]
 pub struct Apps {
     pub terminal: String,
     pub browser: String,
     pub filemanager: String,
     pub editor: String,
+    pub dock: String,
 }
 
 #[derive(Deserialize)]
@@ -51,6 +52,34 @@ pub struct Binding {
     pub action: String,
 }
 
+use std::env;
+
+fn expand_home(s: &mut String, home: &str) {
+    if s.contains('~') {
+        *s = s.replace("~", home);
+    }
+}
+
+impl Config {
+    pub fn expand_tilde(mut self) -> Self {
+        let home = env::var("HOME").unwrap();
+
+        // Apps
+        expand_home(&mut self.apps.terminal, &home);
+        expand_home(&mut self.apps.browser, &home);
+        expand_home(&mut self.apps.filemanager, &home);
+        expand_home(&mut self.apps.editor, &home);
+        expand_home(&mut self.apps.dock, &home);
+
+        // Styles
+        expand_home(&mut self.styles.bg, &home);
+
+        // Google
+        expand_home(&mut self.google.credentials_file, &home);
+
+        self
+    }
+}
 
 
 pub fn path_persistence() -> &'static str {
@@ -67,7 +96,8 @@ pub(crate) fn load_config() -> Config {
     );
 
     let data = fs::read_to_string(&path).expect("No se pudo leer config.toml");
-    toml::from_str(&data).expect("Config TOML inválido")
+    let cfg: Config = toml::from_str(&data).expect("Config TOML inválido");
+    cfg.expand_tilde()
 }
 
 pub(crate) fn parse_bindings(cfg: &Config) -> Vec<Binding> {

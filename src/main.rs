@@ -8,7 +8,7 @@ mod google;
 // use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use utils::battery::Battery;
-use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,};
+use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,};
 use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
 use crate::wm::manager::WorkspaceManager;
 use std::{thread, time::Duration, sync::{mpsc, Arc},};
@@ -22,11 +22,12 @@ use crate::ipc::{server::start_ipc_server,
     },
         
 };
-use crate::google::credentials::read_credentials;
-use crate::google::oauth::{get_access_token, get_auth_url};
-use crate::google::calendar::get_daily;
-use crate::google::oauth::exchange_code_for_token;
-use crate::utils::weather::get_weather;
+use crate::google::{
+    credentials::read_credentials,
+    oauth::{get_access_token, get_auth_url, exchange_code_for_token},
+    calendar::get_daily,
+};
+
     
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let (tx, rx) = mpsc::channel::<CustomEvent>();
@@ -70,7 +71,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     let screen = &wm.conn.setup().roots[screen_num];
     let root = screen.root;
 
-    wm.init_dock(config.styles.dock_width, screen.height_in_pixels);
+    wm.init_dock(config.styles.dock_width, screen.height_in_pixels, config.apps.dock.clone());
 
 
     // ─────────────────────
