@@ -1,7 +1,7 @@
 target/*
 make.sh
 punkwm_dock/src-tauri/target/*
-dock
+/dock
 sudo.sh
 credentials.json
 commands.txt
