@@ -8,5 +8,11 @@ pub enum CustomEvent {
     HomePanelLoadDaily(),
     HomePanelLoadWeather(),
     GoogleOauthLogin(String),
-    
+    OpenAppsPanel(),
+    AppsPanelLoadApps(),
 }
+// AppsPanelSearch(String),
+// NetworkPanelLoadWiFi(),
+// NetworkPanelShareWiFi(),
+// OpenNetworkPanel(),
+// NetworkPanelConnectWiFi(String, String),

@@ -6,7 +6,7 @@ use std::fs;
 use std::path::Path;
 use crate::ipc::message::IPC_NAME;
 use crate::ipc::message::IpcMessage;
-use crate::ipc::handlers::handler::handler;
+use crate::ipc::handler::handler;
 use crate::ipc::socket::SOCKET_PATH;
 use crate::MainThreadNotifier;
 

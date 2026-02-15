@@ -26,7 +26,10 @@ const handlers = {
   },
   "Panel:Notify":{
     "New": ({ app, icon, title, message, now }) => appendNotify(`${app}_${now}`, app, title, message.split("\n").reverse()[0] , now, icon, ),
-  }
+  },
+  "Panel:Apps":{
+    "Load:Apps": ({ Apps }) => LoadApps(Apps),
+  },
 };
 
 const { event: TAURI_EVENT } = window.__TAURI__;

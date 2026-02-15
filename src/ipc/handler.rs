@@ -4,7 +4,8 @@ use crate::ipc::handlers::system::handler_system;
 use crate::ipc::handlers::layout::handler_layout;
 use crate::utils::config::print_in_tty;
 use crate::custom_event::main_thread_notifier::MainThreadNotifier;
-use crate::ipc::handlers::home_panel::handler_home_panel;
+use crate::ipc::handlers::panel::home::handler_home_panel;
+use crate::ipc::handlers::panel::apps::handler_apps_panel;
 
 pub fn handler(msg: IpcMessage, notifier: &MainThreadNotifier) {
 
@@ -20,6 +21,9 @@ pub fn handler(msg: IpcMessage, notifier: &MainThreadNotifier) {
         }
         "Panel:Home" =>{
             handler_home_panel(msg, &notifier);
+        }
+        "Panel:Apps" =>{
+            handler_apps_panel(msg, &notifier);
         }
         _ => {
             let t = format!("Categoria desconocido: [{}]",msg.category);

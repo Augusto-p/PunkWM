@@ -3,7 +3,7 @@ use zbus::{ConnectionBuilder, interface};
 use std::collections::HashMap;
 use zbus::zvariant::Value;
 use std::time::{SystemTime, UNIX_EPOCH};
-use crate::ipc::senders::panel_notify::sender_panel_notify_new;
+use crate::ipc::senders::panel::notify::sender_panel_notify_new;
 use serde::{Deserialize, Serialize};
 
 struct NotificationServer;

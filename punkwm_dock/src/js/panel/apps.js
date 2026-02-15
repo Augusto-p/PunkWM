@@ -16,16 +16,17 @@ function ToogleApps(){
 
 function openApps(){
     body.dataset.panel = "Open-Apps";
+    emit_panel_apps_open();
 }
 
 function NewApp(Name, Image, Package) {
-    Apps_grid.innerHTML += `<div class="app" onclick="emit_panel_apps_open('${Package}')"><img src="${Image}"><span>${Name}</span></div>`
+    Apps_grid.innerHTML += `<div class="app" onclick="emit_panel_apps_open('${Package}')"><img src="assets/AppsIcons/${Image}"><span>${Name}</span></div>`
 }
 
 function LoadApps(Apps) {
     Apps_grid.innerHTML = "";
     Apps.forEach(app => {
-        NewApp(app.Name, app.Image, app.Package);
+        NewApp(app.name, app.icon, app.package);
     });    
 }
 let panel_apps_searchbar_timer = null;

@@ -1,10 +1,11 @@
+use serde::{Deserialize, Serialize};
 use walkdir::WalkDir;
 use std::{
     collections::HashMap,
     fs,
 };
 
-#[derive(Debug)]
+#[derive(Debug,Clone)]
 enum Value {U(String),M(Vec<String>),}
 impl Value {
     fn as_string(&self) -> String {
@@ -14,9 +15,10 @@ impl Value {
         }
     }
 }
+#[derive(Clone)]
 enum Mode {Entry,Action,}
 
-#[derive(Debug)]
+#[derive(Debug , Clone)]
 pub struct Actions {
     pub name: String,
     pub entry: HashMap<String, Value>,
@@ -27,7 +29,7 @@ impl Actions {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Desktop {
     pub package: String,
     pub entry: Option<HashMap<String, Value>>,
@@ -122,7 +124,7 @@ impl Desktop {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize, Serialize,Clone)]
 pub struct DockActions {
     pub name: String,
     pub exec: String,
@@ -133,7 +135,7 @@ impl DockActions {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, Deserialize, Serialize,Clone)]
 pub struct DockDesktop {
     pub package: String,
     pub name: String,

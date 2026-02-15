@@ -5,8 +5,9 @@ use crate::ipc::handlers::layout::handler_layout;
 use crate::ipc::handlers::battery::handler_battery;
 use crate::ipc::handlers::network::handler_network;
 use crate::ipc::handlers::system::handler_system;
-use crate::ipc::handlers::panel_home::handler_panel_home;
-use crate::ipc::handlers::panel_notify::handler_panel_notify;
+use crate::ipc::handlers::panel::home::handler_panel_home;
+use crate::ipc::handlers::panel::notify::handler_panel_notify;
+use crate::ipc::handlers::panel::apps::handler_panel_apps;
 
 pub fn handler(msg: IpcMessage) {
     match msg.category.as_str() {
@@ -31,6 +32,9 @@ pub fn handler(msg: IpcMessage) {
         
         "Panel:Notify" =>{
             handler_panel_notify(msg);
+        },
+        "Panel:Apps" =>{
+            handler_panel_apps(msg);
         },
 
         _ => {

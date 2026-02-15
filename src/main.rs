@@ -8,7 +8,9 @@ mod google;
 // use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use utils::battery::Battery;
-use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,};
+use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,
+    desktops::{Desktop, get_all_desktops_paths, DockDesktop, },
+};
 use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
 use crate::wm::manager::WorkspaceManager;
 use std::{thread, time::Duration, sync::{mpsc, Arc},};
@@ -18,7 +20,8 @@ use crate::ipc::{server::start_ipc_server,
     senders::{  layout::sender_layout_set, battery::sender_battery_update, workspace::sender_workspace_update, 
         network::sender_network_deveice_state, 
         system::{sender_system_load_panel},
-        panel_home::{sender_panel_home_weather_load, sender_panel_home_system_stats,sender_panel_home_google_calender_daily, sender_panel_home_google_oauth_url},
+        panel::home::{sender_panel_home_weather_load, sender_panel_home_system_stats,sender_panel_home_google_calender_daily, sender_panel_home_google_oauth_url},
+        panel::apps::sender_panel_apps_load_apps,
     },
         
 };
@@ -181,16 +184,15 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let mut desktops = Vec::new();
     let paths_folder_desktops = vec![
-        "/usr/share/applications",
-        "/usr/local/share/applications",
-        "~/.local/share/applications",
+        "/usr/share/applications".to_string(),
+        "/usr/local/share/applications".to_string(),
+        "~/.local/share/applications".to_string(),
     ];
 
     let paths_desktops = get_all_desktops_paths(paths_folder_desktops);
     for path in paths_desktops{
-        if let Some(d) = Desktop::parse(path) {
-            desktops.push(DockDesktop::from_desktop(d, config.styles.lang.clone()));
-            desktops.push(dock);
+        if let Some(d) = Desktop::parse(&path) {
+            desktops.push(DockDesktop::from_desktop(d, &config.styles.lang.clone()));
         }
     }
 
@@ -260,6 +262,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         },
                         CustomEvent::HomePanelLoadWeather()=>{
                             let weather_cfg = config.weather.clone();
+                            let lang_cfg = config.styles.lang.clone();
                             std::thread::spawn(move || {
                                 let rt = tokio::runtime::Runtime::new().unwrap();
                                 rt.block_on(async move {
@@ -267,7 +270,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                                         weather_cfg.city, 
                                         weather_cfg.state, 
                                         weather_cfg.country, 
-                                        config.styles.lang.clone(), 
+                                        lang_cfg, 
                                         weather_cfg.units).await{
                                             sender_panel_home_weather_load(weather);
 
@@ -288,22 +291,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
                                 });
                             }
-                            // let weather_cfg = config.weather.clone();
-                            
-                            //         if let Some(weather) = get_weather(
-                            //             weather_cfg.city, 
-                            //             weather_cfg.state, 
-                            //             weather_cfg.country, 
-                            //             weather_cfg.lang, 
-                            //             weather_cfg.units).await{
-                            //                 sender_panel_home_weather_load(weather);
-
-                            //             }
-                                       
-                            //     });
-                            // });
                         },
 
+
+                        CustomEvent::OpenAppsPanel()=>{
+                            let notifier_clone = notifier.clone();
+                            notifier_clone.send(CustomEvent::AppsPanelLoadApps());
+                        },
+
+                        CustomEvent::AppsPanelLoadApps()=>{
+                            sender_panel_apps_load_apps(desktops.clone());
+                        },
                         CustomEvent::ClosePanel() =>{
                             if wm.panel.is_open(){
                                 wm.panel.close();

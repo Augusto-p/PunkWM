@@ -21,7 +21,7 @@ pub struct Config {
     pub weather: WeatherConfig,
     pub google: Google,
 }
-#[derive(Deserialize)]
+#[derive(Deserialize, Clone)]
 pub struct Styles{
     pub bg: String,
     pub dock_width: u16,
