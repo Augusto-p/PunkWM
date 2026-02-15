@@ -98,7 +98,7 @@ body[data-panel="Open-Apps"] #Panel_Apps {
 #Panel_Apps #Apps_grid .app img{
     grid-row: 1;
     grid-column: 1;
-    height: 80%;
+    height: 50%;
 }
 
 #Panel_Apps #Apps_grid .app span{

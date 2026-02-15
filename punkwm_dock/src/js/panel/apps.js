@@ -20,8 +20,31 @@ function openApps(){
 }
 
 function NewApp(Name, Image, Package) {
-    Apps_grid.innerHTML += `<div class="app" onclick="emit_panel_apps_open('${Package}')"><img src="assets/AppsIcons/${Image}"><span>${Name}</span></div>`
+    let div = document.createElement("div");
+    div.classList.add("app");
+
+    div.addEventListener("click", () => {
+        emit_panel_apps_open(Package);
+    });
+
+    let img = document.createElement("img");
+    img.src = `assets/AppsIcons/${Image.toLowerCase()}.svg`;
+
+    // fallback si no existe la imagen
+    img.onerror = () => {
+        img.onerror = null; // evita loop si también falla la default
+        img.src = "assets/AppsIcons/default.svg";
+    };
+
+    let span = document.createElement("span");
+    span.textContent = Name;
+
+    div.appendChild(img);
+    div.appendChild(span);
+
+    Apps_grid.appendChild(div);
 }
+
 
 function LoadApps(Apps) {
     Apps_grid.innerHTML = "";
