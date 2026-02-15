@@ -10,8 +10,10 @@ pub enum CustomEvent {
     GoogleOauthLogin(String),
     OpenAppsPanel(),
     AppsPanelLoadApps(),
+    AppsPanelSearch(String),
+    AppsPanelOpenApp(String),
+
 }
-// AppsPanelSearch(String),
 // NetworkPanelLoadWiFi(),
 // NetworkPanelShareWiFi(),
 // OpenNetworkPanel(),

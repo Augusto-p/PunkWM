@@ -8,3 +8,7 @@ async function emit_panel_apps_open_app(package) {
 async function emit_panel_apps_open() {
     await IPC_Front_emit("Panel:Apps", "Open");
 }
+
+async function emit_panel_apps_load_apps() {
+    await IPC_Front_emit("Panel:Apps", "Load Apps");
+}

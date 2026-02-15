@@ -11,6 +11,21 @@ pub fn ipc_front_handler_apps_panel(msg: IpcFrontMessage) {
             let _ = socket_send(&command);
         },
         
+        "Search" =>{
+            let command = IpcMessage::new("Panel:Apps", "Search", msg.data);
+            let _ = socket_send(&command);
+        },
+
+        "Load Apps" =>{
+            let command = IpcMessage::new("Panel:Apps", "Load Apps", json!({}));
+            let _ = socket_send(&command);
+        },
+
+        "Open App" =>{
+            let command = IpcMessage::new("Panel:Apps", "Open App", msg.data);
+            let _ = socket_send(&command);
+        },
+
         _ => {
             println!(
                 "Nombre desconocido: [{}:{}]",

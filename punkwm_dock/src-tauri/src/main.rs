@@ -74,14 +74,6 @@ fn main() {
         })
         .run(tauri::generate_context!())
         .expect("error running tauri app");
-        //         .invoke_handler(tauri::generate_handler![
-        //     commands::system::sys_poweroff,
-        //     commands::system::sys_reboot,
-        //     commands::system::sys_log_out,
-        //     commands::system::sys_lock,
-        //     commands::system::sys_start_dock,
-        //     commands::layout::layout_toggle,
-        //     commands::workspace::workspcace_set,
-        // ])
+
 
 }

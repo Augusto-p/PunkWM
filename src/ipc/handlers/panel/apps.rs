@@ -7,7 +7,17 @@ pub fn handler_apps_panel(msg: IpcMessage,notifier: &MainThreadNotifier) {
         "Open" => {
             notifier.send(CustomEvent::OpenAppsPanel());
         }
-        
+        "Search" => {
+            let q = msg.data["q"].as_str().unwrap().to_string();
+            notifier.send(CustomEvent::AppsPanelSearch(q));
+        }
+        "Load Apps" => {
+            notifier.send(CustomEvent::AppsPanelLoadApps());
+        }
+        "Open App" => {
+            let package = msg.data["package"].as_str().unwrap().to_string();
+            notifier.send(CustomEvent::AppsPanelOpenApp(package));
+        }
         _ => {
             let t = format!("Nombre desconocido: [{}:{}]",
                 msg.category,

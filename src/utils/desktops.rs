@@ -231,3 +231,53 @@ pub fn get_all_desktops_paths(paths: Vec<String>) -> Vec<String> {
 
     desktop_paths
 }
+
+pub fn search_docks(docks: &[DockDesktop], query: &str) -> Vec<DockDesktop> {
+    let q = query.to_lowercase();
+
+    let mut scored: Vec<(i32, DockDesktop)> = docks
+        .iter()
+        .filter_map(|dock| {
+            let mut score = 0;
+
+            let dock_q = dock.q.to_lowercase();
+
+            // match fuerte: empieza con query
+            if dock_q.starts_with(&q) {
+                score += 5;
+            }
+
+            // match contiene
+            if dock_q.contains(&q) {
+                score += 2;
+            }
+
+            // matches en actions.name
+            let action_matches = dock.actions.iter()
+                .filter(|a| a.name.to_lowercase().contains(&q))
+                .count() as i32;
+
+            if action_matches > 0 {
+                score += 2 + action_matches;
+            }
+
+            if score > 0 {
+                Some((score, dock.clone()))
+            } else {
+                None
+            }
+        })
+        .collect();
+
+    // ordenar de mayor a menor coincidencia
+    scored.sort_by(|a, b| b.0.cmp(&a.0));
+
+    scored.into_iter().map(|(_, dock)| dock).collect()
+}
+
+pub fn find_by_package<'a>(
+    docks: &'a [DockDesktop],
+    package: &str,
+) -> Option<&'a DockDesktop> {
+    docks.iter().find(|d| d.package == package)
+}

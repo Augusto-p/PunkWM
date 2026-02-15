@@ -5,11 +5,11 @@ mod ipc;
 mod network_manager;
 mod google;
 
-// use crate::utils::config::print_in_tty;
+use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use utils::battery::Battery;
 use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,
-    desktops::{Desktop, get_all_desktops_paths, DockDesktop, },
+    desktops::{Desktop, get_all_desktops_paths, DockDesktop, search_docks,find_by_package, },
 };
 use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
 use crate::wm::manager::WorkspaceManager;
@@ -19,7 +19,7 @@ use crate::network_manager::{NetworkManager, Device, DeviceState};
 use crate::ipc::{server::start_ipc_server,
     senders::{  layout::sender_layout_set, battery::sender_battery_update, workspace::sender_workspace_update, 
         network::sender_network_deveice_state, 
-        system::{sender_system_load_panel},
+        system::{sender_system_load_panel, sender_system_panel_close},
         panel::home::{sender_panel_home_weather_load, sender_panel_home_system_stats,sender_panel_home_google_calender_daily, sender_panel_home_google_oauth_url},
         panel::apps::sender_panel_apps_load_apps,
     },
@@ -73,6 +73,31 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     let screen = &wm.conn.setup().roots[screen_num];
     let root = screen.root;
+
+
+    // ───────── Cursor default ─────────
+    let cursor_font = wm.conn.generate_id()?;
+    wm.conn.open_font(cursor_font, b"cursor")?;
+
+    let cursor = wm.conn.generate_id()?;
+    wm.conn.create_glyph_cursor(
+        cursor,
+        cursor_font,
+        cursor_font,
+        68, // left_ptr
+        69,
+        0, 0, 0,
+        65535, 65535, 65535,
+    )?;
+
+    wm.conn.change_window_attributes(
+        root,
+        &ChangeWindowAttributesAux::default().cursor(cursor),
+    )?;
+
+    wm.conn.close_font(cursor_font)?;
+    wm.conn.flush()?;
+
 
     wm.init_dock(config.styles.dock_width, screen.height_in_pixels, config.apps.dock.clone());
 
@@ -302,12 +327,30 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         CustomEvent::AppsPanelLoadApps()=>{
                             sender_panel_apps_load_apps(desktops.clone());
                         },
+
+                        CustomEvent::AppsPanelSearch(q)=>{
+                            let searchs = search_docks(&desktops.clone(), &q);
+                            sender_panel_apps_load_apps(searchs.clone());
+                        },
+
+                        CustomEvent::AppsPanelOpenApp(package)=>{
+                            let notifier_clone = notifier.clone();
+                            if let Some(dock) = find_by_package(&desktops.clone(), &package) {
+                                spawn(&clean_exec(&dock.exec));
+                                notifier_clone.send(CustomEvent::ClosePanel());
+                                notifier_clone.send(CustomEvent::AppsPanelLoadApps());
+                            }
+                        },
+
+
+
                         CustomEvent::ClosePanel() =>{
                             if wm.panel.is_open(){
                                 wm.panel.close();
                                 if let Some(ref mut dock) = wm.dock {
                                     dock.panel_close(&wm.conn);
                                 }        
+                                sender_system_panel_close();
                                 wm.apply_layout();
                             }
                         },
@@ -330,6 +373,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 wm.conn.flush()?;
             }
 
+            
             Event::KeyPress(e) => {
                 let state = e.state;
 
@@ -371,3 +415,13 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 }
 
+fn clean_exec(exec: &str) -> String {
+    let tokens = ["%u", "%U", "%f", "%F", "%i", "%c", "%k"];
+
+    let mut s = exec.to_string();
+    for t in tokens {
+        s = s.replace(t, "");
+    }
+
+    s.split_whitespace().collect::<Vec<_>>().join(" ")
+}

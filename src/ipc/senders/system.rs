@@ -12,7 +12,7 @@ pub fn sender_system_load_panel(dock_width: u32, panel_width: u32 ){
 //     let _ = socket_send_dock(&msg);
 // }
 
-// pub fn sender_system_panel_close(){
-//     let msg = IpcMessage::new("System","Panel:Close", json!({}));
-//     let _ = socket_send_dock(&msg);
-// }
+pub fn sender_system_panel_close(){
+    let msg = IpcMessage::new("System","Panel:Close", json!({}));
+    let _ = socket_send_dock(&msg);
+}

@@ -12,3 +12,9 @@ echo -e "allowed_users=anybody\nneeds_root_rights=yes" | sudo tee /etc/X11/Xwrap
 sudo pacman -S feh
 sudo pacman -S webkit2gtk-4.1
 
+#VirtualVox
+sudo pacman -S virtualbox-guest-utils
+sudo systemctl enable vboxservice.service
+sudo systemctl start vboxservice.service
+sudo pacman -S virtualbox-guest-utils mesa
+sudo systemctl enable vboxservice

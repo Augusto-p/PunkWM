@@ -16,6 +16,7 @@ const handlers = {
   },
   System: {
     "Panel:Load": ({ dock_width, panel_width }) => panel_load(dock_width, panel_width),
+    "Panel:Close": () => body.removeAttribute("data-panel"),
     
   },
   "Panel:Home":{
