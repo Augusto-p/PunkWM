@@ -179,13 +179,79 @@ body[data-panel="Open-WiFi"] #Panel_WiFi {
     margin-right: calc(5 * var(--panel_vw));
     border-top-left-radius: calc(5 * var(--panel_vw));   
     border-top-right-radius: calc(5 * var(--panel_vw));  
-    display: flex;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
     flex-direction: column;
     padding: calc(5 * var(--panel_vw)) calc(10 * var(--panel_vw));
     box-sizing: border-box; 
-    justify-content:space-around ;
+    justify-items: center;
     align-items: center;
     color: #ffffff;
-    /* transform: translateY(calc(105 * var(--panel_vw))); */
+    transform: translateY(calc(105 * var(--panel_vw)));
     transition: transform 1s;
+}
+
+#Panel_WiFi .connected.view{
+    transform: translateY(0);
+}
+
+#Panel_WiFi .connected .password{
+    width: 100%;
+    height: 60%;
+    background-color: #0b1418;
+    color: #ffffff;
+    border-radius: calc(2 * var(--panel_vw));
+    display: grid;
+    grid-template-columns: 1fr calc(15 * var(--panel_vw));
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#Panel_WiFi .connected .password input{
+    outline: none;
+    border: none;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-size:  calc(5 * var(--panel_vw));
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    padding-left: calc(1 * var(--panel_vw));
+}
+
+#Panel_WiFi .connected .password button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: calc(4 * var(--panel_vw));;
+    fill: #ffffff;
+}
+#Panel_WiFi .connected .password input[type="text"] ~ button .view{
+    display: none;
+}
+
+#Panel_WiFi .connected .password input[type="text"] ~ button .no-view{
+    display: block;
+}
+
+#Panel_WiFi .connected .password input[type="password"] ~ button .no-view{
+    display: none;
+}
+
+#Panel_WiFi .connected .password input[type="password"] ~ button .view{
+    display: block;
 }

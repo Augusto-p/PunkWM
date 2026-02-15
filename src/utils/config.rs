@@ -26,6 +26,7 @@ pub struct Styles{
     pub bg: String,
     pub dock_width: u16,
     pub panel_width: u16,
+    pub lang: String,
 }
 
 #[derive(Deserialize, Clone)]
@@ -41,8 +42,6 @@ pub struct WeatherConfig{
     pub state: String,
     pub country: String,
     pub units: String,
-    pub lang: String,
-    
 }
 
 #[derive(Clone)]

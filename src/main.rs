@@ -175,6 +175,28 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     wm.conn.flush()?;
 
+    // ─────────────────────
+    // Apps Load
+    // ─────────────────────
+
+    let mut desktops = Vec::new();
+    let paths_folder_desktops = vec![
+        "/usr/share/applications",
+        "/usr/local/share/applications",
+        "~/.local/share/applications",
+    ];
+
+    let paths_desktops = get_all_desktops_paths(paths_folder_desktops);
+    for path in paths_desktops{
+        if let Some(d) = Desktop::parse(path) {
+            desktops.push(DockDesktop::from_desktop(d, config.styles.lang.clone()));
+            desktops.push(dock);
+        }
+    }
+
+
+
+
     println!("punkwm iniciado");
 
     // ─────────────────────
@@ -245,7 +267,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                                         weather_cfg.city, 
                                         weather_cfg.state, 
                                         weather_cfg.country, 
-                                        weather_cfg.lang, 
+                                        config.styles.lang.clone(), 
                                         weather_cfg.units).await{
                                             sender_panel_home_weather_load(weather);
 
