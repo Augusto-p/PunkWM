@@ -5,7 +5,7 @@ mod ipc;
 mod network_manager;
 mod google;
 
-use crate::utils::config::print_in_tty;
+// use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use utils::battery::Battery;
 use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,
@@ -15,7 +15,7 @@ use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
 use crate::wm::manager::WorkspaceManager;
 use std::{thread, time::Duration, sync::{mpsc, Arc},};
 use crate::custom_event::{main_thread_notifier::MainThreadNotifier, entity::CustomEvent,};
-use crate::network_manager::{NetworkManager, Device, DeviceState, wifi::get_wifi_networks, NetworkConnection};
+use crate::network_manager::{NetworkManager, Device, DeviceState, wifi::get_wifi_networks, connection::NetworkConnection};
 use crate::ipc::{server::start_ipc_server,
     senders::{  layout::sender_layout_set, battery::sender_battery_update, workspace::sender_workspace_update, 
         network::sender_network_deveice_state, 
@@ -354,27 +354,27 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         },
                         
                         CustomEvent::NetworkPanelConnectWiFi(ssid, password)=>{
-                            if NetworkManager::connect(&ssid, &password){
+                            if NetworkConnection::connect(&ssid, &password){
                                 let notifier_clone = notifier.clone();
                                 notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
                             }
                         },
         
                         CustomEvent::NetworkPanelConnectWiFiPublic(ssid)=>{
-                            if NetworkManager::connect_public(&ssid){
+                            if NetworkConnection::connect_public(&ssid){
                                 let notifier_clone = notifier.clone();
                                 notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
                             }
                         },
         
                         CustomEvent::NetworkPanelShareWiFi()=>{
-                            if let Some(qr_base64) = sNetworkManager::hare_wifi() {
+                            if let Some(qr_base64) = NetworkConnection::share_wifi() {
                                 sender_panel_network_share_wifi(qr_base64);
                             }
                         },
         
                         CustomEvent::NetworkPanelDisconnectWiFi()=>{
-                            if NetworkManager::disconnect(&ssid){
+                            if NetworkConnection::disconnect(){
                                 let notifier_clone = notifier.clone();
                                 notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
                             }

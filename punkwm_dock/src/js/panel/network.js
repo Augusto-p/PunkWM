@@ -30,7 +30,7 @@ function ToogleShareWifi() {
     }
 }
 function openShareWiFi(QR) {
-    share_wifi_img.src = QR;
+    share_wifi_img.src = `${QR}`;
     share_wifi.classList.add("view");
     share_wifi_img.onerror = () => {
         share_wifi_img.onerror = null; // evita loop si también falla la default

@@ -1,7 +1,7 @@
 // use crate::utils::config::print_in_tty;
 use crate::ipc::message::IpcMessage;
 use crate::ipc::socket::socket_send_dock;
-use crate::WiFiNetwork;
+use crate::network_manager::wifi::WiFiNetwork;
 use serde_json::json;
 
 

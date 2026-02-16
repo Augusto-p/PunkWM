@@ -1,5 +1,4 @@
 target/*
-make.sh
 punkwm_dock/src-tauri/target/*
 /dock
 sudo.sh
