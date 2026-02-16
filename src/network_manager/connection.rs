@@ -1,5 +1,6 @@
 pub struct NetworkConnection;
 
+use crate::utils::config::print_in_tty;
 use crate::NetworkManager;
 use qrcode::QrCode;
 use base64::{engine::general_purpose, Engine as _};
@@ -20,31 +21,30 @@ impl NetworkConnection {
     }
 
    pub fn disconnect() -> bool {
-        let iface_out = match NetworkManager::run(&[
-            "-t",
-            "-f",
-            "DEVICE,TYPE,STATE",
-            "device",
+        let ssid_out = match NetworkManager::run(&[
+            "-t","-f","ACTIVE,SSID","device","wifi"
         ]) {
-            Ok(s) => s,
+            Ok(o) => o,
             Err(_) => return false,
         };
 
-        let iface = match iface_out
+        let ssid = match ssid_out
             .lines()
-            .find(|l| l.contains(":wifi:connected"))
-            .and_then(|l| l.split(':').next())
+            .find(|l| l.starts_with("yes:"))
+            .and_then(|l| l.split(':').nth(1))
         {
-            Some(i) => i,
-            None => return false,
+            Some(s) if !s.is_empty() => s,
+            _ => return false,
         };
 
         NetworkManager::run(&[
-            "device",
-            "disconnect",
-            iface,
+            "connection",
+            "delete",
+            ssid,
         ]).is_ok()
     }
+
+
 
     fn escape(s: &str) -> String {
         s.replace("\\", "\\\\")
@@ -82,25 +82,15 @@ impl NetworkConnection {
         if ssid.is_empty() {
             return None;
         }
-
-        let pass_out = NetworkManager::run(&[
+        
+        let pass_out = NetworkManager::run_sudo(&[
             "-s","-g","802-11-wireless-security.psk",
             "connection","show",&ssid
         ]).ok()?;
-
         let password = pass_out.trim().to_string();
         let secured = !password.is_empty();
-
         let data = Self::wifi_qr_string(&ssid, &password, secured);
-
-        let code = QrCode::new(data.as_bytes()).ok()?;
-
-        // ✅ SVG renderer (no features extra)
-        let svg: String = data;
-
-
-        // ✅ base64
-        Some(general_purpose::STANDARD.encode(svg.as_bytes()))
+        Some(data)
     }
 
 }

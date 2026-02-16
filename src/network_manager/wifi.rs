@@ -1,4 +1,6 @@
 use crate::NetworkManager;
+use crate::Device;
+
 use serde::Serialize;
 use serde::Deserialize;
 
@@ -36,8 +38,8 @@ pub fn get_wifi_networks() -> Vec<WiFiNetwork> {
         let connected = parts[0] == "*";
         let ssid = parts[1].to_string();
         let security = !parts[2].trim().is_empty();
-        let level = parts[3].parse::<u8>().unwrap_or(0);
-
+        let level = Device::get_level(parts[3].parse::<u8>().unwrap_or(0));
+        
         if ssid.is_empty() {
             continue;
         }

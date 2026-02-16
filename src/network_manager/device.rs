@@ -99,7 +99,7 @@ impl Device{
         255
     }
 
-     fn get_level(signal: u8) -> u8 {
+     pub fn get_level(signal: u8) -> u8 {
         match signal {
             0..=9 => 0,
             10..=29 => 1,

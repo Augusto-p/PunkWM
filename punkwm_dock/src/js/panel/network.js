@@ -3,6 +3,7 @@ const share_wifi_img = document.getElementById("share_wifi_img");
 const Panel_wifi_list = document.getElementById("Panel_wifi_list");
 const Panel_wifi_connected_wifi = document.getElementById("connected_wifi");
 const panel_network_password = document.getElementById("panel_network_password");
+const panel_network_connected_wifi_SSID_view = document.getElementById("connected_wifi_SSID_view")
 
 function ToogleWiFi(){
     let Panel_Mode = body.getAttribute("data-panel");
@@ -90,12 +91,14 @@ function Load_wifis(Wifis) {
 function OpenConnect(SSID) {
     if (SSID != null) {
         Panel_wifi_connected_wifi.classList.add("view");
-        panel_network_password.setAttribute("data-SSID", SSID)
+        panel_network_password.setAttribute("data-SSID", SSID);
+        panel_network_connected_wifi_SSID_view.textContent = `Connected to: ${SSID}`
     }    
 }
 function CloseConnect(){
     Panel_wifi_connected_wifi.classList.remove("view");
     panel_network_password.removeAttribute("data-SSID");
+    panel_network_password.value = "";
 }
 
 function TogglePassword() {
@@ -125,43 +128,4 @@ panel_network_password.addEventListener("keyup", (e)=>{
 
 
 // update_network("connected_wifi", 3)
-openWiFi()
-Load_wifis([
-  {
-    "ssid": "Casa_5G",
-    "security": true,
-    "level": 4,
-    "connected": true
-  },
-  {
-    "ssid": "Vecino_2",
-    "security": true,
-    "level": 3,
-    "connected": false
-  },
-  {
-    "ssid": "Cafeteria_Free_WiFi",
-    "security": false,
-    "level": 4,
-    "connected": false
-  },
-  {
-    "ssid": "Oficina",
-    "security": true,
-    "level": 2,
-    "connected": false
-  },
-  {
-    "ssid": "Router_Viejo",
-    "security": true,
-    "level": 1,
-    "connected": false
-  },
-  {
-    "ssid": "WiFi_Publico",
-    "security": false,
-    "level": 0,
-    "connected": false
-  }
-]
-)
+// openWiFi()

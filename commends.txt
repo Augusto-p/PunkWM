@@ -14,6 +14,7 @@ sudo pacman -S webkit2gtk-4.1
 sudo pacman -S rustup
 rustup default stable
 
+echo 'ALL ALL=NOPASSWD: /usr/bin/nmcli -s -g 802-11-wireless-security.psk connection show *' | sudo tee /etc/sudoers.d/nmcli-psk
 
 #VirtualVox
 sudo pacman -S virtualbox-guest-utils

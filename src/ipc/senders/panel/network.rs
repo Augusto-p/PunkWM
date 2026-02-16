@@ -11,6 +11,6 @@ pub fn sender_panel_network_load_wifi(wifis: Vec<WiFiNetwork>){
 }
 
 pub fn sender_panel_network_share_wifi(qr: String){
-    let msg = IpcMessage::new("Panel:Network",":WiFi", json!({"QR": qr}));
+    let msg = IpcMessage::new("Panel:Network","Share:WiFi", json!({"QR": qr}));
     let _ = socket_send_dock(&msg);
 }
