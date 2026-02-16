@@ -8,6 +8,7 @@ use crate::ipc::handlers::system::handler_system;
 use crate::ipc::handlers::panel::home::handler_panel_home;
 use crate::ipc::handlers::panel::notify::handler_panel_notify;
 use crate::ipc::handlers::panel::apps::handler_panel_apps;
+use crate::ipc::handlers::panel::network::handler_panel_network;
 
 pub fn handler(msg: IpcMessage) {
     match msg.category.as_str() {
@@ -36,7 +37,9 @@ pub fn handler(msg: IpcMessage) {
         "Panel:Apps" =>{
             handler_panel_apps(msg);
         },
-
+        "Panel:Network" =>{
+            handler_panel_network(msg);
+        },
         _ => {
             let _ = print_in_tty(&format!("Categoria desconocido: [{}]",msg.category));
         }

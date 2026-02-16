@@ -102,31 +102,12 @@ body[data-panel="Open-WiFi"] #Panel_WiFi {
     padding-right: calc(5 * var(--panel_vw));
 }
 
-#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-}
 
-/* fondo */
-#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-/* barra */
-#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar-thumb {
-    background: #484f5a;
-    border-radius: 10px;
-}
-
-/* hover */
-#Panel_WiFi #Panel_wifi_list::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.55);
-}
 
 
 #Panel_WiFi #Panel_wifi_list .wifi{
     display: grid;
-    grid-template-columns: 4vh 1fr 4vh;
+    grid-template-columns: 4vh 4vh 1fr 4vh;
     grid-template-rows: 100%;
     fill: #ffffff;
     --front:#ffffff;
@@ -135,6 +116,7 @@ body[data-panel="Open-WiFi"] #Panel_WiFi {
     align-items: center;
     justify-items: center;
     background-color: #1f333e;
+    border-radius: calc(3 * var(--panel_vw));
 }
 
 #Panel_WiFi #Panel_wifi_list .wifi button{
@@ -153,21 +135,48 @@ body[data-panel="Open-WiFi"] #Panel_WiFi {
     transform: rotateZ(-45deg);
 
 }
-#Panel_WiFi #Panel_wifi_list .wifi.connected{
-    background-color: #95ffc6;
+#Panel_WiFi #Panel_wifi_list .wifi.In-Use{
+    background-color: #01602d;
 }
 
 #Panel_WiFi #Panel_wifi_list .wifi button .ulinked{
     display: none;
 }
 
-#Panel_WiFi #Panel_wifi_list .wifi.connected button .ulinked{
+#Panel_WiFi #Panel_wifi_list .wifi.In-Use button .ulinked{
     display: block;
 }
-#Panel_WiFi #Panel_wifi_list .wifi.connected button .linked{
+#Panel_WiFi #Panel_wifi_list .wifi.In-Use button .linked{
     display: none;
 }
-
+#Panel_WiFi #Panel_wifi_list .wifi span{
+    text-align: start;
+    width: 100%;
+    position: relative;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div svg.Lock{
+    display: none;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div svg.Unlock{
+    fill: #ff0000;
+    display: block;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div.Lock svg.Lock{
+    fill: #00ff2a;
+    display: block;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div.Lock svg.Unlock{
+    display: none;
+}
 
 #Panel_WiFi .connected{
     position: absolute;

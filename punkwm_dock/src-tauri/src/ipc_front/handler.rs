@@ -3,6 +3,8 @@ use crate::ipc_front::handlers::workspace::ipc_front_handler_workspace;
 use crate::ipc_front::handlers::layout::ipc_front_handler_layout;
 use crate::ipc_front::handlers::panel::home::ipc_front_handler_home_panel;
 use crate::ipc_front::handlers::panel::apps::ipc_front_handler_apps_panel;
+use crate::ipc_front::handlers::panel::network::ipc_front_handler_network_panel;
+
 use crate::ipc_front::message::IpcFrontMessage;
 
 pub fn ipc_front_handler(msg: IpcFrontMessage) {
@@ -21,6 +23,9 @@ pub fn ipc_front_handler(msg: IpcFrontMessage) {
         },
         "Panel:Apps"=>{
             ipc_front_handler_apps_panel(msg);
+        },
+        "Panel:Network"=>{
+            ipc_front_handler_network_panel(msg);
         },
         _ => {
             println!(

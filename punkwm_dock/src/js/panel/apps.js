@@ -10,7 +10,7 @@ function ToogleApps(){
     }else{
         panel_close();
     }
-
+    panel_apps_searchbar.value = "";
 
 }
 

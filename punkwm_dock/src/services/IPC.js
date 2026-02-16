@@ -31,6 +31,11 @@ const handlers = {
   "Panel:Apps":{
     "Load:Apps": ({ Apps }) => LoadApps(Apps),
   },
+  "Panel:Network":{
+    "Load:WiFi": ({ WiFis }) => Load_wifis(WiFis),
+    "Share:WiFi": ({ QR }) => openShareWiFi(QR),
+  },
+
 };
 
 const { event: TAURI_EVENT } = window.__TAURI__;

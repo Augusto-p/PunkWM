@@ -15,13 +15,14 @@ use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
 use crate::wm::manager::WorkspaceManager;
 use std::{thread, time::Duration, sync::{mpsc, Arc},};
 use crate::custom_event::{main_thread_notifier::MainThreadNotifier, entity::CustomEvent,};
-use crate::network_manager::{NetworkManager, Device, DeviceState};
+use crate::network_manager::{NetworkManager, Device, DeviceState, wifi::get_wifi_networks, NetworkConnection};
 use crate::ipc::{server::start_ipc_server,
     senders::{  layout::sender_layout_set, battery::sender_battery_update, workspace::sender_workspace_update, 
         network::sender_network_deveice_state, 
         system::{sender_system_load_panel, sender_system_panel_close},
         panel::home::{sender_panel_home_weather_load, sender_panel_home_system_stats,sender_panel_home_google_calender_daily, sender_panel_home_google_oauth_url},
         panel::apps::sender_panel_apps_load_apps,
+        panel::network::{sender_panel_network_load_wifi, sender_panel_network_share_wifi},
     },
         
 };
@@ -341,12 +342,48 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 notifier_clone.send(CustomEvent::AppsPanelLoadApps());
                             }
                         },
+                        
+                        CustomEvent::OpenNetworkPanel()=>{
+                            let notifier_clone = notifier.clone();
+                            notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
+                        },
 
+                        CustomEvent::NetworkPanelLoadWiFi()=>{
+                            let wifis = get_wifi_networks();
+                            sender_panel_network_load_wifi(wifis);
+                        },
+                        
+                        CustomEvent::NetworkPanelConnectWiFi(ssid, password)=>{
+                            if NetworkManager::connect(&ssid, &password){
+                                let notifier_clone = notifier.clone();
+                                notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
+                            }
+                        },
+        
+                        CustomEvent::NetworkPanelConnectWiFiPublic(ssid)=>{
+                            if NetworkManager::connect_public(&ssid){
+                                let notifier_clone = notifier.clone();
+                                notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
+                            }
+                        },
+        
+                        CustomEvent::NetworkPanelShareWiFi()=>{
+                            if let Some(qr_base64) = sNetworkManager::hare_wifi() {
+                                sender_panel_network_share_wifi(qr_base64);
+                            }
+                        },
+        
+                        CustomEvent::NetworkPanelDisconnectWiFi()=>{
+                            if NetworkManager::disconnect(&ssid){
+                                let notifier_clone = notifier.clone();
+                                notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
+                            }
+                        },
 
 
                         CustomEvent::ClosePanel() =>{
                             if wm.panel.is_open(){
-                                wm.panel.close();
+                                    wm.panel.close();
                                 if let Some(ref mut dock) = wm.dock {
                                     dock.panel_close(&wm.conn);
                                 }        
