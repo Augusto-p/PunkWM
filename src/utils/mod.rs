@@ -7,3 +7,4 @@ pub mod system;
 pub mod weather;
 pub mod notifications;
 pub mod desktops;
+pub mod qrcode;

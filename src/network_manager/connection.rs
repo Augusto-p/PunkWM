@@ -5,6 +5,7 @@ use crate::NetworkManager;
 use qrcode::QrCode;
 use base64::{engine::general_purpose, Engine as _};
 use qrcode::render::svg;
+use crate::utils::qrcode::get_qrcode_in_base64;
 
 impl NetworkConnection {
 
@@ -90,7 +91,7 @@ impl NetworkConnection {
         let password = pass_out.trim().to_string();
         let secured = !password.is_empty();
         let data = Self::wifi_qr_string(&ssid, &password, secured);
-        Some(data)
+        get_qrcode_in_base64(data)
     }
 
 }
