@@ -91,7 +91,7 @@ impl NetworkConnection {
         let password = pass_out.trim().to_string();
         let secured = !password.is_empty();
         let data = Self::wifi_qr_string(&ssid, &password, secured);
-        get_qrcode_in_base64(data)
+        get_qrcode_in_base64(&data)
     }
 
 }
