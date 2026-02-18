@@ -5,9 +5,9 @@ const handlers = {
 
 };
 
-const { event: TAURI_EVENT } = window.__TAURI__;
+const { event: TAURI_EVENT, core: TAURI_CORE } = window.__TAURI__;
 
-TAURI_EVENT.listen("IPC", (event) => {
+TAURI_EVENT.listen("ipc", (event) => {
   console.log("📥 IPC:", event.payload);
   const { category, name, data } = event.payload;
   handlers?.[category]?.[name]?.(data);
@@ -21,3 +21,5 @@ async function IPC_emit(category, name, data = {}) {
     data,
   });
 }
+
+

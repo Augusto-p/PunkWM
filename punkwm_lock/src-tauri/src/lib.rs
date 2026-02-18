@@ -1,5 +1,5 @@
 use std::{ fs::{ OpenOptions}, io::{self, Write}};
-pub const TTY: &str = "/dev/pts/1";
+pub const TTY: &str = "/dev/pts/0";
 pub fn print_in_tty(texto: &str) -> io::Result<()> {
     let mut tty = OpenOptions::new()
         .write(true)

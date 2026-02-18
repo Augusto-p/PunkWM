@@ -1,15 +1,26 @@
 mod ipc;
 mod utils;
+mod apphandle;
 
 use tauri::{Manager, Size, PhysicalSize, Position, PhysicalPosition};
 use tauri::Listener;
-
+use punkwm_lock_lib::print_in_tty;
 use crate::ipc::handler::ipc_handler;
 use crate::ipc::message::IpcMessage;
+use crate::utils::config::load_config;
+use serde_json::json;
+use crate::apphandle::set_app_handle;
+use tauri::Emitter;
 
 fn main() {
+    let config = load_config();
+    let _ = print_in_tty(&format!("Congig: {:?}", config));
+
+
     tauri::Builder::default()
-        .setup(|app| {
+        .plugin(tauri_plugin_fs::init()) // <--- Añade esta línea
+        .setup(move |app| {
+            set_app_handle(app.handle().clone());
             let win = app.get_webview_window("main").unwrap();
             win.set_fullscreen(false)?;
             win.set_decorations(false)?;
@@ -44,6 +55,16 @@ fn main() {
                     ipc_handler(msg);
                 }
             });
+
+            let handle = app.handle().clone();
+            let message = IpcMessage::new("System", "Set Background", json!({"bg": config.lock_screen.bg.clone()}));
+
+            win.on_window_event(move |event| {
+                if let tauri::WindowEvent::Focused(true) = event {
+                    let _ = handle.emit("ipc", message.clone());
+                }
+            });
+
 
             Ok(())
         })
