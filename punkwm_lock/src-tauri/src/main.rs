@@ -11,8 +11,6 @@ fn main() {
     tauri::Builder::default()
         .setup(|app| {
             let win = app.get_webview_window("main").unwrap();
-
-            // ⚠️ No usar fullscreen en xinit sin WM
             win.set_fullscreen(false)?;
             win.set_decorations(false)?;
             win.set_resizable(false)?;
@@ -20,7 +18,7 @@ fn main() {
             win.set_minimizable(false)?;
             win.set_closable(false)?;
 
-            // ✅ Forzar tamaño = tamaño del monitor
+
             if let Some(monitor) = win.primary_monitor()? {
                 let s = monitor.size();
 

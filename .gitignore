@@ -3,6 +3,7 @@ punkwm_dock/src-tauri/target/*
 punkwm_lock/src-tauri/target/*
 /dock
 /lock
+/punkwm
 sudo.sh
 credentials.json
 commands.txt

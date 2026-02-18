@@ -21,29 +21,38 @@ body[data-mode="user"] .login{
     transform: translateX(100%);
 }
 body[data-mode="user"] .login_user{
-    transform: translateX(0);
+    transform: translateY(0);
 }
 
 
 ::-webkit-scrollbar {
     width: 5px;
     height: 5px;
+    transition: 1s ease-in-out;
+
 }
 
 /* fondo */
 ::-webkit-scrollbar-track {
     background: transparent;
+    transition: 1s ease-in-out;
+
 }
 
 /* barra */
 ::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 30vh;
+    transition: 1s ease-in-out;
+
+    
 }
 
 /* hover */
 ::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.55);
+    transition: 1s ease-in-out;
+
 }
 
 section{
@@ -59,6 +68,7 @@ section{
     grid-template-rows: 100%;
     position: relative;
     overflow: hidden;
+
 }
 .users{
     z-index: 10;
@@ -93,7 +103,7 @@ section{
     outline: none;
     background-color: transparent;
     cursor: pointer;
-
+    transition: 1s ease-in-out;
 }
 .user:hover{
     background-color: rgba(0, 0, 0, 0.2);
@@ -130,7 +140,7 @@ section{
     grid-row: 1;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
     transform: translateX(0);
-    transition: transform 1s;
+    transition: transform 2s;
     padding: 20vh 5vw;
     box-sizing: border-box;
     display: grid;
@@ -148,8 +158,8 @@ section{
     grid-column: 2;
     grid-row: 1;
     box-shadow: 0 0 10px rgba(0,0,0,.2);
-    transform: translateX(100%);
-    transition: transform 1s;
+    transform: translateY(-100%);
+    transition: transform 2s;
     padding: 15vh 5vw;
     box-sizing: border-box;
     display: grid;
@@ -171,6 +181,7 @@ section{
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;   
+    transition: 1s ease-in-out;
 }
 
 .input-box{
@@ -217,27 +228,34 @@ section{
     fill: #fff;
     padding: 0;
     margin: 0;
-    display: flex;
-    justify-content: center;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     align-items: center;
+    cursor: pointer;
 }
 .input-box button svg{
     height: 70%;
+    grid-column: 1;
+    grid-row: 1;
+    cursor: pointer;
+    transition: 1s ease-in-out;
 }
 .input-box button svg.hidden{
-    display: block;
+    opacity: 100%;
 }
 
 .input-box button svg.show{
-    display: none;
+    opacity: 0;
 }
 
 .input-box input[type="password"] ~ button svg.hidden{
-    display: none;
+    opacity: 0;
 }
 
 .input-box input[type="password"] ~  button svg.show{
-    display: block;
+    opacity: 100%;
 }
 
 
