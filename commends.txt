@@ -13,6 +13,13 @@ sudo pacman -S feh
 sudo pacman -S webkit2gtk-4.1
 sudo pacman -S rustup
 rustup default stable
+sudo pacman -S llvm clang
+sudo pacman -S sudo
+sudo pacman -S pam
+
+sudo pacman -Syy
+sudo pacman -S reflector
+sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
 echo 'ALL ALL=NOPASSWD: /usr/bin/nmcli -s -g 802-11-wireless-security.psk connection show *' | sudo tee /etc/sudoers.d/nmcli-psk
 

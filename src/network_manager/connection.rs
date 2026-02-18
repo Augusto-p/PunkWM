@@ -1,11 +1,8 @@
-pub struct NetworkConnection;
-
-use crate::utils::config::print_in_tty;
+// use crate::utils::config::print_in_tty;
 use crate::NetworkManager;
-use qrcode::QrCode;
-use base64::{engine::general_purpose, Engine as _};
-use qrcode::render::svg;
 use crate::utils::qrcode::get_qrcode_in_base64;
+
+pub struct NetworkConnection;
 
 impl NetworkConnection {
 

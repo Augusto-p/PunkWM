@@ -5,7 +5,7 @@ mod ipc;
 mod network_manager;
 mod google;
 
-use crate::utils::config::print_in_tty;
+// use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use utils::battery::Battery;
 use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,

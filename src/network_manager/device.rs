@@ -109,25 +109,6 @@ impl Device{
         }
     }
 
-    pub fn is_networking_enabled() -> bool{
-        let out = match NetworkManager::run(&["networking"]) {
-            Ok(out) => out,
-            Err(_) => return false,
-        };
-        out.trim() == "enabled"
-    }
-
-    pub fn networking_enabled() -> bool{
-        match NetworkManager::run(&["networking", "on"]) {
-            Ok(_) => return true,
-            Err(_) => return false,
-        };
-    }
-
-    pub fn networking_disabled() -> bool{
-        match NetworkManager::run(&["networking", "off"]) {
-            Ok(_) => return true,
-            Err(_) => return false,
-        };
-    }
+    
+    
 }

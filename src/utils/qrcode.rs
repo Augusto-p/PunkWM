@@ -1,4 +1,4 @@
-use qrcode::{QrCode, Version, EcLevel};
+use qrcode::{QrCode};
 use qrcode::render::svg;
 use base64::{engine::general_purpose, Engine as _};
 

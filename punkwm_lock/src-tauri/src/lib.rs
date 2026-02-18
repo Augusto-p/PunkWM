@@ -5,6 +5,6 @@ pub fn print_in_tty(texto: &str) -> io::Result<()> {
         .write(true)
         .open(TTY)?;
 
-    writeln!(tty, "=> {}\n", texto)?;
+    writeln!(tty, "¡=> {}\n", texto)?;
     Ok(())
 }

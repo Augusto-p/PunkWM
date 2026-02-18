@@ -6,7 +6,7 @@ use std::{
 };
 
 #[derive(Debug,Clone)]
-enum Value {U(String),M(Vec<String>),}
+pub enum Value {U(String),M(Vec<String>),}
 impl Value {
     fn as_string(&self) -> String {
         match self {
@@ -20,11 +20,11 @@ enum Mode {Entry,Action,}
 
 #[derive(Debug , Clone)]
 pub struct Actions {
-    pub name: String,
-    pub entry: HashMap<String, Value>,
+    name: String,
+    entry: HashMap<String, Value>,
 }
 impl Actions {
-    pub fn new(name: String, entry: HashMap<String, Value>) -> Self {
+    fn new(name: String, entry: HashMap<String, Value>) -> Self {
         Self { name, entry }
     }
 }
@@ -32,7 +32,7 @@ impl Actions {
 #[derive(Debug, Clone)]
 pub struct Desktop {
     pub package: String,
-    pub entry: Option<HashMap<String, Value>>,
+    entry: Option<HashMap<String, Value>>,
     pub actions: Vec<Actions>,
 }
 impl Desktop {
@@ -129,11 +129,6 @@ pub struct DockActions {
     pub name: String,
     pub exec: String,
 }
-impl DockActions {
-    pub fn new(name: String, exec: String) -> Self {
-        Self { name, exec }
-    }
-}
 
 #[derive(Debug, Deserialize, Serialize,Clone)]
 pub struct DockDesktop {
@@ -145,10 +140,6 @@ pub struct DockDesktop {
     pub actions: Vec<DockActions>,
 }
 impl DockDesktop {
-    pub fn new(package: String,name: String,icon: String,exec: String,q: String,actions: Vec<DockActions>,) -> Self {
-        Self {package,name,icon,exec,q,actions,}
-    }
-
     pub fn from_desktop(d: Desktop, lang: &str) -> Self {
         let entry = d.entry.unwrap_or_default();
 

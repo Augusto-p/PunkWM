@@ -12,12 +12,15 @@ function ToggleLoginUserPassword() {
 }
 
 
-function newUser(name, image) {
+function newUser(user, name, image) {
+    if(!name){
+        name = user;
+    }
     let button = document.createElement("button");
     button.classList.add("user");
     button.innerHTML = `<div class="avatar" style="background-image: url('${image}')"></div><h3>${name}</h3>`;
     button.addEventListener("click", ()=>{
-        password_login_user.setAttribute("data-user", name);
+        password_login_user.setAttribute("data-user", user);
         login_user_avatar.style.backgroundImage = `url('${image}')`;
         document.body.setAttribute("data-mode", "user");
     });
@@ -26,7 +29,7 @@ function newUser(name, image) {
 function load_users(users) {
     users_list.innerHTML = "";
     users.forEach(user => {
-        newUser(user.name, user.image);
+        newUser(user.user, user.name, user.image);
     });
 }
 
@@ -52,37 +55,55 @@ load_users([
     {
         "image": 'https://gpticketstore.vshcdn.net/uploads/images/12172/teams-lineups-f1-max-verstapen.jpg',
         "name": "Max Vestappen",
+        "user": "maxver",
+
     }, 
     {
         "image": 'https://imageio.forbes.com/specials-images/imageserve/6753832b78f53643f93a2dbc/0x0.jpg?format=jpg&crop=1263,1266,x300,y30,safe&height=416&width=416&fit=bounds',
         "name": "Charles Leclerc",
+        "user": "chlec",
+
     },
     {
         "image": 'https://ichef.bbci.co.uk/ace/standard/972/cpsprodpb/aba6/live/7991d4d0-c5dd-11f0-bca0-d197f0674a9d.jpg',
         "name": "Lewis Hamilton",
+        "user": "hami",
+
     },
     {
         "image": 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjkBrZ2r4jRgICj3n2vF1Vhbbz4bvL2RoT3Q&s',
         "name": "Fernando Alonso",
+        "user": "magic",
+
     },
     {
         "image": 'https://media.gq.com.mx/photos/671bf1a17917c4a39b483898/master/w_1600%2Cc_limit/Sergio_Checo_Perez_gp_cdmx_2024-2180835921.jpg',
         "name": "Sergio \"Checo\" Pérez",
+        "user": "checo",
+
     },
     {
         "image": 'https://img2.51gt3.com/rac/racer/202503/f10f01a1704147ca90ab3a4325f38785.png?x-oss-process=style/_nhd_en',
         "name": "George Russell",
+        "user": "georgina",
+
     },
     {
         "image": 'https://cdn-3.motorsport.com/images/amp/6xERX380/s1000/valtteri-bottas-mercedes.jpg',
         "name": "Valtteri Bottas",
+        "user": "botass",
+
     },
     {
         "image": 'https://media.formula1.com/image/upload/f_auto,c_limit,q_75,w_1320/content/dam/fom-website/drivers/2025Drivers/tsunoda',
         "name": "Yuki Tsunoda",
+        "user": "yuki",
+
     },
     {
         "image": 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyyAJuMmdbU0LFiGAVI99n7NaczyqsDJX9bA&s',
         "name": "Nicholas \"The G.O.A.T\" Latifi",
+        "user": "goat",
+
     }
 ])
