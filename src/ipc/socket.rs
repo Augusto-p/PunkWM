@@ -2,11 +2,11 @@ use std::os::unix::net::UnixStream;
 use crate::ipc::message::IpcMessage;
 use std::io::Write;
 
-pub const SOCKET_PATH: &str = "/tmp/punk.sock";
-pub const SOCKET_PATH_DOCK: &str = "/tmp/punk_dock.sock";
+pub const SOCKET_PATH: &str = "/tmp/{user}_punk.sock";
+pub const SOCKET_PATH_DOCK: &str = "/tmp/{user}_punk_dock.sock";
 
 pub fn socket_send_dock(msg: &IpcMessage) -> Result<(), String> {
-    let mut stream = UnixStream::connect(SOCKET_PATH_DOCK)
+    let mut stream = UnixStream::connect(&socket_path_dock())
         .map_err(|e| format!("No se pudo conectar al socket: {}", e))?;
 
     let json = serde_json::to_string(msg)
@@ -17,4 +17,13 @@ pub fn socket_send_dock(msg: &IpcMessage) -> Result<(), String> {
         .map_err(|e| format!("Error enviando mensaje: {}", e))?;
 
     Ok(())
+}
+pub fn socket_path() -> String {
+    let user = std::env::var("USER").unwrap_or_default();
+    SOCKET_PATH.replace("{user}", &user)
+}
+
+pub fn socket_path_dock() -> String {
+    let user = std::env::var("USER").unwrap_or_default();
+    SOCKET_PATH_DOCK.replace("{user}", &user)
 }

@@ -53,6 +53,12 @@ password_login_user.addEventListener("keyup", (e)=>{
 
 load_users([
     {
+        "image": 'https://hips.hearstapps.com/hmg-prod/images/img-3-6655e9b91dcf6.jpg?crop=1xw:1xh;0,0.107xh',
+        "name": "Augusto \"Null\" Picardo",
+        "user": "augus",
+
+    },
+    {
         "image": 'https://gpticketstore.vshcdn.net/uploads/images/12172/teams-lineups-f1-max-verstapen.jpg',
         "name": "Max Vestappen",
         "user": "maxver",
@@ -100,10 +106,5 @@ load_users([
         "user": "yuki",
 
     },
-    {
-        "image": 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyyAJuMmdbU0LFiGAVI99n7NaczyqsDJX9bA&s',
-        "name": "Nicholas \"The G.O.A.T\" Latifi",
-        "user": "goat",
-
-    }
+    
 ])

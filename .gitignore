@@ -9,3 +9,5 @@ credentials.json
 commands.txt
 errors.log
 tols/*
+/OutLOCK
+/OUTBASH

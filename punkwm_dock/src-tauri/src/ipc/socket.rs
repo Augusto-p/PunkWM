@@ -8,12 +8,15 @@ use crate::ipc::message::IPC_NAME;
 use crate::ipc::message::IpcMessage;
 use std::io::Write;
 
-pub const SOCKET_PATH_WM: &str = "/tmp/punk.sock";
-pub const SOCKET_PATH_ME: &str = "/tmp/punk_dock.sock";
+pub const SOCKET_PATH_WM: &str = "/tmp/{user}_punk.sock";
+pub const SOCKET_PATH_ME: &str = "/tmp/{user}_punk_dock.sock";
+
+
 
 pub fn socket_listen() {
-    let _ = fs::remove_file(SOCKET_PATH_ME);
-        let listener = UnixListener::bind(SOCKET_PATH_ME)
+    
+    let _ = fs::remove_file(&socket_path_me());
+        let listener = UnixListener::bind(&socket_path_me())
         .expect("No se pudo bindear el socket");
 
     for stream in listener.incoming() {
@@ -47,7 +50,7 @@ pub fn socket_listen() {
 }
 
 pub fn socket_send(msg: &IpcMessage) -> Result<(), String> {
-    let mut stream = UnixStream::connect(SOCKET_PATH_WM)
+    let mut stream = UnixStream::connect(&socket_path_wm())
         .map_err(|e| format!("No se pudo conectar al socket: {}", e))?;
 
     let json = serde_json::to_string(msg)
@@ -58,4 +61,14 @@ pub fn socket_send(msg: &IpcMessage) -> Result<(), String> {
         .map_err(|e| format!("Error enviando mensaje: {}", e))?;
 
     Ok(())
+}
+
+pub fn socket_path_wm() -> String {
+    let user = std::env::var("USER").unwrap_or_default();
+    SOCKET_PATH_WM.replace("{user}", &user)
+}
+
+pub fn socket_path_me() -> String {
+    let user = std::env::var("USER").unwrap_or_default();
+    SOCKET_PATH_ME.replace("{user}", &user)
 }

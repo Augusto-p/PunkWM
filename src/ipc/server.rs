@@ -7,11 +7,12 @@ use std::path::Path;
 use crate::ipc::message::IPC_NAME;
 use crate::ipc::message::IpcMessage;
 use crate::ipc::handler::handler;
-use crate::ipc::socket::SOCKET_PATH;
+use crate::ipc::socket::socket_path;
 use crate::MainThreadNotifier;
 
 pub fn start_ipc_server(notifier: MainThreadNotifier) -> std::io::Result<()> {
-    let path = Path::new(SOCKET_PATH);
+    let path_socket = socket_path();
+    let path = Path::new(&path_socket);
 
     // Borramos socket viejo si existe
     let _ = fs::remove_file(path);

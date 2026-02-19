@@ -14,9 +14,6 @@ use tauri::Emitter;
 
 fn main() {
     let config = load_config();
-    let _ = print_in_tty(&format!("Congig: {:?}", config));
-
-
     tauri::Builder::default()
         .plugin(tauri_plugin_fs::init()) // <--- Añade esta línea
         .setup(move |app| {

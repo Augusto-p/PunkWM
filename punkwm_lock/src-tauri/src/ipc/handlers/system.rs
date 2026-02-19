@@ -4,15 +4,17 @@ use crate::utils::auth::login_auth;
 use serde_json::json;
 use crate::utils::config::load_config;
 use crate::apphandle::get_api_ipc;
+use crate::utils::wm::launch_wm_with_env;
+use crate::utils::tools::spawn;
 
 pub fn ipc_handler_system(msg: IpcMessage) {
      match msg.name.as_str() {
         "Poweroff" =>{
-            let _ = print_in_tty("SYSTEM:Poweroff");
+            spawn("poweroff");
         },
 
         "Reboot" =>{
-            let _ = print_in_tty("SYSTEM:Reboot");
+            spawn("reboot");
         },
         "Start" =>{
             let config = load_config();
@@ -21,12 +23,30 @@ pub fn ipc_handler_system(msg: IpcMessage) {
             let _ = api_ipc.emit(message.clone());
         },
         "Login" =>{
-            let user = msg.data["User"].as_str().unwrap().to_string();
+            let username = msg.data["User"].as_str().unwrap().to_string();
             let password = msg.data["Password"].as_str().unwrap().to_string();
-            if login_auth(&user, &password) {
-                let _ = print_in_tty(&format!("\nSYSTEM:\nUser: {}\nPassword: {}", user, password));
+            if login_auth(&username, &password) {
+                match nix::unistd::User::from_name(&username) {
+                    Ok(Some(user)) => {
+                        let uid = user.uid.as_raw();
+                        launch_wm_with_env(uid, "/home/augus/PunkWM/punk_wm");
+                    }
+
+                    Ok(None) => {
+                        let _ = print_in_tty(
+                            "SYSTEM ERROR: Usuario no encontrado en /etc/passwd"
+                        );
+                    }
+
+                    Err(e) => {
+                        let _ = print_in_tty(&format!(
+                            "SYSTEM ERROR (nix): {}",
+                            e
+                        ));
+                    }
+                }
             } else {
-                let _ = print_in_tty(&format!("\nSYSTEM Error:\nUser: {}\nPassword: {}", user, password));
+                let _ = print_in_tty("SYSTEM: Login incorrecto");
             }
             
         },
@@ -37,6 +57,7 @@ pub fn ipc_handler_system(msg: IpcMessage) {
                 msg.name
             );
         }
+
      }
     
 }
