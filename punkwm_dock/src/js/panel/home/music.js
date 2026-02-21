@@ -4,7 +4,7 @@ const Music_Artist = document.getElementById("Music-Artist");
 const Music_Album = document.getElementById("Music-Album");
 const Music_Time = document.getElementById("Music-time");
 
-function Load_Song(Title,Artist, Album, Art, Duration, File=null) {
+function Load_Song(Title,Artist, Album, Art, Duration, mode) {
     Music_Title.textContent = Title.trim();
     Music_Artist.textContent = Artist.trim();
     Music_Album.textContent = Album.trim();
@@ -22,4 +22,8 @@ function formatTime(seconds) {
 
   return `${min.toString().padStart(2, "0")}:${sec.toString().padStart(2, "0")}`;
 
+}
+function mmssToInt(tiempo) {
+  const [min, seg] = tiempo.split(":").map(Number);
+  return (min * 60) + seg;
 }

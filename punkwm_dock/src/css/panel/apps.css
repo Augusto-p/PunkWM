@@ -116,23 +116,3 @@ body[data-panel="Open-Apps"] #Panel_Apps {
     border: 1px solid #78c9f4;
 }
 
-#Panel_Apps #Apps_grid::-webkit-scrollbar {
-    width: 3px;
-    height: 3px;
-}
-
-/* fondo */
-#Panel_Apps #Apps_grid::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-/* barra */
-#Panel_Apps #Apps_grid::-webkit-scrollbar-thumb {
-    background: #484f5a;
-    border-radius: 10px;
-}
-
-/* hover */
-#Panel_Apps #Apps_grid::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.55);
-}

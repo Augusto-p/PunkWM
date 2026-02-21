@@ -8,3 +8,6 @@ function emit_system_reboot() {
 function emit_system_start() {
     IPC_emit("System", "Start");
 }
+
+emit_system_start();
+window.focus()

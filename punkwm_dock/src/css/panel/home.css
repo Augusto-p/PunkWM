@@ -532,26 +532,6 @@ body[data-panel="Open-Home"] #Panel_Home {
 }
 
 
-#Panel_Home .Down .diary .content::-webkit-scrollbar {
-    width: 2px;
-    height: 2px;
-}
-
-/* fondo */
-#Panel_Home .Down .diary .content::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-/* barra */
-#Panel_Home .Down .diary .content::-webkit-scrollbar-thumb {
-    background: #484f5a;
-    border-radius: 6px;
-}
-
-/* hover */
-#Panel_Home .Down .diary .content::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.55);
-}
 
 .calendar-colorid-1 {
     background-color: #ac725e;
