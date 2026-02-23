@@ -1,10 +1,14 @@
-use std::{ fs::{ OpenOptions}, io::{self, Write}};
+use std::{ fs::{ OpenOptions}, io::{Write}};
 pub const TTY: &str = "/dev/pts/0";
-pub fn print_in_tty(texto: &str) -> io::Result<()> {
-    let mut tty = OpenOptions::new()
-        .write(true)
-        .open(TTY)?;
-
-    writeln!(tty, "¡=> {}\n", texto)?;
-    Ok(())
+pub fn print_in_tty(texto: &str) {
+    match OpenOptions::new().write(true).open(TTY) {
+        Ok(mut tty) => {
+            if let Err(e) = writeln!(tty, "=> {}\n", texto) {
+                eprintln!("Error escribiendo en TTY: {}", e);
+            }
+        }
+        Err(e) => {
+            eprintln!("Error abriendo TTY: {}", e);
+        }
+    }
 }

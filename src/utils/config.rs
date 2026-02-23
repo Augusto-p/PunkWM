@@ -1,21 +1,12 @@
 use serde::{Deserialize, Serialize};
-use x11rb::protocol::xproto::ModMask;
-use std::{collections::HashMap, fs::{self, OpenOptions}, io::{self, Write},  sync::OnceLock};
-
-use crate::utils::keys::{keycode_from_name, parse_mods};
+use std::{collections::HashMap, fs::{self, OpenOptions}, io::{Write},  sync::OnceLock};
+use std::path::Path;
+use std::env;
 pub const TTY: &str = "/dev/pts/0";
-#[derive(Deserialize, Clone)]
-pub struct Apps {
-    pub terminal: String,
-    pub browser: String,
-    pub filemanager: String,
-    pub editor: String,
-    pub dock: String,
-}
 
 #[derive(Deserialize)]
 pub struct Config {
-    pub apps: Apps,
+    pub apps: HashMap<String, String>,
     pub keybindings: HashMap<String, String>,
     pub styles: Styles,
     pub weather: WeatherConfig,
@@ -43,16 +34,20 @@ pub struct WeatherConfig{
     pub country: String,
     pub units: String,
 }
+pub(crate) fn load_config() -> Config {
+    let mut path = format!(
+        "{}/.config/punkwm/config.toml",
+        std::env::var("HOME").unwrap()
+    );
+    if !Path::new(&path).exists(){
+        path = "/etc/PunkWM/config.toml".to_string();
+    }
 
-#[derive(Clone)]
-pub struct Binding {
-    pub modifier: ModMask,
-    pub keycode: u8,
-    pub action: String,
+    let data = fs::read_to_string(&path).expect("No se pudo leer config.toml");
+    let mut cfg: Config = toml::from_str(&data).expect("Config TOML inválido");
+    cfg.apps = cfg.apps.into_iter().map(|(k, v)| (k.to_uppercase(), v)).collect();
+    cfg.expand_tilde()
 }
-
-use std::env;
-
 fn expand_home(s: &mut String, home: &str) {
     if s.contains('~') {
         *s = s.replace("~", home);
@@ -64,11 +59,9 @@ impl Config {
         let home = env::var("HOME").unwrap();
 
         // Apps
-        expand_home(&mut self.apps.terminal, &home);
-        expand_home(&mut self.apps.browser, &home);
-        expand_home(&mut self.apps.filemanager, &home);
-        expand_home(&mut self.apps.editor, &home);
-        expand_home(&mut self.apps.dock, &home);
+        for command in self.apps.values_mut() {
+            expand_home(command, &home);
+        }
 
         // Styles
         expand_home(&mut self.styles.bg, &home);
@@ -77,6 +70,10 @@ impl Config {
         expand_home(&mut self.google.credentials_file, &home);
 
         self
+    }
+
+    pub fn get_app_command(&self, name: &str) -> String {
+        self.apps.get(&name.to_uppercase()).cloned().unwrap_or_else(|| "".to_string()) // Maneja el caso de que no exista
     }
 }
 
@@ -88,49 +85,17 @@ pub fn path_persistence() -> &'static str {
         format!("{}/.config/punkwm/persistence.bin", home)
     })
 }
-pub(crate) fn load_config() -> Config {
-    let path = format!(
-        "{}/.config/punkwm/config.toml",
-        std::env::var("HOME").unwrap()
-    );
 
-    let data = fs::read_to_string(&path).expect("No se pudo leer config.toml");
-    let cfg: Config = toml::from_str(&data).expect("Config TOML inválido");
-    cfg.expand_tilde()
-}
 
-pub(crate) fn parse_bindings(cfg: &Config) -> Vec<Binding> {
-    let mut bindings = Vec::new();
-
-    for (k, action) in &cfg.keybindings {
-        let parts: Vec<&str> = k.split('_').collect();
-        if parts.len() != 2 {
-            continue;
+pub fn print_in_tty(texto: &str) {
+    match OpenOptions::new().write(true).open(TTY) {
+        Ok(mut tty) => {
+            if let Err(e) = writeln!(tty, "=> {}\n", texto) {
+                eprintln!("Error escribiendo en TTY: {}", e);
+            }
         }
-
-        let modifier = parse_mods(parts[0]);
-        if modifier == ModMask::from(0u16) {
-            continue;
-        }
-
-        if let Some(code) = keycode_from_name(parts[1]) {
-            bindings.push(Binding {
-                modifier,
-                keycode: code,
-                action: action.clone(),
-            });
+        Err(e) => {
+            eprintln!("Error abriendo TTY: {}", e);
         }
     }
-
-    bindings
-}
-
-
-pub fn print_in_tty(texto: &str) -> io::Result<()> {
-    let mut tty = OpenOptions::new()
-        .write(true)
-        .open(TTY)?;
-
-    writeln!(tty, "=> {}\n", texto)?;
-    Ok(())
 }

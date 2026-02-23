@@ -1,7 +1,6 @@
-use punkwm_lock_lib::print_in_tty;
-use std::process::Command;
+// use punkwm_lock_lib::print_in_tty;
 use std::os::unix::process::CommandExt;
-use nix::unistd::{setuid, setgid, setsid, Uid, User};
+use nix::unistd::{setuid, setgid,  Uid, User};
     
 
 

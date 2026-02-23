@@ -2,9 +2,9 @@ mod ipc;
 mod utils;
 mod apphandle;
 
+// use punkwm_lock_lib::print_in_tty;
 use tauri::{Manager, Size, PhysicalSize, Position, PhysicalPosition};
 use tauri::Listener;
-use punkwm_lock_lib::print_in_tty;
 use crate::ipc::handler::ipc_handler;
 use crate::ipc::message::IpcMessage;
 use crate::utils::config::load_config;

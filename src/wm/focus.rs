@@ -2,7 +2,7 @@ use x11rb::connection::Connection;
 use x11rb::protocol::xproto::*;
 use x11rb::rust_connection::ReplyError;
 use x11rb::CURRENT_TIME;
-
+use crate::ipc::senders::workspace::sender_workspace_update;
 use super::manager::WorkspaceManager;
 
 impl WorkspaceManager {
@@ -99,6 +99,7 @@ impl WorkspaceManager {
             self.focused[current_ws] = Some(focused_idx);
             let _ = self.focus_window(self.workspaces[current_ws][focused_idx]);
         }
+        sender_workspace_update(self);
     }
 
  

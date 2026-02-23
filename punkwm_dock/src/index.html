@@ -152,16 +152,16 @@
                             repellendus, praesentium quidem velit in commodi ipsum libero earum, debitis quibusdam
                             quas.</span>
                     </div>
-                    <img src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/64/70/1c/64701cff-71ed-912f-ce62-71d409f5e6ad/195497640560.jpg/1200x1200bb.webp"
+                    <img onclick="openMusic()" src="https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/64/70/1c/64701cff-71ed-912f-ce62-71d409f5e6ad/195497640560.jpg/1200x1200bb.webp"
                         id="Music-image">
                     <span id="Music-time">01:39/03:88</span>
 
                 </div>
                 <div class="controls">
-                    <button id="Music-Pre"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <button id="Music-Pre" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                             <path d="M220-240v-480h80v480h-80Zm520 0L380-480l360-240v480Z" />
                         </svg></button>
-                    <button id="Music-P">
+                    <button id="Music-P" data-mode="play" onclick="PlayPauseSong()">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" class="play">
                             <path d="M320-200v-560l440 280-440 280Z" />
                         </svg>
@@ -255,7 +255,7 @@
 
 
 
-    <section class="Panel" id="Panel_Music" data-mode="Local">
+    <section class="Panel" id="Panel_Music" >
         <audio id="Local_Music_Player"></audio>
 
         <div class="header">

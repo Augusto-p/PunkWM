@@ -11,8 +11,8 @@ impl WorkspaceManager {
                 &ConfigureWindowAux::new()
                     .x(Some(panel_zone as i32))
                     .y(gap as i32)
-                    .width(Some((width - gap * 2) as u32))
-                    .height(Some((height - gap * 2) as u32)),
+                    .width(Some((width - gap ) as u32))
+                    .height(Some((height) as u32)),
             );
         }
 

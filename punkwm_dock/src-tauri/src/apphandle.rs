@@ -1,6 +1,7 @@
 use tauri::AppHandle;
 use once_cell::sync::OnceCell;
 use crate::IpcMessage;
+use crate::IpcFrontMessage;
 use serde::Serialize;
 use serde::Deserialize;
 use tauri::Emitter;
@@ -15,6 +16,16 @@ pub struct EmitPayload {
 }
 impl From<IpcMessage> for EmitPayload {
     fn from(msg: IpcMessage) -> Self {
+        EmitPayload {
+            category: msg.category,
+            name: msg.name,
+            data: msg.data,
+        }
+    }
+}
+
+impl From<IpcFrontMessage> for EmitPayload {
+    fn from(msg: IpcFrontMessage) -> Self {
         EmitPayload {
             category: msg.category,
             name: msg.name,
@@ -48,6 +59,12 @@ impl EmitArg for EmitPayload {
 }
 
 impl EmitArg for IpcMessage {
+    fn emit(self, app: &AppHandle) -> tauri::Result<()> {
+        let payload = EmitPayload::from(self);
+        app.emit("ipc", payload)
+    }
+}
+impl EmitArg for IpcFrontMessage {
     fn emit(self, app: &AppHandle) -> tauri::Result<()> {
         let payload = EmitPayload::from(self);
         app.emit("ipc", payload)

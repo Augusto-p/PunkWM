@@ -116,3 +116,20 @@ body[data-panel="Open-Apps"] #Panel_Apps {
     border: 1px solid #78c9f4;
 }
 
+#Panel_Apps #Music-P svg{
+    transition: 0.7 ease-in-out;
+}
+
+#Panel_Apps #Music-P[data-mode="play"] .pause{
+    opacity: 0;
+}
+#Panel_Apps #Music-P[data-mode="play"] .play{
+    opacity: 1;
+}
+
+#Panel_Apps #Music-P[data-mode="pause"] .pause{
+    opacity: 1;
+}
+#Panel_Apps #Music-P[data-mode="pause"] .play{
+    opacity: 0;
+}

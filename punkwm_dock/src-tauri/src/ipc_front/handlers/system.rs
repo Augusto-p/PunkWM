@@ -1,3 +1,5 @@
+use crate::apphandle::get_api_ipc;
+use tauri::{Manager};
 use crate::ipc::socket::socket_send;
 use crate::IpcMessage;
 use serde_json::json;
@@ -28,10 +30,19 @@ pub fn ipc_front_handler_system(msg: IpcFrontMessage) {
             let _ = socket_send(&command);
         }
         "Open Panel" => {
+            let api = get_api_ipc();
+            if let Some(window) = api.app_handle.get_webview_window("main") {
+                let _ = window.set_resizable(true);
+            } 
             let command = IpcMessage::new("System", "Open Panel", json!({}));
             let _ = socket_send(&command);
+
         }
         "Close Panel" => {
+            let api = get_api_ipc();
+            if let Some(window) = api.app_handle.get_webview_window("main") {
+                let _ = window.set_resizable(true);
+            }
             let command = IpcMessage::new("System", "Close Panel", json!({}));
             let _ = socket_send(&command);
         }

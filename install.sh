@@ -1,5 +1,5 @@
 #!/bin/bash
-
+punk_folder=$(pwd)
 # =============================
 # CONFIG
 # =============================
@@ -88,7 +88,8 @@ run "sudo pacman -Sy --noconfirm \
 xorg-xinit webkit2gtk gtk3 atk pango gdk-pixbuf2 xorg-server \
 seatd xorg-xrandr xorg-xsetroot xf86-video-intel xf86-video-amdgpu \
 xf86-video-vesa xorg-server-xorgxrdp xorg-xauth feh \
-rustup llvm clang sudo pam nano networkmanager firefox zsh unzip wget git" \
+rustup llvm clang sudo pam nano networkmanager firefox zsh unzip wget git gst-libav gst-plugins-good \
+gst-plugins-bad  gst-plugins-ugly pipewire pipewire-pulse wireplumber" \
 "Instalando paquetes principales"
 
 # =============================
@@ -101,6 +102,17 @@ run "sudo systemctl enable --now seatd" "Activando seatd"
 run "sudo systemctl enable --now NetworkManager" "Activando NetworkManager"
 run "sudo systemctl enable mpd.service acpid.service wpa_supplicant" "Habilitando servicios adicionales"
 run "sudo systemctl start mpd.service acpid.service wpa_supplicant" "Iniciando servicios adicionales"
+# systemctl --user enable pipewire
+# systemctl --user enable pipewire-pulse
+# systemctl --user enable wireplumber
+# systemctl --user start pipewire
+# systemctl --user start pipewire-pulse
+# systemctl --user start wireplumber
+# sudo pacman -Syu alsa-utils alsa-plugins
+# sudo pacman -S pulseaudio pulseaudio-alsa pavucontrol
+# sudo pacman -S pipewire pipewire-pulse
+# sudo pacman -S pipewire wireplumber pipewire-pulse pipewire-alsa
+
 
 # =============================
 # SHELL
@@ -179,6 +191,29 @@ run "cp user/.Xresources $HOME/" "Copiando Xresources"
 run "cp user/.zshrc $HOME/" "Copiando zshrc"
 
 run "sudo ln -sf /home/$USER_NAME/.zshrc /root/.zshrc" "Linkeando zshrc root"
+
+# =============================
+# WM 
+# =============================
+
+cd "$punk_folder/punkwm_lock/src-tauri"
+run "cargo build" "Compilando PunkWM LockScreen"
+cd "$punk_folder/punkwm_dock/src-tauri"
+run "cargo build" "Compilando PunkWM Dock"
+cd "$punk_folder"
+run "cargo build" "Compilando PunkWM"
+run "mkdir -p /opt/PunkWM/" ""
+run "mv "$punk_folder/punkwm_lock/src-tauri/target/debug/punkwm_lock" "/opt/PunkWM/PunkWM_LockScreen"" "Instalando PunkWM LockScreen"
+run "mv "$punk_folder/punkwm_dock/src-tauri/target/debug/punkwm_dock" "/opt/PunkWM/PunkWM_Dock"" "Instalando PunkWM Dock"
+run "mv "$punk_folder/target/debug/punk_wm" "/opt/PunkWM/PunkWM_Dock"" "Instalando PunkWM "
+
+run "sudo ln -sf /opt/PunkWM/PunkWM_LockScreen /usr/bin/PunkWM_LockScreen" "Linkeando PunkWM LockScreen"
+run "sudo ln -sf /opt/PunkWM/PunkWM_Dock /usr/bin/PunkWM_Dock" "Linkeando PunkWM Dock"
+run "sudo ln -sf /opt/PunkWM/PunkWM /usr/bin/PunkWM" "Linkeando PunkWM"
+
+run "mkdir -p /etc/PunkWM/" ""
+
+
 
 # =============================
 # WM SERVICE

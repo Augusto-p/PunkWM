@@ -5,13 +5,14 @@ mod ipc;
 mod network_manager;
 mod google;
 
-// use crate::utils::config::print_in_tty;
+use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use utils::battery::Battery;
 use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,
     desktops::{Desktop, get_all_desktops_paths, DockDesktop, search_docks,find_by_package, },
 };
 use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
+
 use crate::wm::manager::WorkspaceManager;
 use std::{thread, time::Duration, sync::{mpsc, Arc},};
 use crate::custom_event::{main_thread_notifier::MainThreadNotifier, entity::CustomEvent,};
@@ -19,7 +20,7 @@ use crate::network_manager::{NetworkManager, Device, DeviceState, wifi::get_wifi
 use crate::ipc::{server::start_ipc_server,
     senders::{  layout::sender_layout_set, battery::sender_battery_update, workspace::sender_workspace_update, 
         network::sender_network_deveice_state, 
-        system::{sender_system_load_panel, sender_system_panel_close},
+        system::{sender_system_load_panel, sender_system_panel_close, },
         panel::home::{sender_panel_home_weather_load, sender_panel_home_system_stats,sender_panel_home_google_calender_daily, sender_panel_home_google_oauth_url},
         panel::apps::sender_panel_apps_load_apps,
         panel::network::{sender_panel_network_load_wifi, sender_panel_network_share_wifi},
@@ -100,7 +101,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     wm.conn.flush()?;
 
 
-    wm.init_dock(config.styles.dock_width, screen.height_in_pixels, config.apps.dock.clone());
+    wm.init_dock(config.styles.dock_width, screen.height_in_pixels, config.get_app_command("DOCK"));
 
 
     // ─────────────────────
@@ -168,7 +169,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     )?;
 
     // Keybindings
-    let bindings = crate::utils::config::parse_bindings(&config);
+    
+    let bindings = crate::utils::keys::parse_bindings(&wm.conn,&config);
 
     for b in &bindings {
         wm.conn.grab_key(
@@ -232,7 +234,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // ─────────────────────
     loop {
         let event = wm.conn.wait_for_event()?;
-
+        const LOCK_MASK: u16 = 2; // El bit para CapsLock
+        const MOD2_MASK: u16 = 16; // El bit para NumLock (0x10)
+        const IGNORE_MODS: u16 = LOCK_MASK | MOD2_MASK;
         match event {
             Event::ClientMessage(e) if e.type_ == wake_up_atom => {
                 while let Ok(custom) = rx.try_recv() {
@@ -254,8 +258,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 wm.panel.open();
                                 if let Some(ref mut dock) = wm.dock {
                                     dock.panel_open(&wm.conn);
+
                                 }                                    
                                 wm.apply_layout();
+                                
                             }
                         },
                         CustomEvent::OpenHomePanel()=>{
@@ -411,36 +417,53 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             }
 
             
-            Event::KeyPress(e) => {
-                let state = e.state;
-
-                if state.contains(KeyButMask::MOD4 | KeyButMask::SHIFT)
-                    && (10..=18).contains(&e.detail)
-                {
-                    wm.move_focus_window((e.detail - 10) as usize);
-                    continue;
-                }
-
-                if state.contains(KeyButMask::MOD4) && (10..=18).contains(&e.detail) {
-                    wm.switch_to((e.detail - 10) as usize);
-                    continue;
-                }
-
-                if state.contains(KeyButMask::MOD1) && e.detail == 46 {
-                    wm.toggle_layout_persist();
-                    continue;
-                }
-
+            Event::KeyPress(e) => {                
+                let state = u16::from(e.state) & !IGNORE_MODS;
+                let keycode = e.detail;
                 for b in &bindings {
-                    if e.detail == b.keycode && state.contains(b.modifier) {
+                    if keycode == b.keycode && state == u16::from(b.modifier){
                         match b.action.as_str() {
-                            "focus_next" => wm.focus_next(),
-                            "focus_prev" => wm.focus_prev(),
-                            "close" => wm.close_focused(wm_protocols, wm_delete),
-                            "terminal" => spawn(&config.apps.terminal),
-                            "browser" => spawn(&config.apps.browser),
-                            "filemanager" => spawn(&config.apps.filemanager),
-                            "editor" => spawn(&config.apps.editor),
+                            s if s.starts_with("Workspace:") => {
+                                if let Some(rest) = s.strip_prefix("Workspace:") {
+                                    if let Ok(num) = rest.parse::<usize>() {
+                                        if num >= 1 && num <= 9 {
+                                            wm.switch_to(num-1);
+                                        }
+                                    }
+                                }
+                            },
+                            s if s.starts_with("Focus:To:Workspace:") => {
+                                if let Some(rest) = s.strip_prefix("Focus:To:Workspace:") {
+                                    if let Ok(num) = rest.parse::<usize>() {
+                                        if num >= 1 && num <= 9 {
+                                            wm.move_focus_window(num -1);
+                                            wm.switch_to(num-1);
+                                        }
+                                    }
+                                }
+                            },
+                             s if s.starts_with("Move:Focus:To:Workspace:") => {
+                                if let Some(rest) = s.strip_prefix("Move:Focus:To:Workspace:") {
+                                    if let Ok(num) = rest.parse::<usize>() {
+                                        if num >= 1 && num <= 9 {
+                                            wm.move_focus_window(num -1);
+                                            
+                                        }
+                                    }
+                                }
+                            },
+                            s if s.starts_with("Open:") => {
+                                if let Some(app) = s.strip_prefix("Open:") {
+                                    let command = config.get_app_command(app);
+                                    if command != ""{
+                                        spawn(&command);
+                                    }
+                                }
+                            },
+                            "Window:Focus:Next" => wm.focus_next(),
+                            "Window:Focus:Previous" => wm.focus_prev(),
+                            "Window:Closed:Focused" => wm.close_focused(wm_protocols, wm_delete),
+                            "Layout:Toggle" => wm.toggle_layout_persist(),
                             _ => {}
                         }
                     }

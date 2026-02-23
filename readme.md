@@ -1,9 +1,97 @@
+# PunkWM
+<details>
+  <summary style="font-size: 20px; font-weight: bold;">Feature</summary>
+
+
+</details>
+
+<details>
+  <summary style="font-size: 20px; font-weight: bold;">Installation</summary>
+
+
+</details>
+
+<details>
+  <summary style="font-size: 20px; font-weight: bold;">Keyboard Shortcuts</summary>
+
+  | Function | Description | Default Shortcut |
+  |:-----------|:------------|:------------------:|
+  | Workspace:1 | This function changes the current workspace to Workspace 1. | <kbd>SUPER</kbd> + <kbd>1</kbd>  |
+  | Workspace:2 | This function changes the current workspace to Workspace 2. | <kbd>SUPER</kbd> + <kbd>2</kbd>  |
+  | Workspace:3 | This function changes the current workspace to Workspace 3. | <kbd>SUPER</kbd> + <kbd>3</kbd>  |
+  | Workspace:4 | This function changes the current workspace to Workspace 4. | <kbd>SUPER</kbd> + <kbd>4</kbd>  |
+  | Workspace:5 | This function changes the current workspace to Workspace 5. | <kbd>SUPER</kbd> + <kbd>5</kbd>  |
+  | Workspace:6 | This function changes the current workspace to Workspace 6. | <kbd>SUPER</kbd> + <kbd>6</kbd>  |
+  | Workspace:7 | This function changes the current workspace to Workspace 7. | <kbd>SUPER</kbd> + <kbd>7</kbd>  |
+  | Workspace:8 | This function changes the current workspace to Workspace 8. | <kbd>SUPER</kbd> + <kbd>8</kbd>  |
+  | Workspace:9 | This function changes the current workspace to Workspace 9. | <kbd>SUPER</kbd> + <kbd>9</kbd>  |
+  | Focus:To:Workspace:1 | This function moves the currently focused window to Workspace 1 and changes the active workspace to Workspace 1. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>1</kbd>  |
+  | Focus:To:Workspace:2 | This function moves the currently focused window to Workspace 2 and changes the active workspace to Workspace 2. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>2</kbd>  |
+  | Focus:To:Workspace:3 | This function moves the currently focused window to Workspace 3 and changes the active workspace to Workspace 3. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>3</kbd>  |
+  | Focus:To:Workspace:4 | This function moves the currently focused window to Workspace 4 and changes the active workspace to Workspace 4. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>4</kbd>  |
+  | Focus:To:Workspace:5 | This function moves the currently focused window to Workspace 5 and changes the active workspace to Workspace 5. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>5</kbd>  |
+  | Focus:To:Workspace:6 | This function moves the currently focused window to Workspace 6 and changes the active workspace to Workspace 6. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>6</kbd>  |
+  | Focus:To:Workspace:7 | This function moves the currently focused window to Workspace 7 and changes the active workspace to Workspace 7. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>7</kbd>  |
+  | Focus:To:Workspace:8 | This function moves the currently focused window to Workspace 8 and changes the active workspace to Workspace 8. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>8</kbd>  |
+  | Focus:To:Workspace:9 | This function moves the currently focused window to Workspace 9 and changes the active workspace to Workspace 9. | <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>9</kbd>  |
+  | Move:Focus:To:Workspace:1 | This function moves the currently focused window to Workspace 1 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>1</kbd>  |
+  | Move:Focus:To:Workspace:2 | This function moves the currently focused window to Workspace 2 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>2</kbd>  |
+  | Move:Focus:To:Workspace:3 | This function moves the currently focused window to Workspace 3 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>3</kbd>  |
+  | Move:Focus:To:Workspace:4 | This function moves the currently focused window to Workspace 4 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>4</kbd>  |
+  | Move:Focus:To:Workspace:5 | This function moves the currently focused window to Workspace 5 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>5</kbd>  |
+  | Move:Focus:To:Workspace:6 | This function moves the currently focused window to Workspace 6 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>6</kbd>  |
+  | Move:Focus:To:Workspace:7 | This function moves the currently focused window to Workspace 7 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>7</kbd>  |
+  | Move:Focus:To:Workspace:8 | This function moves the currently focused window to Workspace 8 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>8</kbd>  |
+  | Move:Focus:To:Workspace:9 | This function moves the currently focused window to Workspace 9 while keeping the current workspace active. | <kbd>ALT</kbd> + <kbd>SUPER</kbd> + <kbd>SHIFT</kbd> + <kbd>9</kbd>  |
+  | Window:Focus:Next | This function changes focus to the next window. |  <kbd>ALT</kbd> + <kbd>J</kbd>  |
+  | Window:Focus:Previous | This function changes focus to the previous window. |  <kbd>ALT</kbd> + <kbd>K</kbd>  |
+  | Window:Closed:Focused | This function closes the currently focused window. |  <kbd>ALT</kbd> + <kbd>Q</kbd>  |
+  | Layout:Toggle | This function changes the current workspace layout to the next layout.|  <kbd>ALT</kbd> + <kbd>L</kbd>  |
+  | Open:<kbd>APP</kbd> | This function opens the APP application. |  |
+  | Open:TERMINAL | This function opens the configured terminal.|  <kbd>SUPER</kbd> + <kbd>Return</kbd>  |
+  | Open:BROWSER |This function opens the configured browser|  <kbd>SUPER</kbd> + <kbd>B</kbd>  |
+  | Open:EDITOR |This function opens the configured editor|  <kbd>SUPER</kbd> + <kbd>E</kbd>  |
+  | Open:FILEMANAGER |This function opens the configured file explorer|  <kbd>SUPER</kbd> + <kbd>L</kbd>  |
+</details>
+
+
+<details>
+  <summary style="font-size: 20px; font-weight: bold;">Layouts</summary>
+
+  | Pos | Description | Wiew with 1 window |  Wiew with 2 window |  Wiew with 3 window | Wiew with 4 window | Wiew with 5 window |
+  |:--:|:----------------|:---:|:----:|:---:|:---:|:--:|
+  |11| Each window takes up the full screen without respecting margins. |<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|
+  |14| This layout makes each window occupy the entire screen while respecting the margins. |<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|
+  
+
+
+
+</details>
+
+
+
+
+
+
+
+ 
+
+
+<!-- 
+
+
+
+
+
+
+
+
 | Módulo               | Función                                                       |
 | -------------------- | ------------------------------------------------------------- |
 | **WM Core**          | Manejo de ventanas: **abrir**, **cerrar**, maximizar, mover, tiling   |
 | **Layout Manager**   | **Definir layouts**: **tile**, **max**, **spiral**, **dwindle**, **magnifier**, **fair** |
 | **Widget Manager**   | Controlar widgets HTML/CSS y su comunicación con Core         |
-| **Input Handler**    | Mapear teclas, atajos (ej. Alt+Q, Super+... )                 |
+| **Input Handler**    | Mapear teclas, atajos (ej. Alt+Q, SUPER+... )                 |
 | **Persistence**      | Guardar layouts y posición de widgets en `persistence.bin`    |
 | **IPC / Messaging**  | Comunicación Core ↔ Widgets (WebSocket / JSON / IPC)          |
 | **Rendering Engine** | WebView o motor HTML/CSS para render de widgets               |
@@ -162,4 +250,4 @@ Para usar la **Google Calendar API** en tu proyecto Rust (o cualquier lenguaje),
 > Este archivo es tu `credentials.json`.
 
 ---
-
+ -->

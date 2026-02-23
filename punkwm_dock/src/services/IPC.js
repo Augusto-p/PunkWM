@@ -35,6 +35,12 @@ const handlers = {
     "Load:WiFi": ({ WiFis }) => Load_wifis(WiFis),
     "Share:WiFi": ({ QR }) => openShareWiFi(QR),
   },
+  "Panel:Music":{
+    "YT:Set Cookies": (cookies)=> Save_Cookies_YT(cookies),
+    "YT:Load Quik Picks": ({ songs })=> load_Songs(songs),
+    "YT:Load Next Songs": ({ songs })=> load_Songs(songs),
+    "YT:Load Search": ({ songs })=> load_Songs(songs),
+  }
 
 };
 
@@ -54,4 +60,19 @@ async function IPC_Front_emit(category, name, data = {}) {
     name,
     data,
   });
+}
+
+
+async function sha1(message) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(message);
+
+  const hashBuffer = await crypto.subtle.digest("SHA-1", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+
+  const hashHex = hashArray
+    .map(b => b.toString(16).padStart(2, "0"))
+    .join("");
+
+  return hashHex;
 }

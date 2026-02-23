@@ -3,6 +3,7 @@ const Music_Title = document.getElementById("Music-Tittle");
 const Music_Artist = document.getElementById("Music-Artist");
 const Music_Album = document.getElementById("Music-Album");
 const Music_Time = document.getElementById("Music-time");
+const Music_P = document.getElementById("Music-P");
 
 function Load_Song(Title,Artist, Album, Art, Duration, mode) {
     Music_Title.textContent = Title.trim();
@@ -27,3 +28,16 @@ function mmssToInt(tiempo) {
   const [min, seg] = tiempo.split(":").map(Number);
   return (min * 60) + seg;
 }
+
+function PlayPauseSong() {
+  if (Music_P.getAttribute("data-mode") == "play") {
+      Music_P.setAttribute("data-mode", "pause")
+      emit_Music_Panel_YTMusic_Pause_Song()
+  }else{
+    Music_P.setAttribute("data-mode", "play")
+    emit_Music_Panel_YTMusic_Play_Song()
+  }
+  
+}
+
+document.addEventListener("")

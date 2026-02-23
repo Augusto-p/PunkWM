@@ -1,7 +1,7 @@
 mod ipc;
 mod apphandle;
 mod ipc_front;
-
+mod utils;
 // use punkwm_dock_lib::print_in_tty;
 use std::env;
 use tauri::webview::WebviewWindowBuilder;
@@ -10,9 +10,6 @@ use crate::ipc::message::IpcMessage;
 use crate::apphandle::set_app_handle;
 use crate::ipc_front::handler::ipc_front_handler;
 use crate::ipc_front::message::IpcFrontMessage;
-
-
-  
 use tauri::Listener;
 
 
@@ -38,6 +35,7 @@ fn main() {
     }
 
     tauri::Builder::default()
+        .plugin(tauri_plugin_http::init())
         .setup(move |app| {
             set_app_handle(app.handle().clone());
             // ───────────── VENTANA ─────────────
@@ -48,7 +46,7 @@ fn main() {
             )
             .title(&window_title)
             .decorations(false)
-            .resizable(true)
+            .resizable(false)
             .transparent(true)
             .inner_size(width, height)
             .min_inner_size(width, height)            
