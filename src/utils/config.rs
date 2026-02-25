@@ -18,6 +18,7 @@ pub struct Styles{
     pub dock_width: u16,
     pub panel_width: u16,
     pub lang: String,
+    pub music_folders: Vec<String>,
 }
 
 #[derive(Deserialize, Clone)]

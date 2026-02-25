@@ -8,3 +8,5 @@ pub mod weather;
 pub mod notifications;
 pub mod desktops;
 pub mod qrcode;
+pub mod paths;
+pub mod song;

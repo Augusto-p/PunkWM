@@ -245,6 +245,7 @@ body[data-panel="Open-Home"] #Panel_Home {
     fill: #4f7fc4;
     border: none;
     outline: none;
+    transition: 0.7s ease-in-out;
 }
 
 #Panel_Home .Up .Rigth .quick_asses #Poweroff:hover{
@@ -319,10 +320,19 @@ body[data-panel="Open-Home"] #Panel_Home {
     box-sizing: border-box;
     fill: #fff;
     padding: calc(1 * var(--panel_vw));
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.7s ease-in-out;
+}
+#Panel_Home .Down .Music .controls button:hover{
+    background-color: #4f7fc4;
 }
 
 #Panel_Home .Down .Music .controls button svg {
     width: 100%;
+    transition: 0.7s ease-in-out;
 }
 
 #Panel_Home .Down .Music .controls button#Music-Pre {
@@ -335,17 +345,25 @@ body[data-panel="Open-Home"] #Panel_Home {
     border-bottom-right-radius: calc(3 * var(--panel_vw));
 }
 
-#Panel_Home .Down .Music .controls button .pause {
-    display: none;
+
+#Panel_Home .Down .Music .controls #Music-P svg{
+    position: absolute;
 }
 
-#Panel_Home .Down .Music .controls button.pause .pause {
-    display: block;
+#Panel_Home .Down .Music .controls #Music-P[data-mode="play"] .pause{
+    opacity: 1;
+}
+#Panel_Home .Down .Music .controls #Music-P[data-mode="play"] .play{
+    opacity: 0;
 }
 
-#Panel_Home .Down .Music .controls button.pause .play {
-    display: none;
+#Panel_Home .Down .Music .controls #Music-P[data-mode="pause"] .pause{
+    opacity: 0;
 }
+#Panel_Home .Down .Music .controls #Music-P[data-mode="pause"] .play{
+    opacity: 1;
+}
+
 
 #Panel_Home .Down .Music .Music-info {
     grid-row: 1;
@@ -369,7 +387,7 @@ body[data-panel="Open-Home"] #Panel_Home {
     mask-image: linear-gradient(to right,
             transparent 0%,
             transparent 10%,
-            black 60%,
+            black 30%,
             black 100%);
 
     mask-repeat: no-repeat;
@@ -381,11 +399,15 @@ body[data-panel="Open-Home"] #Panel_Home {
     grid-row: 1;
     grid-column: 2;
     position: absolute;
-    bottom: calc(2 * var(--panel_vw));
-    right: calc(2 * var(--panel_vw));
+    bottom: 0;
+    right: 0;
     font-weight: 900;
     color: #999;
     font-size: calc(4 * var(--panel_vw));
+    background-color: #00000070;
+    border-top-left-radius: calc(2 * var(--panel_vw));
+    padding: calc(1 * var(--panel_vw));
+    box-sizing: border-box;
 }
 
 #Panel_Home .Down .Music .Music-info .Music-data {
@@ -413,6 +435,8 @@ body[data-panel="Open-Home"] #Panel_Home {
 
     line-height: 1.2em;
     max-height: 2.4em;
+    font-weight: 700;
+    width: 120%;
     /* line-height × 2 */
 }
 
@@ -454,6 +478,10 @@ body[data-panel="Open-Home"] #Panel_Home {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: 0.7s ease-in-out;
+}
+#Panel_Home .Down .diary .header button:hover{
+    transform: rotateZ(180deg);
 }
 
 #Panel_Home .Down .diary .header button svg {

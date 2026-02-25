@@ -30,4 +30,8 @@ walkdir = "2"
 shellexpand = "3"
 qrcode = "0.12"
 base64 = "0.22"
-
+audiotags = "0.5"
+lofty = "0.20"
+natord = "1"
+rodio = "0.17"
+symphonia = { version = "0.5", features = ["mp3"] }

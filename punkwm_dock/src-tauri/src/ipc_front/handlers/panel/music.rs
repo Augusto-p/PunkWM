@@ -11,6 +11,9 @@ use serde_json::json;
 use serde_json::Value;            
 use serde::{Deserialize,Serialize};
 use std::fs;
+use crate::ipc::socket::socket_send;
+use crate::IpcMessage;
+
 
 pub fn ipc_front_handler_music_panel(msg: IpcFrontMessage) {
      match msg.name.as_str() {
@@ -464,7 +467,32 @@ pub fn ipc_front_handler_music_panel(msg: IpcFrontMessage) {
                 let _ = window.eval("document.querySelector('video').pause()").unwrap();
             }
         }
-
+        "Local:Load:Song"=>{
+            let command = IpcMessage::new("Panel:Music", "Local:Load:Song", json!({}));
+            let _ = socket_send(&command);
+        }
+        
+        "Local:Start:Song"=>{
+            let command = IpcMessage::new("Panel:Music", "Local:Start:Song", msg.data);
+            let _ = socket_send(&command);
+        }
+        "Local:Play:Song"=>{
+            let command = IpcMessage::new("Panel:Music", "Local:Play:Song", json!({}));
+            let _ = socket_send(&command);
+        }
+        "Local:Pause:Song"=>{
+            let command = IpcMessage::new("Panel:Music", "Local:Pause:Song", json!({}));
+            let _ = socket_send(&command);
+        }
+        "Local:Reset:Song"=>{
+            let command = IpcMessage::new("Panel:Music", "Local:Reset:Song", json!({}));
+            let _ = socket_send(&command);
+        }
+        "Local:Stop:Song"=>{
+            let command = IpcMessage::new("Panel:Music", "Local:Stop:Song", json!({}));
+            let _ = socket_send(&command);
+        }
+         
         
             _ => {
             println!(

@@ -8,6 +8,7 @@ use crate::ipc::handlers::system::handler_system;
 use crate::ipc::handlers::panel::home::handler_panel_home;
 use crate::ipc::handlers::panel::notify::handler_panel_notify;
 use crate::ipc::handlers::panel::apps::handler_panel_apps;
+use crate::ipc::handlers::panel::music::handler_panel_music;
 use crate::ipc::handlers::panel::network::handler_panel_network;
 
 pub fn handler(msg: IpcMessage) {
@@ -39,6 +40,9 @@ pub fn handler(msg: IpcMessage) {
         },
         "Panel:Network" =>{
             handler_panel_network(msg);
+        },
+        "Panel:Music" =>{
+            handler_panel_music(msg);
         },
         _ => {
             let _ = print_in_tty(&format!("Categoria desconocido: [{}]",msg.category));

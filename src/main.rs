@@ -4,15 +4,18 @@ mod wm;
 mod ipc;
 mod network_manager;
 mod google;
-
+mod localaudio;
 use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use utils::battery::Battery;
+use crate::localaudio::audio_thread::audio_thread;
+use crate::localaudio::entity::LocalAudioCommand;
 use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,
     desktops::{Desktop, get_all_desktops_paths, DockDesktop, search_docks,find_by_package, },
 };
 use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
-
+use crate::utils::paths::collect_files;
+use std::path::Path;
 use crate::wm::manager::WorkspaceManager;
 use std::{thread, time::Duration, sync::{mpsc, Arc},};
 use crate::custom_event::{main_thread_notifier::MainThreadNotifier, entity::CustomEvent,};
@@ -24,6 +27,8 @@ use crate::ipc::{server::start_ipc_server,
         panel::home::{sender_panel_home_weather_load, sender_panel_home_system_stats,sender_panel_home_google_calender_daily, sender_panel_home_google_oauth_url},
         panel::apps::sender_panel_apps_load_apps,
         panel::network::{sender_panel_network_load_wifi, sender_panel_network_share_wifi},
+        panel::music::sender_panel_music_local_load_songs,
+    
     },
         
 };
@@ -32,10 +37,12 @@ use crate::google::{
     oauth::{get_access_token, get_auth_url, exchange_code_for_token},
     calendar::get_daily,
 };
-
+use natord::compare_ignore_case;
+use crate::utils::song::Song;
     
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let (tx, rx) = mpsc::channel::<CustomEvent>();
+    let (tx_audio, rx_audio) = mpsc::channel::<LocalAudioCommand>();
     thread::spawn(move || {
         if let Some(manager) = BatteryManager::new() {
             let mut last: Option<Battery> = None;
@@ -118,11 +125,21 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     // ─────────────────────
     
     let notifier = MainThreadNotifier {
-        tx: tx.clone(),
+        tx_custom: tx.clone(),
+        tx_audio: tx_audio.clone(),
         conn: Arc::new(ipc_conn),
         root,
         wake_up_atom,
     };
+
+
+    
+
+    // 🔥 Hilo dedicado al audio
+    let notifier_audio = notifier.clone();
+    thread::spawn(move || {
+        audio_thread(notifier_audio,rx_audio);
+    });
 
     let notifier_clone = notifier.clone();
     thread::spawn(move || {
@@ -271,7 +288,6 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                             notifier_clone.send(CustomEvent::HomePanelLoadWeather());
                             
                         },
-
                         CustomEvent::HomePanelLoadDaily()=>{
                             if let Some(credenciales) = read_credentials(config.google.credentials_file.clone()) {
                                 let scopes = config.google.scopes.clone();
@@ -324,22 +340,17 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 });
                             }
                         },
-
-
                         CustomEvent::OpenAppsPanel()=>{
                             let notifier_clone = notifier.clone();
                             notifier_clone.send(CustomEvent::AppsPanelLoadApps());
                         },
-
                         CustomEvent::AppsPanelLoadApps()=>{
                             sender_panel_apps_load_apps(desktops.clone());
                         },
-
                         CustomEvent::AppsPanelSearch(q)=>{
                             let searchs = search_docks(&desktops.clone(), &q);
                             sender_panel_apps_load_apps(searchs.clone());
                         },
-
                         CustomEvent::AppsPanelOpenApp(package)=>{
                             let notifier_clone = notifier.clone();
                             if let Some(dock) = find_by_package(&desktops.clone(), &package) {
@@ -348,45 +359,37 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 notifier_clone.send(CustomEvent::AppsPanelLoadApps());
                             }
                         },
-                        
                         CustomEvent::OpenNetworkPanel()=>{
                             let notifier_clone = notifier.clone();
                             notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
                         },
-
                         CustomEvent::NetworkPanelLoadWiFi()=>{
                             let wifis = get_wifi_networks();
                             sender_panel_network_load_wifi(wifis);
                         },
-                        
                         CustomEvent::NetworkPanelConnectWiFi(ssid, password)=>{
                             if NetworkConnection::connect(&ssid, &password){
                                 let notifier_clone = notifier.clone();
                                 notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
                             }
                         },
-        
                         CustomEvent::NetworkPanelConnectWiFiPublic(ssid)=>{
                             if NetworkConnection::connect_public(&ssid){
                                 let notifier_clone = notifier.clone();
                                 notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
                             }
                         },
-        
                         CustomEvent::NetworkPanelShareWiFi()=>{
                             if let Some(qr_base64) = NetworkConnection::share_wifi() {
                                 sender_panel_network_share_wifi(qr_base64);
                             }
                         },
-        
                         CustomEvent::NetworkPanelDisconnectWiFi()=>{
                             if NetworkConnection::disconnect(){
                                 let notifier_clone = notifier.clone();
                                 notifier_clone.send(CustomEvent::NetworkPanelLoadWiFi());
                             }
                         },
-
-
                         CustomEvent::ClosePanel() =>{
                             if wm.panel.is_open(){
                                     wm.panel.close();
@@ -397,7 +400,27 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                                 wm.apply_layout();
                             }
                         },
-                        
+                        CustomEvent::SongsLocalLoad() =>{
+                           let mut songs_files = Vec::new();
+                           let mut songs = Vec::new();
+                           for folder in config.styles.music_folders.clone() {
+                                collect_files(Path::new(&folder), &mut songs_files);
+                            }
+                            for path in songs_files {
+                                if let Some(song) = Song::from_path(path){
+                                    songs.push(song)
+                                }
+                                
+                            }
+                            songs.sort_by(|a, b| {
+                                compare_ignore_case(&a.title, &b.title)
+                                    .then(compare_ignore_case(&a.album, &b.album))
+                                    .then(compare_ignore_case(&a.artist, &b.artist))
+                            });
+                            songs.dedup();
+                            sender_panel_music_local_load_songs(songs);
+                        },
+                             
                     }
                 }
             }

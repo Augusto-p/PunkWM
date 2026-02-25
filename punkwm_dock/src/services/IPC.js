@@ -40,6 +40,8 @@ const handlers = {
     "YT:Load Quik Picks": ({ songs })=> load_Songs(songs),
     "YT:Load Next Songs": ({ songs })=> load_Songs(songs),
     "YT:Load Search": ({ songs })=> load_Songs(songs),
+    "Local:Load Songs": ({songs})=>load_Songs(songs),
+    "Local:Current Time Song": ({current_time})=> Song_Time_Update(current_time),
   }
 
 };
@@ -61,6 +63,8 @@ async function IPC_Front_emit(category, name, data = {}) {
     data,
   });
 }
+
+
 
 
 async function sha1(message) {

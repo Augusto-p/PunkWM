@@ -19,5 +19,6 @@ pub enum CustomEvent {
     NetworkPanelConnectWiFiPublic(String),
     NetworkPanelDisconnectWiFi(),
     NetworkPanelShareWiFi(),
+    SongsLocalLoad(),
 }
 

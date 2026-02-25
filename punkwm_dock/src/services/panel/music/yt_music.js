@@ -36,4 +36,4 @@ async function emit_Music_Panel_YTMusic_Pause_Song() {
     await IPC_Front_emit("Panel:Music", "YT:Pause Song");
 }
 
-emit_Music_Panel_YTMusic_Mode_Start();
+// emit_Music_Panel_YTMusic_Mode_Start();

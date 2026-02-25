@@ -7,7 +7,7 @@ use crate::custom_event::main_thread_notifier::MainThreadNotifier;
 use crate::ipc::handlers::panel::home::handler_home_panel;
 use crate::ipc::handlers::panel::apps::handler_apps_panel;
 use crate::ipc::handlers::panel::network::handler_network_panel;
-
+use crate::ipc::handlers::panel::music::handler_music_panel;
 pub fn handler(msg: IpcMessage, notifier: &MainThreadNotifier) {
 
     match msg.category.as_str() {
@@ -28,6 +28,9 @@ pub fn handler(msg: IpcMessage, notifier: &MainThreadNotifier) {
         }
         "Panel:Network" =>{
             handler_network_panel(msg, &notifier);
+        }
+        "Panel:Music" =>{
+            handler_music_panel(msg, &notifier);
         }
         _ => {
             let t = format!("Categoria desconocido: [{}]",msg.category);

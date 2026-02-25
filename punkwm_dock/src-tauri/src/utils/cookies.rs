@@ -90,13 +90,13 @@ pub fn parse_cookies(text: &str) -> Vec<Cookie> {
         .collect()
 }
 pub trait CookieSearch {
-    fn search(&self, domain: &str, name: &str) -> Option<&Cookie>;
+    fn _search(&self, domain: &str, name: &str) -> Option<&Cookie>;
     fn search_many<'a>(&'a self,domain: &str,names: Vec<&str>,) -> Vec<&'a Cookie>;
 
 }
 
 impl CookieSearch for Vec<Cookie> {
-    fn search(&self, domain: &str, name: &str) -> Option<&Cookie> {
+    fn _search(&self, domain: &str, name: &str) -> Option<&Cookie> {
         self.iter().find(|c| {
             c.domain == domain && c.name == name
         })

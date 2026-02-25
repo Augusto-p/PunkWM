@@ -1,7 +1,7 @@
 const Songs = document.getElementById("Songs");
 const Panel_Music = document.getElementById("Panel_Music");
 const panel_music_searchbar = document.getElementById("panel_music_searchbar");
-const Local_Music_Player = document.getElementById("Local_Music_Player");
+
 function ToogleMusic(){
     let Panel_Mode = body.getAttribute("data-panel");
     if (Panel_Mode == null){
@@ -17,10 +17,14 @@ function ToogleMusic(){
 
 function openMusic(){
     body.dataset.panel = "Open-Music";
-    ToogleMusicSourse()
+    if (!Panel_Music.getAttribute("data-mode")) {    
+        ToogleMusicSourse()
+    }
+    
 }
 
-function newSong(id, title, artist, album, duration = "", cover, mode) {
+function newSong(index,id, title, artist, album, duration = "", cover, mode) {
+    
     let div = document.createElement("div");
     div.classList.add("song");
     div.innerHTML = `<div class="img" style="background-image: url('${cover}');">
@@ -32,30 +36,27 @@ function newSong(id, title, artist, album, duration = "", cover, mode) {
                 <span class="Album">${album}</span>`;
     div.addEventListener("click", ()=>{
         if (mode == "Local") {
-            Local_Music_Player.src = id;
-            Local_Music_Player.play();
-            Load_Song(title, artist, album, cover, mmssToInt(duration), mode);
+            emit_Music_Panel_Local_Start_Song(id)
         }else if (mode ="YT-Mucic"){
             emit_Music_Panel_YTMusic_Start_Song(id);
             emit_Music_Panel_YTMusic_Get_Next_Songs(id);
-            Load_Song(title, artist, album, cover, mmssToInt(duration), mode);
         }
-        console.log("Play: ", id);
+        Load_Song(index, title, artist, album, cover, mmssToInt(duration), mode);
+        
         
     });
     Songs.appendChild(div)    
 }
 function load_Songs(songs) {
     Songs.innerHTML = "";
-    songs.forEach(song => {
-        newSong(song.id, song.title, song.artist, song.album, song.duration, song.cover, song.mode);
-        
+    songs.forEach((song, index) => {        
+        newSong(index, song.id, song.title, song.artist, song.album, song.duration, song.cover, song.mode);
     });
 }
 
 function ToogleMusicSourse(mode) {
     if (!mode){
-        mode = window.localStorage.getItem("MusicSourse");
+        mode = window.localStorage.getItem("MusicSourse") ?? "Local";
     }
     if (mode == "YT-Mucic"){
         if (!get_Cookies_YT()) {
@@ -63,6 +64,8 @@ function ToogleMusicSourse(mode) {
         }else{
             emit_get_quick_picks();
         }
+    }else if (mode == "Local") {
+        emit_Music_Panel_Local_Load_Songs()   
     }
     
     Panel_Music.setAttribute("data-mode", mode)
