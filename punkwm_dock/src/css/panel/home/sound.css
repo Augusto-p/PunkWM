@@ -1,0 +1,225 @@
+#Panel_Home .Down .Sound {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-gap: calc(100% - 15vh - 40 * var(--panel_vw));
+    grid-template-rows: 100%;
+    grid-template-columns: 15vh calc(40 * var(--panel_vw));
+    justify-items: center;
+    position: relative;
+}
+#Panel_Home .Down .Sound .MusicBox{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: calc(5 * var(--panel_vw));
+    overflow: hidden;
+}
+#Panel_Home .Down .Sound .MusicBox #MusicCurrentTimeSvg{
+    position: absolute;
+    width: 1000%;
+    transition: .1s ease-in;
+    transform: rotateY(180deg) rotateZ(180deg);
+}
+#Panel_Home .Down .Sound .MusicBox #MusicCurrentTimeSvg path{
+    fill: #ffffff70;
+}
+
+#Panel_Home .Down .Sound .MusicBox:hover #MusicCurrentTimeSvg path{
+    fill: #ffffff;
+}
+
+#Panel_Home .Down .Sound #Music{
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: calc(5 * var(--panel_vw));
+    background-position: center;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 3vh;
+    box-shadow: inset 0px 0px calc(4 * var(--panel_vw)) #1f333e;
+}
+
+
+#Panel_Home .Down .Sound #Music .controls{
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 100%;
+    column-gap: calc(2 * var(--panel_vw));
+    padding: 0 calc(4 * var(--panel_vw));
+    box-sizing: border-box;
+    position: relative;
+}
+
+#Panel_Home .Down .Sound #Music .controls button{
+    outline: none;
+    border: none;
+    fill: #ffffff70;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.7s ease-in-out;
+    position: relative;
+}
+
+#Panel_Home .Down .Sound #Music .controls button:hover{
+    fill: #fff;
+    background-color: #1f333e80;
+    border-radius: 2vh;
+}
+#Panel_Home .Down .Sound #Music .controls button svg{
+    width: 60%;
+    transition: 0.7s ease-in-out;
+}
+#Panel_Home .Down .Sound #Music .controls button:hover svg{
+    width: 80%;
+}
+
+#Panel_Home .Down .Sound #Music .controls button svg.play,
+#Panel_Home .Down .Sound #Music .controls button svg.pause{
+    position: absolute;
+}
+
+#Panel_Home .Down .Sound #Music .controls button[data-mode="play"] .pause{
+    opacity: 1;
+}
+#Panel_Home .Down .Sound #Music .controls button[data-mode="play"] .play{
+    opacity: 0;
+}
+
+#Panel_Home .Down .Sound #Music .controls button[data-mode="pause"] .pause{
+    opacity: 0;
+}
+#Panel_Home .Down .Sound #Music .controls button[data-mode="pause"] .play{
+    opacity: 1;
+}
+
+#Panel_Home .Down .Sound #Music .info{
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 1vh calc(2 * var(--panel_vw));
+}
+
+#Panel_Home .Down .Sound #Music .info span{
+    display: block;
+    max-width: 100%;
+    width: fit-content;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    line-break: auto;
+    text-wrap-mode: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    margin: .5vh 0;
+    color: #ffffff70;
+    transition: 0.7s ease-in-out;
+}
+
+#Panel_Home .Down .Sound #Music:hover .info span{
+    color: #fff;
+    background-color: #1f333e80;
+}
+
+#Panel_Home .Down .Sound #Music .info span#MusicTittle{
+    font-weight: 900;
+    font-size: calc(5.5 * var(--panel_vw));
+}
+#Panel_Home .Down .Sound #Music .info span#MusicArtist{
+    font-weight: 600;
+    font-size: calc(4.5 * var(--panel_vw));
+}
+#Panel_Home .Down .Sound #Music .info span#MusicAlbum{
+    font-weight: 300;
+    font-size: calc(3.5 * var(--panel_vw));
+}
+
+#Panel_Home .Down .Sound #Music .info .duration{
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    right: calc(1 * var(--panel_vw));
+}
+#Panel_Home .Down .Sound #Music .info .duration span{
+    font-weight: 900;
+    font-size: calc(3 * var(--panel_vw));
+    user-select: none;
+}
+#Panel_Home .Down .Sound .SysControls{
+    grid-row: 1;
+    grid-column: 2;
+    height: 100%;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    column-gap: calc(3 * var(--panel_vw));
+    box-sizing: border-box;
+    padding: 0 calc(1 * var(--panel_vw));
+}
+ #Panel_Home .Down .Sound .SysControls #VolumeBox, #Panel_Home .Down .Sound .SysControls #GlowBox{
+    grid-row: 1;
+    height: 100%;
+    background-color: #1f333e80;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    border-radius: calc(5 * var(--panel_vw));
+    overflow: hidden;
+}
+
+#Panel_Home .Down .Sound .SysControls #VolumeBox .Volume, #Panel_Home .Down .Sound .SysControls #GlowBox .Glow{
+    
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ffffff;
+    height: calc(var(--value) * 1% + 1%);
+    transition: .7s ease-in-out;
+    pointer-events: none;
+}
+
+#Panel_Home .Down .Sound .SysControls #VolumeBox svg, #Panel_Home .Down .Sound .SysControls #GlowBox svg{
+    position: absolute;
+    z-index: 2;
+    width: 60%;
+    bottom: 1.5vh;
+    fill: #1f333e;
+    transition: .7s ease-in-out;
+    pointer-events: none;
+}
+#Panel_Home .Down .Sound .SysControls #GlowBox svg{
+    transform: rotateZ(calc(var(--value) * 36deg));
+}

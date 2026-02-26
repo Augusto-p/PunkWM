@@ -23,7 +23,7 @@ function openMusic(){
     
 }
 
-function newSong(index,id, title, artist, album, duration = "", cover, mode) {
+function newSong(index,id, title, artist, album, duration, cover, mode) {
     
     let div = document.createElement("div");
     div.classList.add("song");
@@ -36,12 +36,13 @@ function newSong(index,id, title, artist, album, duration = "", cover, mode) {
                 <span class="Album">${album}</span>`;
     div.addEventListener("click", ()=>{
         if (mode == "Local") {
-            emit_Music_Panel_Local_Start_Song(id)
+            PanelMusicLocal.StartSong(id);
+            // emit_Music_Panel_Local_Start_Song(id)
         }else if (mode ="YT-Mucic"){
             emit_Music_Panel_YTMusic_Start_Song(id);
             emit_Music_Panel_YTMusic_Get_Next_Songs(id);
         }
-        Load_Song(index, title, artist, album, cover, mmssToInt(duration), mode);
+        SongWidgetLoad(index, title, artist, album, cover, duration, mode);
         
         
     });
@@ -65,7 +66,8 @@ function ToogleMusicSourse(mode) {
             emit_get_quick_picks();
         }
     }else if (mode == "Local") {
-        emit_Music_Panel_Local_Load_Songs()   
+        PanelMusicLocal.LoadSongs();
+        // emit_Music_Panel_Local_Load_Songs()   
     }
     
     Panel_Music.setAttribute("data-mode", mode)

@@ -1,68 +1,123 @@
-const Music_Art = document.getElementById("Music-image");
-const Music_Title = document.getElementById("Music-Tittle");
-const Music_Artist = document.getElementById("Music-Artist");
-const Music_Album = document.getElementById("Music-Album");
-const Music_Time = document.getElementById("Music-time");
-const Music_P = document.getElementById("Music-P");
+const SongWidget = document.getElementById("Music");
+const SongWidgetTittle = document.getElementById("MusicTittle");
+const SongWidgetArtist = document.getElementById("MusicArtist");
+const SongWidgetAlbum = document.getElementById("MusicAlbum");
+const SongWidgetMusicCurrentTimeSvg = document.getElementById("MusicCurrentTimeSvg");
+const SongWidgetMusicCurrentTime = document.getElementById("MusicCurrentTime");
+const SongWidgetMusicDuration = document.getElementById("MusicDuration");
+const SongWidgetMusicPlayPause = document.getElementById("MusicPlayPause");
 
-function Load_Song(index, Title,Artist, Album, Art, Duration, mode) {
-    Music_Title.textContent = Title.trim();
-    Music_Artist.textContent = Artist.trim();
-    Music_Album.textContent = Album.trim();
-    Music_Art.src = Art;
-    Music_Time.textContent = `00:00/${formatTime(Duration)}`;
-    Music_P.setAttribute("data-index", index);
+const SysVolume = document.getElementById("VolumeBox");
+const SysGlow = document.getElementById("GlowBox");
+
+
+function SongWidgetUpdateCurrentTimeSvg(percent) {
+  degrees = percent * 3.6;
+  SongWidgetMusicCurrentTimeSvg.innerHTML = "";
+  const cx = 100;
+  const cy = 100;
+  const r = 80;
+  const radians = (degrees - 90) * Math.PI / 180;
+  const x = cx + r * Math.cos(radians);
+  const y = cy + r * Math.sin(radians);
+  const largeArcFlag = degrees > 180 ? 1 : 0;
+  const pathData = `
+    M ${cx} ${cy}
+    L ${cx} ${cy - r}
+    A ${r} ${r} 0 ${largeArcFlag} 1 ${x} ${y}
+    Z
+  `;
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", pathData);
+  SongWidgetMusicCurrentTimeSvg.appendChild(path);
 }
 
-function Song_Time_Update(seconds) {
-    Music_Time.textContent = `${formatTime(seconds)}/${Music_Time.textContent.slice(Music_Time.textContent.indexOf("/") + 1)}`;
+function SongWidgetUpdateCurrentTime(currentTime) {
+  SongWidgetMusicCurrentTime.textContent = formatTime(currentTime);
+  let duration = parseInt(SongWidget.getAttribute("data-duration"), 10);
+  let percent = currentTime * 100 / duration;
+  SongWidgetUpdateCurrentTimeSvg(percent);
+  SongWidget.setAttribute("data-currentTime", currentTime);
+  if (duration == currentTime) {
+    SongWidgetNext();
+  }
 }
 
-function formatTime(seconds) {
-  const min = Math.floor(seconds / 60);
-  const sec = Math.floor(seconds % 60);
-
-  return `${min.toString()}:${sec.toString().padStart(2, "0")}`;
-
+function SongWidgetLoad(position, title, artist, album, cover, duration, mode) {
+  SongWidget.setAttribute("data-duration", duration);
+  SongWidget.setAttribute("data-mode", mode);
+  SongWidget.setAttribute("data-position", position);
+  SongWidget.style.backgroundImage = `url("${cover}")`;
+  SongWidgetTittle.textContent = title;
+  SongWidgetArtist.textContent = artist;
+  SongWidgetAlbum.textContent = album;
+  SongWidgetMusicDuration.textContent = duration;
 }
-function mmssToInt(tiempo) {
-  const [min, seg] = tiempo.split(":").map(Number);
-  return (min * 60) + seg;
+
+function SongWidgetNext() {
+  if (window.localStorage.getItem("MusicSourse") == "Local") {
+    let position = SongWidget.getAttribute("data-position");
+    let songsChildNodesLength = Songs.childNodes.length;
+    Songs.childNodes[( position + 1) % songsChildNodesLength].click();
+  }
 }
 
-function PlayPauseSong() {
-  if (Music_P.getAttribute("data-mode") == "play") {
-      Music_P.setAttribute("data-mode", "pause")
-      if (window.localStorage.getItem("MusicSourse") == "Local") {
-          emit_Music_Panel_Local_Pause_Songs()
-      }else if(window.localStorage.getItem("MusicSourse") == "YT_Music") {
-        emit_Music_Panel_YTMusic_Pause_Song();
-      }
-  }else{
-    Music_P.setAttribute("data-mode", "play")
+function SongWidgetPre() {
+  if (window.localStorage.getItem("MusicSourse") == "Local") {
+    let currentTime = SongWidget.getAttribute("data-currentTime");
+    if (currentTime > 5) {
+      // emit_Music_Panel_Local_Reset_Songs();
+      PanelMusicLocal.ResetSong();
+    } else {
+      let position = SongWidget.getAttribute("data-position");
+      let songsChildNodesLength = Songs.childNodes.length;
+      Songs.childNodes[(position - 1) % songsChildNodesLength].click()
+    }
+  }
+}
+
+function SongWidgetPlayPause() {
+  if (SongWidgetMusicPlayPause.getAttribute("data-mode") == "play") {
+    SongWidgetMusicPlayPause.setAttribute("data-mode", "pause");
     if (window.localStorage.getItem("MusicSourse") == "Local") {
-          emit_Music_Panel_Local_Play_Songs()
-    }else if(window.localStorage.getItem("MusicSourse") == "YT_Music") {
+      // emit_Music_Panel_Local_Pause_Songs()
+      PanelMusicLocal.PauseSong();
+    } else if (window.localStorage.getItem("MusicSourse") == "YT_Music") {
+      emit_Music_Panel_YTMusic_Pause_Song();
+    }
+  } else {
+    SongWidgetMusicPlayPause.setAttribute("data-mode", "play");
+    if (window.localStorage.getItem("MusicSourse") == "Local") {
+      // emit_Music_Panel_Local_Play_Songs()
+      PanelMusicLocal.PlaySong();
+    } else if (window.localStorage.getItem("MusicSourse") == "YT_Music") {
       emit_Music_Panel_YTMusic_Play_Song();
     }
   }
+
+}
+
+SysVolume.addEventListener("click", (e)=>{
+  let percent = roundToMultiple(Math.round(100 - e.layerY * 100 / SysVolume.offsetHeight));
+  SysVolume.setAttribute("data-Volume", percent);
+  SysVolume.style.setProperty("--value", percent);
+  //UpdateVolumenBack 
+})
+
+
+SysGlow.addEventListener("click", (e)=>{
+  let percent = roundToMultiple(Math.round(100 - e.layerY * 100 / SysGlow.offsetHeight));
+  SysGlow.setAttribute("data-Glow", percent);
+  SysGlow.style.setProperty("--value", percent);
+  //UpdateGlowBack 
+})
+
+function roundToMultiple(x) {
+  let x2 = Math.round(x / 2) * 2;
+  let x5 = Math.round(x / 5) * 5;
+  if (Math.abs(x - x2) < Math.abs(x - x5)){
+    return x2;
+  }
+  return x5
   
-}
-
-
-function PreSong() {
-  if (window.localStorage.getItem("MusicSourse") == "Local") {
-    if (Local_Music_Player.currentTime > 5) {
-        emit_Music_Panel_Local_Reset_Songs();
-    }else{
-      let currentIndex = Music_P.getAttribute("data-index");
-      Songs.childNodes[(currentIndex+1)%Songs.childNodes.length].click()
-    }
-  }  
-}
-function NextSong() {
-  if (window.localStorage.getItem("MusicSourse") == "Local") {
-    let currentIndex = Music_P.getAttribute("data-index");
-    Songs.childNodes[(currentIndex+1)%Songs.childNodes.length].click()
-  }  
 }

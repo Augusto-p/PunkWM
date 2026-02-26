@@ -17,31 +17,31 @@ const handlers = {
   System: {
     "Panel:Load": ({ dock_width, panel_width }) => panel_load(dock_width, panel_width),
     "Panel:Close": () => body.removeAttribute("data-panel"),
-    
+
   },
-  "Panel:Home":{
+  "Panel:Home": {
     "Google:Daily": ({ events }) => Load_Diary(events),
     "System:Stats": ({ cpu, ram, disk, gpu }) => Load_stats(cpu, ram, disk, gpu),
     "Weather:Load": ({ temp, phrase, icon, wind_direction, wind_speed }) => Load_weather(temp, phrase, icon, wind_direction, wind_speed),
     "Google:Oauth:url": ({ Url }) => set_diary_login_mode(Url),
   },
-  "Panel:Notify":{
-    "New": ({ app, icon, title, message, now }) => appendNotify(`${app}_${now}`, app, title, message.split("\n").reverse()[0] , now, icon, ),
+  "Panel:Notify": {
+    "New": ({ app, icon, title, message, now }) => appendNotify(`${app}_${now}`, app, title, message.split("\n").reverse()[0], now, icon,),
   },
-  "Panel:Apps":{
+  "Panel:Apps": {
     "Load:Apps": ({ Apps }) => LoadApps(Apps),
   },
-  "Panel:Network":{
+  "Panel:Network": {
     "Load:WiFi": ({ WiFis }) => Load_wifis(WiFis),
     "Share:WiFi": ({ QR }) => openShareWiFi(QR),
   },
-  "Panel:Music":{
-    "YT:Set Cookies": (cookies)=> Save_Cookies_YT(cookies),
-    "YT:Load Quik Picks": ({ songs })=> load_Songs(songs),
-    "YT:Load Next Songs": ({ songs })=> load_Songs(songs),
-    "YT:Load Search": ({ songs })=> load_Songs(songs),
-    "Local:Load Songs": ({songs})=>load_Songs(songs),
-    "Local:Current Time Song": ({current_time})=> Song_Time_Update(current_time),
+  "Panel:Music": {
+    "YT:Set Cookies": (cookies) => Save_Cookies_YT(cookies),
+    "YT:Load Quik Picks": ({ songs }) => load_Songs(songs),
+    "YT:Load Next Songs": ({ songs }) => load_Songs(songs),
+    "YT:Load Search": ({ songs }) => load_Songs(songs),
+    "Local:Load Songs": ({ songs }) => load_Songs(songs),
+    "Local:Current Time Song": ({ current_time }) => SongWidgetUpdateCurrentTime(current_time),
   }
 
 };
@@ -66,17 +66,12 @@ async function IPC_Front_emit(category, name, data = {}) {
 
 
 
-
-async function sha1(message) {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(message);
-
-  const hashBuffer = await crypto.subtle.digest("SHA-1", data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-
-  const hashHex = hashArray
-    .map(b => b.toString(16).padStart(2, "0"))
-    .join("");
-
-  return hashHex;
+class Sender {
+  static async Emit(category, name, data = {}) {
+    await TAURI_EVENT.emit("IPC-Front", {
+      category,
+      name,
+      data,
+    });
+  }
 }
