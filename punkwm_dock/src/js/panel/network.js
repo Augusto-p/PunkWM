@@ -8,7 +8,7 @@ const panel_network_connected_wifi_SSID_view = document.getElementById("connecte
 function ToogleWiFi(){
     let Panel_Mode = body.getAttribute("data-panel");
     if (Panel_Mode == null){
-        emit_Open_Panel();
+        Panel.Open();
         openWiFi();
     }else if (Panel_Mode != "Open-WiFi") {
         openWiFi();
@@ -19,12 +19,13 @@ function ToogleWiFi(){
 
 function openWiFi(){
     body.dataset.panel = "Open-WiFi";
-    emit_network_panel_open()
+    PanelNetwork.Open();
+
 }
 
 function ToogleShareWifi() {
     if (!share_wifi.classList.contains("view")) {
-        emit_network_panel_share_wifi();
+        PanelNetwork.ShareWiFi();
     }else{
         share_wifi.classList.remove("view");
 
@@ -54,12 +55,13 @@ function NewWifi(ssid, level, security, connected) {
                     <svg class="ulinked" xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960"><path d="m770-302-60-62q40-11 65-42.5t25-73.5q0-50-35-85t-85-35H520v-80h160q83 0 141.5 58.5T880-480q0 57-29.5 105T770-302ZM634-440l-80-80h86v80h-6ZM792-56 56-792l56-56 736 736-56 56ZM440-280H280q-83 0-141.5-58.5T80-480q0-69 42-123t108-71l74 74h-24q-50 0-85 35t-35 85q0 50 35 85t85 35h160v80ZM320-440v-80h65l79 80H320Z"/></svg>`;
     button.addEventListener("click", ()=>{
       if(connected){
-        emit_network_panel_disconnect_wifi();
+        PanelNetwork.DisconnectWiFi();
       }else{
         if (security) {
             OpenConnect(ssid);
         }else{
-            emit_network_panel_connect_wifi_Public(ssid);
+            PanelNetwork.ConnectWiFiPublic(ssid);
+            
             
         }
       }
@@ -117,7 +119,7 @@ panel_network_password.addEventListener("keyup", (e)=>{
     if (e.key === "Enter") {   
         let password = panel_network_password.value;
         let SSID = panel_network_password.getAttribute("data-SSID");
-        emit_network_panel_connect_wifi(SSID, password);
+        PanelNetwork.ConnectWiFi(SSID, password);
         CloseConnect()
     }
 

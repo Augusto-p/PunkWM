@@ -1,14 +1,6 @@
-async function emit_panel_apps_search(query) {
-    await IPC_Front_emit("Panel:Apps", "Search", {"q": query });
-}
-
-async function emit_panel_apps_open_app(package) {
-    await IPC_Front_emit("Panel:Apps", "Open App", {"package": package});
-}
-async function emit_panel_apps_open() {
-    await IPC_Front_emit("Panel:Apps", "Open");
-}
-
-async function emit_panel_apps_load_apps() {
-    await IPC_Front_emit("Panel:Apps", "Load Apps");
+class PanelApps extends Sender {
+    static async Open(){super.Emit("Panel:Apps", "Open");}
+    static async LoadApps(){super.Emit("Panel:Apps", "Load Apps");}
+    static async OpenApp(package){super.Emit("Panel:Apps", "Open App", {"package": package});}
+    static async SearchApps(query){super.Emit("Panel:Apps", "Search", {"q": query });}
 }

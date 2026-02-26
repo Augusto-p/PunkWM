@@ -9,14 +9,13 @@ function openHome(){
     const month = new Intl.DateTimeFormat(undefined, {month: 'long'}).format(today);
     home_date_day.textContent = name_day.charAt(0).toUpperCase() + name_day.slice(1);
     home_date_date.textContent = `${today.getDate()} ${month.charAt(0).toUpperCase() + month.slice(1)}`;
-    emit_Open_Home_Panel();
-    
+    PanelHome.Open();
 }
 
 function ToggleHome(){
     let Panel_Mode = body.getAttribute("data-panel");
     if (Panel_Mode == null){
-        emit_Open_Panel();
+        Panel.Open();
         openHome();
     }else if (Panel_Mode != "Open-Home") {
         openHome();

@@ -1,13 +1,7 @@
-function emit_system_poweroff() {
-    IPC_emit("System", "Poweroff");
+class System extends Sender {
+    static async Poweroff(){super.Emit("System", "Poweroff");}
+    static async Reboot(){super.Emit("System", "Reboot");}
+    static async Start(){super.Emit("System", "Start");}
 }
-function emit_system_reboot() {
-    IPC_emit("System", "Reboot");
-}
-
-function emit_system_start() {
-    IPC_emit("System", "Start");
-}
-
-emit_system_start();
+System.Start();
 window.focus()

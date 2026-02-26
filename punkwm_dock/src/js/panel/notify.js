@@ -9,7 +9,7 @@ function openNotify(){
 function ToggleNotify(){
     let Panel_Mode = body.getAttribute("data-panel");
     if (Panel_Mode == null){
-        emit_Open_Panel();
+        Panel.Open();
         openNotify();
     }else if (Panel_Mode != "Open-Notify") {
         openNotify();

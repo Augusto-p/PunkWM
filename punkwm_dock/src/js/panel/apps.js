@@ -3,7 +3,7 @@ const panel_apps_searchbar = document.getElementById("panel_apps_searchbar")
 function ToogleApps(){
     let Panel_Mode = body.getAttribute("data-panel");
     if (Panel_Mode == null){
-        emit_Open_Panel();
+        Panel.Open();
         openApps();
     }else if (Panel_Mode != "Open-Apps") {
         openApps();
@@ -16,7 +16,8 @@ function ToogleApps(){
 
 function openApps(){
     body.dataset.panel = "Open-Apps";
-    emit_panel_apps_open();
+    PanelApps.Open();
+    
 }
 
 function NewApp(Name, Image, Package) {
@@ -56,17 +57,18 @@ let panel_apps_searchbar_timer = null;
 panel_apps_searchbar.addEventListener("keyup", (e)=>{
     if (e.key === "Enter") {
         if (panel_apps_searchbar.value == "") {
-            emit_panel_apps_load_apps();
+            PanelApps.LoadApps();
         }else{
-            emit_panel_apps_search(panel_apps_searchbar.value);
+            PanelApps.SearchApps(panel_apps_searchbar.value);
+            
         }
     }
     clearTimeout(panel_apps_searchbar_timer);
     panel_apps_searchbar_timer = setTimeout(() => {
         if (panel_apps_searchbar.value == "") {
-            emit_panel_apps_load_apps();
+            PanelApps.LoadApps();
         }else{
-            emit_panel_apps_search(panel_apps_searchbar.value);
+            PanelApps.SearchApps(panel_apps_searchbar.value);
         }
     }, 1000);
 })
@@ -74,6 +76,7 @@ panel_apps_searchbar.addEventListener("keyup", (e)=>{
 
 function App_Open(Package){
     panel_apps_searchbar.value = "";
-    emit_panel_apps_open_app(Package);
+    PanelApps.OpenApp(Package);
+    
 
 }

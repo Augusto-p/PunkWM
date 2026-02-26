@@ -1,3 +1,3 @@
-async function emit_layout_toggle() {
-    await IPC_Front_emit("Layout", "Toggle");
+class Layout extends Sender {
+    static async Toggle(){super.Emit("Layout", "Toggle");}
 }

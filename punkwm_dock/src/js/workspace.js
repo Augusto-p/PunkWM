@@ -8,7 +8,7 @@ function updateWorkspaces(workspace) {
     workspaces.innerHTML = ""
     for (let index = 0; index < 9; index++) {
         let mode = workspace[index];
-        workspaces.innerHTML += `<button onclick="emit_workspace_set(this)" data-workspace="${index}">${getModeImage(mode)}</button>`
+        workspaces.innerHTML += `<button onclick="Workspace.Set(this)" data-workspace="${index}">${getModeImage(mode)}</button>`
 
     }
     function getGhostColor() {

@@ -129,7 +129,8 @@ function setLayout(layout) {
 }
 
 function toggleLayout() {
-    emit_layout_toggle() 
+    Layout.Toggle();
+    
     Layout = (Layout +1) % 15;
     layout_btn.innerHTML = Layouts[Layout]
     //IPC

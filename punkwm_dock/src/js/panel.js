@@ -16,6 +16,6 @@ function panel_load(dock_width, panel_width) {
 panel_load(80,300)
 function panel_close() {
     body.removeAttribute("data-panel");
-    emit_Close_Panel();
+    Panel.Close();
     
 }

@@ -23,6 +23,12 @@ pub fn handler_system(msg: IpcMessage, notifier: &MainThreadNotifier) {
         "Open Panel"=>{notifier.send(CustomEvent::OpenPanel());}
         "Close Panel"=>{notifier.send(CustomEvent::ClosePanel());}
 
+        "Set Volume"=>{
+            let _ = print_in_tty("WM Socket: Set Volume");
+        },
+        "Set Glow"=>{
+            let _ = print_in_tty("WM Socket: Set Glow");
+        },
         _ => {
             let t = format!("Nombre desconocido: [{}:{}]",
                 msg.category,

@@ -46,6 +46,15 @@ pub fn ipc_front_handler_system(msg: IpcFrontMessage) {
             let command = IpcMessage::new("System", "Close Panel", json!({}));
             let _ = socket_send(&command);
         }
+
+        "Set Volume" => {
+            let command = IpcMessage::new("System", "Set Volume", msg.data);
+            let _ = socket_send(&command);
+        }
+        "Set Glow" => {
+            let command = IpcMessage::new("System", "Set Glow", msg.data);
+            let _ = socket_send(&command);
+        }
         _ => {
             println!(
                 "Nombre desconocido: [{}:{}]",

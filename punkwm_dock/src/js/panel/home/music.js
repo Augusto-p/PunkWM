@@ -66,7 +66,6 @@ function SongWidgetPre() {
   if (window.localStorage.getItem("MusicSourse") == "Local") {
     let currentTime = SongWidget.getAttribute("data-currentTime");
     if (currentTime > 5) {
-      // emit_Music_Panel_Local_Reset_Songs();
       PanelMusicLocal.ResetSong();
     } else {
       let position = SongWidget.getAttribute("data-position");
@@ -80,18 +79,16 @@ function SongWidgetPlayPause() {
   if (SongWidgetMusicPlayPause.getAttribute("data-mode") == "play") {
     SongWidgetMusicPlayPause.setAttribute("data-mode", "pause");
     if (window.localStorage.getItem("MusicSourse") == "Local") {
-      // emit_Music_Panel_Local_Pause_Songs()
       PanelMusicLocal.PauseSong();
     } else if (window.localStorage.getItem("MusicSourse") == "YT_Music") {
-      emit_Music_Panel_YTMusic_Pause_Song();
+      PanelMusicYT.pause();
     }
   } else {
     SongWidgetMusicPlayPause.setAttribute("data-mode", "play");
     if (window.localStorage.getItem("MusicSourse") == "Local") {
-      // emit_Music_Panel_Local_Play_Songs()
       PanelMusicLocal.PlaySong();
     } else if (window.localStorage.getItem("MusicSourse") == "YT_Music") {
-      emit_Music_Panel_YTMusic_Play_Song();
+      PanelMusicYT.play();
     }
   }
 
@@ -101,7 +98,7 @@ SysVolume.addEventListener("click", (e)=>{
   let percent = roundToMultiple(Math.round(100 - e.layerY * 100 / SysVolume.offsetHeight));
   SysVolume.setAttribute("data-Volume", percent);
   SysVolume.style.setProperty("--value", percent);
-  //UpdateVolumenBack 
+  System.setVolume(percent);
 })
 
 
@@ -109,7 +106,7 @@ SysGlow.addEventListener("click", (e)=>{
   let percent = roundToMultiple(Math.round(100 - e.layerY * 100 / SysGlow.offsetHeight));
   SysGlow.setAttribute("data-Glow", percent);
   SysGlow.style.setProperty("--value", percent);
-  //UpdateGlowBack 
+  System.setGlow(percent);
 })
 
 function roundToMultiple(x) {

@@ -182,11 +182,11 @@ function set_diary_login_mode(url){
 
 function diary_reresh() {
     set_diary_load_mode();
-    emit_Home_Panel_Refresh_Diary();
-    
+    PanelHomeDaily.Refresh();
 }
 
 function oauth_login(url){
-    emit_Home_Panel_Google_Login(url);
+    PanelHomeDaily.GoogleLogin(url);
+
     set_diary_load_mode();
 }

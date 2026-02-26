@@ -5,7 +5,7 @@ const panel_music_searchbar = document.getElementById("panel_music_searchbar");
 function ToogleMusic(){
     let Panel_Mode = body.getAttribute("data-panel");
     if (Panel_Mode == null){
-        emit_Open_Panel();
+        Panel.Open();
         openMusic();
     }else if (Panel_Mode != "Open-Music") {
         openMusic();
@@ -37,10 +37,10 @@ function newSong(index,id, title, artist, album, duration, cover, mode) {
     div.addEventListener("click", ()=>{
         if (mode == "Local") {
             PanelMusicLocal.StartSong(id);
-            // emit_Music_Panel_Local_Start_Song(id)
         }else if (mode ="YT-Mucic"){
-            emit_Music_Panel_YTMusic_Start_Song(id);
-            emit_Music_Panel_YTMusic_Get_Next_Songs(id);
+            PanelMusicYT.startSong();
+            PanelMusicYT.nextSongs(id);
+
         }
         SongWidgetLoad(index, title, artist, album, cover, duration, mode);
         
@@ -60,14 +60,13 @@ function ToogleMusicSourse(mode) {
         mode = window.localStorage.getItem("MusicSourse") ?? "Local";
     }
     if (mode == "YT-Mucic"){
-        if (!get_Cookies_YT()) {
-            emit_Music_Panel_YTMusic_Mode_Start();
+        if (!PanelMusicYT.getCookies()) {
+            PanelMusicYT.start();
         }else{
-            emit_get_quick_picks();
+            PanelMusicYT.quickPicks();
         }
     }else if (mode == "Local") {
         PanelMusicLocal.LoadSongs();
-        // emit_Music_Panel_Local_Load_Songs()   
     }
     
     Panel_Music.setAttribute("data-mode", mode)
@@ -79,7 +78,7 @@ panel_music_searchbar.addEventListener("keyup", (e)=>{
         let mode = window.localStorage.getItem("MusicSourse");
         if (mode == "YT-Mucic"){
             if(panel_music_searchbar.value == ""){
-                emit_Music_Panel_YTMusic_Get_Quick_Picks()
+                PanelMusicYT.quickPicks();
             }
         }
         console.log("Sarch: ", panel_music_searchbar.value);

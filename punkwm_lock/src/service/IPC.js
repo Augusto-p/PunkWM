@@ -14,12 +14,12 @@ TAURI_EVENT.listen("ipc", (event) => {
 
 });
 
-async function IPC_emit(category, name, data = {}) {
-  await TAURI_EVENT.emit("IPC", {
-    category,
-    name,
-    data,
-  });
+class Sender {
+  static async Emit(category, name, data = {}) {
+    await TAURI_EVENT.emit("IPC-Front", {
+      category,
+      name,
+      data,
+    });
+  }
 }
-
-

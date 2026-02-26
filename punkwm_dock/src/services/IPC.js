@@ -36,7 +36,7 @@ const handlers = {
     "Share:WiFi": ({ QR }) => openShareWiFi(QR),
   },
   "Panel:Music": {
-    "YT:Set Cookies": (cookies) => Save_Cookies_YT(cookies),
+    "YT:Set Cookies": (cookies) => PanelMusicYT.saveCookies(cookies),
     "YT:Load Quik Picks": ({ songs }) => load_Songs(songs),
     "YT:Load Next Songs": ({ songs }) => load_Songs(songs),
     "YT:Load Search": ({ songs }) => load_Songs(songs),
