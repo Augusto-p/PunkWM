@@ -17,7 +17,8 @@ const handlers = {
   System: {
     "Panel:Load": ({ dock_width, panel_width }) => panel_load(dock_width, panel_width),
     "Panel:Close": () => body.removeAttribute("data-panel"),
-
+    "Set:Volume": ({ Volume })=>{SysVolume.setAttribute("data-Volume", Volume);SysVolume.style.setProperty("--value", Volume);},
+    "Set:Glow": ({ Glow })=>{SysGlow.setAttribute("data-Glow", Glow);SysGlow.style.setProperty("--value", Glow);},
   },
   "Panel:Home": {
     "Google:Daily": ({ events }) => Load_Diary(events),
@@ -40,6 +41,8 @@ const handlers = {
     "YT:Load Quik Picks": ({ songs }) => load_Songs(songs),
     "YT:Load Next Songs": ({ songs }) => load_Songs(songs),
     "YT:Load Search": ({ songs }) => load_Songs(songs),
+    "YT:ViewStatus": ({ status }) => console.log(status),
+    "YT:Load Current Time": ({ time }) => SongWidgetUpdateCurrentTime(time),
     "Local:Load Songs": ({ songs }) => load_Songs(songs),
     "Local:Current Time Song": ({ current_time }) => SongWidgetUpdateCurrentTime(current_time),
   }

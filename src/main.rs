@@ -5,12 +5,14 @@ mod ipc;
 mod network_manager;
 mod google;
 mod localaudio;
-use crate::utils::config::print_in_tty;
+use crate::ipc::senders::system::{sender_system_glow, sender_system_volume};
+use crate::utils::brightness::Brightness;
+// use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
+use crate::utils::volume::Volume;
 use utils::battery::Battery;
-use crate::localaudio::audio_thread::audio_thread;
-use crate::localaudio::entity::LocalAudioCommand;
-use crate::utils::{tools::spawn, battery::BatteryManager,system::system_usage,weather::get_weather,
+use crate::localaudio::{entity::LocalAudioCommand,audio_thread::audio_thread};
+use crate::utils::{tools::spawn, battery::BatteryManager,system::SystemUsage,weather::get_weather,
     desktops::{Desktop, get_all_desktops_paths, DockDesktop, search_docks,find_by_package, },
 };
 use x11rb::{connection::Connection, protocol::{Event, xproto::*},};
@@ -23,7 +25,7 @@ use crate::network_manager::{NetworkManager, Device, DeviceState, wifi::get_wifi
 use crate::ipc::{server::start_ipc_server,
     senders::{  layout::sender_layout_set, battery::sender_battery_update, workspace::sender_workspace_update, 
         network::sender_network_deveice_state, 
-        system::{sender_system_load_panel, sender_system_panel_close, },
+        system::{sender_system_load_panel, sender_system_panel_close,},
         panel::home::{sender_panel_home_weather_load, sender_panel_home_system_stats,sender_panel_home_google_calender_daily, sender_panel_home_google_oauth_url},
         panel::apps::sender_panel_apps_load_apps,
         panel::network::{sender_panel_network_load_wifi, sender_panel_network_share_wifi},
@@ -283,7 +285,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                         },
                         CustomEvent::OpenHomePanel()=>{
                             let notifier_clone = notifier.clone();
-                            sender_panel_home_system_stats(system_usage());
+                            sender_panel_home_system_stats(SystemUsage::get());
+                            sender_system_volume(Volume::get());
+                            sender_system_glow(Brightness::get());
                             notifier_clone.send(CustomEvent::HomePanelLoadDaily());
                             notifier_clone.send(CustomEvent::HomePanelLoadWeather());
                             

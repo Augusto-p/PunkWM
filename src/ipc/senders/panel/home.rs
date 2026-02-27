@@ -2,7 +2,7 @@
 use crate::ipc::message::IpcMessage;
 use crate::ipc::socket::socket_send_dock;
 use crate::google::calendar::CalenderEventEntry;
-use crate::utils::system::Usage;
+use crate::utils::system::SystemUsage;
 use crate::utils::weather::Weather;
 
 use serde_json::json;
@@ -13,7 +13,7 @@ pub fn sender_panel_home_google_calender_daily(daily: Vec<CalenderEventEntry>){
     let _ = socket_send_dock(&msg);
 }
 
-pub fn sender_panel_home_system_stats(stats: Usage){
+pub fn sender_panel_home_system_stats(stats: SystemUsage){
     let msg = IpcMessage::new("Panel:Home","System:Stats", serde_json::to_value(&stats).unwrap());
     let _ = socket_send_dock(&msg);
 }

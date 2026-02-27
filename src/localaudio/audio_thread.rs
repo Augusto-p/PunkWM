@@ -1,7 +1,7 @@
 
 use rodio::{Decoder, OutputStream, Sink};
 use std::fs::File;
-use crate::utils::config::print_in_tty;
+// use crate::utils::config::print_in_tty;
 use std::io::BufReader;
 use std::sync::{mpsc::Receiver, Arc, Mutex};
 use std::thread;

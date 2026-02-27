@@ -22,6 +22,14 @@ pub fn handler_system(msg: IpcMessage) {
             let _ = api_ipc.emit(msg.clone());
         }
 
+        "Set Volume" => {
+            let api_ipc = get_api_ipc();
+            let _ = api_ipc.emit(msg.clone());
+        }
+        "Set Glow" => {
+            let api_ipc = get_api_ipc();
+            let _ = api_ipc.emit(msg.clone());
+        }
         _ => {
             println!(
                 "Nombre desconocido: [{}:{}]",

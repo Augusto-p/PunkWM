@@ -58,10 +58,10 @@
 <details>
   <summary style="font-size: 20px; font-weight: bold;">Layouts</summary>
 
-  | Pos | Description | Wiew with 1 window |  Wiew with 2 window |  Wiew with 3 window | Wiew with 4 window | Wiew with 5 window |
-  |:--:|:----------------|:---:|:----:|:---:|:---:|:--:|
-  |11| Each window takes up the full screen without respecting margins. |<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|
-  |14| This layout makes each window occupy the entire screen while respecting the margins. |<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|
+  | Pos | Name| Description | Wiew with 1 window |  Wiew with 2 window |  Wiew with 3 window | Wiew with 4 window | Wiew with 5 window |
+  |:--:|:--:|:----------------|:---:|:----:|:---:|:---:|:--:|
+  |11| Full Screen |Each window takes up the full screen without respecting margins. |<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|<img src=".github/image/layouts/fullscreen.svg"/>|
+  |14| Max |This layout makes each window occupy the entire screen while respecting the margins. |<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|<img src=".github/image/layouts/max.svg"/>|
   
 
 

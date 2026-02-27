@@ -10,3 +10,5 @@ pub mod desktops;
 pub mod qrcode;
 pub mod paths;
 pub mod song;
+pub mod volume;
+pub mod brightness;
