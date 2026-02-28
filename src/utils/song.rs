@@ -50,6 +50,37 @@ impl Song{
         let seconds = duration.as_secs() % 60;
         Some(format!("{}:{:02}", minutes, seconds))
     }
+
+   pub fn search_songs(songs: &[Self], query: &str) -> Vec<Self> {
+    let q = query.trim().to_lowercase();
+
+    if q.is_empty() {
+        return Vec::new();
+    }
+
+    let mut results: Vec<(Self, u8)> = songs
+        .iter()
+        .filter_map(|song| {
+            let title = song.title.to_lowercase();
+            let artist = song.artist.to_lowercase();
+            let album = song.album.to_lowercase();
+
+            if title.contains(&q) {
+                Some((song.clone(), 3))
+            } else if artist.contains(&q) {
+                Some((song.clone(), 2))
+            } else if album.contains(&q) {
+                Some((song.clone(), 1))
+            } else {
+                None
+            }
+        })
+        .collect();
+
+    results.sort_by(|a, b| b.1.cmp(&a.1));
+
+    results.into_iter().map(|(song, _)| song).collect()
+}
 }
 
 pub struct MyMime(pub MimeType);

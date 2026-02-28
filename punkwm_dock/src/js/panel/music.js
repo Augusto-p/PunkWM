@@ -79,6 +79,14 @@ panel_music_searchbar.addEventListener("keyup", (e)=>{
         if (mode == "YT-Mucic"){
             if(panel_music_searchbar.value == ""){
                 PanelMusicYT.quickPicks();
+            }else{
+                PanelMusicYT.search(panel_music_searchbar.value);
+            }
+        }else if (mode == "Local") {
+            if(panel_music_searchbar.value == ""){
+                PanelMusicLocal.LoadSongs();
+            }else{
+                PanelMusicLocal.SearchSong(panel_music_searchbar.value);
             }
         }
         console.log("Sarch: ", panel_music_searchbar.value);

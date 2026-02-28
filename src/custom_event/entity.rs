@@ -14,11 +14,11 @@ pub enum CustomEvent {
     AppsPanelOpenApp(String),
     OpenNetworkPanel(),
     NetworkPanelLoadWiFi(),
-    
     NetworkPanelConnectWiFi(String, String),
     NetworkPanelConnectWiFiPublic(String),
     NetworkPanelDisconnectWiFi(),
     NetworkPanelShareWiFi(),
     SongsLocalLoad(),
+    SongsLocalSearch(String),
 }
 

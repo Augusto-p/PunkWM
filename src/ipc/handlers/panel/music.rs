@@ -25,7 +25,10 @@ pub fn handler_music_panel(msg: IpcMessage,notifier: &MainThreadNotifier) {
         "Local:Stop:Song" => {
             notifier.send(LocalAudioCommand::Stop());
         }
-        
+        "Local:Search:Song" => {
+            let q = msg.data["q"].as_str().unwrap().to_string();
+            notifier.send(CustomEvent::SongsLocalSearch(q));
+        }
 
 
 
