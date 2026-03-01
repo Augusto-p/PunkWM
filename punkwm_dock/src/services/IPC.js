@@ -4,7 +4,7 @@ const handlers = {
   },
 
   Layout: {
-        Set: (data) => {console.log(data);setLayout(data.layout)},
+        Set: ({ layout }) => setLayout(layout),
   },
 
   Battery: {
@@ -79,4 +79,5 @@ class Sender {
       data,
     });
   }
+
 }
