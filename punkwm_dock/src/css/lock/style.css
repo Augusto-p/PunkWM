@@ -1,0 +1,300 @@
+body {
+    position: relative;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 100vh;
+    padding: 3%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    flex-direction: column;
+}
+
+#clock {
+    background-color: transparent;
+    position: relative;
+    display: grid;
+    user-select: none;
+    grid-template-columns: 27% 1fr 27% 1fr 27%;
+    grid-template-rows: 70% 1fr;
+    width: 25vw;
+    height: 20vh;
+    font-weight: 900;
+    font-size: 4rem;
+    justify-items: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2%;
+    border-radius: 2vh;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+  
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  
+
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.4),
+    0 8px 32px rgba(0,0,0,0.3);    
+}
+
+
+#clock .date {
+    grid-column: 1/6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 1.8rem;
+    font-weight: 700;
+
+}
+
+
+#user{
+    margin: 5vh;
+    width: 25vw;
+    height: 40vh;
+    font-weight: 900;
+    font-size: 2rem;
+    justify-items: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 2vh;
+    color: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    user-select: none;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  
+
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.4),
+    0 8px 32px rgba(0,0,0,0.3);    
+}
+
+#user img{
+    width: 5vw;
+    height: 5vw;
+    object-fit: cover;
+    border-radius: 50%;
+    user-select: none;
+}
+
+
+.input-box{
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 6vh;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255,.2);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr 8vh;
+    border-radius: 50vh;
+    padding: 0;
+    user-select: none;
+
+}
+.input-box input{
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    padding: 0;
+    padding-left: 1vw;
+    user-select: unset;
+}
+
+.input-box input::placeholder{
+    color: #fff;
+}
+
+.input-box button{
+    grid-column: 2;
+    grid-row: 1;
+    width: 100%;
+    user-select: none;
+    height: 6vh;
+    position: relative;
+    background: transparent;
+    outline: none;
+    border: none;
+    fill: #fff;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    align-items: center;
+    cursor: pointer;
+}
+.input-box button svg{
+    height: 70%;
+    grid-column: 1;
+    grid-row: 1;
+    cursor: pointer;
+    transition: 1s ease-in-out;
+}
+.input-box button svg.hidden{
+    opacity: 100%;
+}
+
+.input-box button svg.show{
+    opacity: 0;
+}
+
+.input-box input[type="password"] ~ button svg.hidden{
+    opacity: 0;
+}
+
+.input-box input[type="password"] ~  button svg.show{
+    opacity: 100%;
+}
+
+.LoginBtn{
+    grid-column: 1;
+    grid-row: 3;
+    width: 100%;
+    height: 6vh;
+    user-select: none;
+    position: relative;
+    border: 2px solid rgba(255, 255, 255,.2);
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 50vh;
+    border: none;
+    outline: none;
+    box-shadow:  0 0 10px rgb(0, 0, 0, .1);
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+    font-weight: 900;
+    transition: 2s ease-in-out;
+}
+
+.LoginBtn:hover{
+    background: transparent;
+    color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+    border: 2px solid rgba(255, 255, 255,.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.PowerMenu{
+    width: 22vh;
+    height: 7vh;
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 1vh;
+    align-items: center;
+    justify-items: center;
+    border-radius: 50vh;
+    bottom: calc(2vh - 2px);
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(0,0,0,.2);
+}
+.PowerMenu button{
+    background-color: transparent;
+    outline: none;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    fill: #fff;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, .2);
+    transition: 1s ease-in-out;
+}
+.PowerMenu button svg{
+    width: 80%;
+}
+.PowerMenu button:hover{
+    background-color: #fff;
+}
+
+.PowerMenu button:nth-child(1):hover{
+    fill: rgb(181, 6, 15);
+}
+.PowerMenu button:nth-child(2):hover{
+    fill: rgb(172, 172, 3);
+    transform: rotateZ(-360deg);
+}
+
+.PowerMenu button:nth-child(3):hover{
+    fill: #088542;
+}

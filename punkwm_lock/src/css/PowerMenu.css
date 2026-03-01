@@ -1,7 +1,6 @@
 .PowerMenu{
     width: 15vh;
     height: 7vh;
-    background-color: aqua;
     position: absolute;
     display: grid;
     grid-template-columns: repeat(2, 1fr);

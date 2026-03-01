@@ -8,8 +8,8 @@ sudo pacman -Syy
 sudo pacman -S reflector
 sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
 
-
-
+sudo passwd -Sa | awk '$2 == "P" {print $1, $2}'
+ALL ALL=(root) NOPASSWD: /usr/bin/passwd -Sa
 #VirtualVox
 sudo pacman -S virtualbox-guest-utils
 sudo systemctl enable vboxservice.service

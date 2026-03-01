@@ -19,6 +19,8 @@ const handlers = {
     "Panel:Close": () => body.removeAttribute("data-panel"),
     "Set:Volume": ({ Volume })=>{SysVolume.setAttribute("data-Volume", Volume);SysVolume.style.setProperty("--value", Volume);},
     "Set:Glow": ({ Glow })=>{SysGlow.setAttribute("data-Glow", Glow);SysGlow.style.setProperty("--value", Glow);},
+    "Set Background LockScreen": ({ bg }) => setWallpaerLockScreen(bg),
+    "Set User LockScreen":({image, name}) => setUserLockScreen(name, image)
   },
   "Panel:Home": {
     "Google:Daily": ({ events }) => Load_Diary(events),
