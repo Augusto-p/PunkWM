@@ -424,7 +424,26 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                             songs.dedup();
                             sender_panel_music_local_load_songs(songs);
                         },
-                             
+                        CustomEvent::SongsLocalSearch(q) =>{
+                           let mut songs_files = Vec::new();
+                           let mut songs = Vec::new();
+                           for folder in config.styles.music_folders.clone() {
+                                collect_files(Path::new(&folder), &mut songs_files);
+                            }
+                            for path in songs_files {
+                                if let Some(song) = Song::from_path(path){
+                                    songs.push(song)
+                                }
+                                
+                            }
+                            songs.sort_by(|a, b| {
+                                compare_ignore_case(&a.title, &b.title)
+                                    .then(compare_ignore_case(&a.album, &b.album))
+                                    .then(compare_ignore_case(&a.artist, &b.artist))
+                            });
+                            songs.dedup();
+                            sender_panel_music_local_load_songs(Song::search_songs(&songs, &q));
+                        },
                     }
                 }
             }

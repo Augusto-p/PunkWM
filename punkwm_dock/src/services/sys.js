@@ -8,3 +8,5 @@ class System extends Sender {
     static async setVolume(volume){super.Emit("System", "Set Volume", {"Volume": volume});}
     static async setGlow(Glow){super.Emit("System", "Set Glow", {"Glow": Glow});}
 }
+
+System.StartDock();

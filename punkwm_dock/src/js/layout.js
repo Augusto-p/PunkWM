@@ -129,7 +129,7 @@ function setLayout(layout) {
 }
 
 function toggleLayout() {
-    Layout.Toggle();
+    LayoutClsss.Toggle();
     
     Layout = (Layout +1) % 15;
     layout_btn.innerHTML = Layouts[Layout]

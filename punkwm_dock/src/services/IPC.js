@@ -4,7 +4,7 @@ const handlers = {
   },
 
   Layout: {
-    Set: ({ Layout }) => setLayout(Layout),
+        Set: (data) => {console.log(data);setLayout(data.layout)},
   },
 
   Battery: {

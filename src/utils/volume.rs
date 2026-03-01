@@ -3,6 +3,7 @@ pub struct Volume;
 
 impl Volume {
     pub fn set(percent:u8){
+        Volume::unmute();
         let percent = percent.min(100);
         let volume = format!("{}%", percent);
         if let Ok(status) = Command::new("pactl").args(["set-sink-volume", "@DEFAULT_SINK@", &volume]).status(){
