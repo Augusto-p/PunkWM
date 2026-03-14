@@ -1,0 +1,18 @@
+
+sudo usermod -aG video augus
+echo -e "allowed_users=anybody\nneeds_root_rights=yes" | sudo tee /etc/X11/Xwrapper.config
+
+
+
+sudo pacman -Syy
+sudo pacman -S reflector
+sudo reflector --latest 20 --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+
+sudo passwd -Sa | awk '$2 == "P" {print $1, $2}'
+ALL ALL=(root) NOPASSWD: /usr/bin/passwd -Sa
+#VirtualVox
+sudo pacman -S virtualbox-guest-utils
+sudo systemctl enable vboxservice.service
+sudo systemctl start vboxservice.service
+sudo pacman -S virtualbox-guest-utils mesa
+sudo systemctl enable vboxservice

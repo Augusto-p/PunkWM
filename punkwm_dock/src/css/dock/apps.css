@@ -1,0 +1,11 @@
+#Apps{
+    grid-row: 8;
+    fill: #fff;
+}
+#Apps>svg{
+    width: 70%;
+    background-color: #1d242c;
+    border-radius: calc(10 * var(--dock_vw));
+    padding: calc(6 * var(--dock_vw));
+    box-sizing:border-box;
+}

@@ -1,0 +1,35 @@
+body {    
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    display:grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    height:100vh;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* fondo */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* barra */
+::-webkit-scrollbar-thumb {
+    background: #484f5a;
+    border-radius: 10px;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.55);
+}

@@ -1,0 +1,42 @@
+#workspaces {
+    width: 65%;
+    height: 100%;
+    background-color: #1D242C;
+    grid-column: 1;
+    grid-row: 2;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(9, 1fr);
+    justify-items: center;
+    align-items: center;
+    border-radius: calc(10 * var(--dock_vw));
+    position: relative;
+    box-sizing: border-box;
+}
+
+#workspaces button {
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+#workspaces button>svg {
+    height: 60%;
+}
+
+#workspaces button>svg.Dot {
+    fill: #484F5A;
+
+}

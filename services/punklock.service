@@ -1,0 +1,15 @@
+[Unit]
+Description=Punk Lock DM
+After=systemd-user-sessions.service
+
+[Service]
+ExecStart=/usr/bin/xinit /usr/bin/PunkWM_LockScreen -- :1 vt2
+User=root
+TTYPath=/dev/tty2
+StandardInput=tty
+StandardOutput=tty
+StandardError=tty
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
