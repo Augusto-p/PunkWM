@@ -89,7 +89,7 @@ xorg-xinit webkit2gtk gtk3 atk pango gdk-pixbuf2 xorg-server \
 seatd xorg-xrandr xorg-xsetroot xf86-video-intel xf86-video-amdgpu \
 xf86-video-vesa xorg-server-xorgxrdp xorg-xauth feh \
 rustup llvm clang sudo pam nano networkmanager firefox zsh unzip wget git gst-libav gst-plugins-good \
-gst-plugins-bad  gst-plugins-ugly pipewire pipewire-pulse wireplumber" \
+gst-plugins-bad  gst-plugins-ugly pipewire pipewire-pulse wireplumber openbsd-netcat" \
 "Instalando paquetes principales"
 
 # =============================

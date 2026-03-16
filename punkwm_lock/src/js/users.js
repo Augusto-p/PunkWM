@@ -12,7 +12,7 @@ function ToggleLoginUserPassword() {
 }
 
 
-function newUser(user, name, image) {
+async function newUser(user, name, image) {
     if(!name){
         name = user;
     }
@@ -32,7 +32,7 @@ function newUser(user, name, image) {
 function load_users(users) {
     users_list.innerHTML = "";
     users.forEach(user => {
-        newUser(user.user, user.name, user.image);
+        newUser(user.username, user.comment, user.photo);
     });
 }
 

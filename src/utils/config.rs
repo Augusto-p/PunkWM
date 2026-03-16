@@ -19,6 +19,7 @@ pub struct Styles{
     pub dock_width: u16,
     pub panel_width: u16,
     pub lang: String,
+    keymap: String,
     pub music_folders: Vec<String>,
 }
 
@@ -49,6 +50,12 @@ impl WeatherConfig{
    
 }
 
+impl Styles{
+
+    pub fn keymap(&self)->String{
+        self.keymap.clone()
+    }
+}
 
 
 

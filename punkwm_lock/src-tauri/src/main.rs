@@ -23,7 +23,7 @@ fn main() {
             win.set_decorations(false)?;
             win.set_resizable(false)?;
             win.set_maximizable(false)?;
-            win.set_minimizable(false)?;
+            win.set_minimizable(false)?; // desactiva devtools
             win.set_closable(false)?;
 
 

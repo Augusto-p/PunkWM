@@ -1,4 +1,3 @@
-pub mod handler;
 pub mod workspace;
 pub mod layout;
 pub mod battery;

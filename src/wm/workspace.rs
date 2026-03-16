@@ -1,7 +1,7 @@
 use super::manager::WorkspaceManager;
 use x11rb::protocol::xproto::*;
 // use crate::wm::dock::Dock;
-use crate::utils::config::print_in_tty;
+// use crate::utils::config::print_in_tty;
 // use crate::utils::config::print_in_tty;
 use x11rb::{connection::Connection, protocol::xproto::Window};
 use crate::ipc::senders::workspace::sender_workspace_update;

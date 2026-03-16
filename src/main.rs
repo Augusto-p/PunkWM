@@ -8,7 +8,7 @@ mod localaudio;
 use crate::ipc::senders::system::{sender_system_glow, sender_system_volume};
 use crate::utils::brightness::Brightness;
 use crate::ipc::senders::system::sender_system_user_lockscreen;
-use crate::utils::config::print_in_tty;
+// use crate::utils::config::print_in_tty;
 use crate::utils::notifications::listen_notifications;
 use crate::utils::volume::Volume;
 use utils::battery::Battery;
@@ -249,6 +249,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 
     println!("punkwm iniciado");
+    //keymap
+    spawn(&format!("setxkbmap {}", config.styles.keymap()));
 
     // ─────────────────────
     // Main event loop

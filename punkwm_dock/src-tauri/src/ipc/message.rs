@@ -1,5 +1,6 @@
 use serde::{Serialize, Deserialize};
 pub const IPC_NAME: &str = "PUNK_DOCK";
+pub const IPC_WM_NAME: &str = "PUNK";
 #[derive(Debug, Serialize, Deserialize, Clone)]
 pub struct IpcMessage {
     sender: String,

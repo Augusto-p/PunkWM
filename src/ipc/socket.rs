@@ -1,7 +1,6 @@
 use std::os::unix::net::UnixStream;
 use crate::ipc::message::IpcMessage;
 use std::io::Write;
-
 pub const SOCKET_PATH: &str = "/tmp/{user}_punk.sock";
 pub const SOCKET_PATH_DOCK: &str = "/tmp/{user}_punk_dock.sock";
 

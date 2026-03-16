@@ -3,9 +3,10 @@ use std::os::unix::net::UnixListener;
 use std::os::unix::net::UnixStream;
 use std::io::{BufRead, BufReader};
 use std::fs;
-use crate::ipc::handlers::handler::handler;
-use crate::ipc::message::IPC_NAME;
+use crate::ipc::handler::handler;
+use crate::ipc::message::{IPC_NAME,IPC_WM_NAME};
 use crate::ipc::message::IpcMessage;
+use crate::utils::settingspanel::SettingsPanel;
 use std::io::Write;
 
 pub const SOCKET_PATH_WM: &str = "/tmp/{user}_punk.sock";
@@ -29,8 +30,22 @@ pub fn socket_listen() {
                             if let Ok(msg) = serde_json::from_str::<IpcMessage>(mensaje.trim()) {
                                 if msg.sender() == IPC_NAME{
                                     continue
+                                }else if msg.sender() == IPC_WM_NAME{
+                                    handler(msg)
+                                }else if msg.sender() == "PUNK_WM_APP_Open"{
+                                    match msg.get_category().as_str(){
+                                        "Settings Panel" =>{
+                                            match msg.get_name().as_str(){
+                                                "main" =>{
+                                                    SettingsPanel::open_main()
+                                                }
+                                                _=>continue
+                                            }
+
+                                        }
+                                        _=>continue
+                                    }
                                 }
-                                handler(msg)
                             }
                         }
                         Err(e) => {

@@ -1,6 +1,6 @@
 use punkwm_lock_lib::print_in_tty;
 use crate::ipc::message::IpcMessage;
-use crate::utils::auth::login_auth;
+use crate::utils::user::UserInfo;
 use serde_json::json;
 use crate::utils::config::load_config;
 use crate::apphandle::get_api_ipc;
@@ -17,15 +17,25 @@ pub fn ipc_handler_system(msg: IpcMessage) {
             spawn("reboot");
         },
         "Start" =>{
+            
             let config = load_config();
-            let message = IpcMessage::new("System", "Set Background", json!({"bg": config.get_bg()}));
             let api_ipc = get_api_ipc();
+            let message = IpcMessage::new("System", "Set Background", json!({"bg": config.get_bg()}));
             let _ = api_ipc.emit(message.clone());
+
+            
+
         },
+        "Load Users"=>{
+            let api_ipc = get_api_ipc();
+            let users = UserInfo::get_users();
+            let message_users = IpcMessage::new("System", "Load Users",  json!({"users": users.clone()}));
+            let _ = api_ipc.emit(message_users.clone());
+        }
         "Login" =>{
             let username = msg.get_data()["User"].as_str().unwrap().to_string();
             let password = msg.get_data()["Password"].as_str().unwrap().to_string();
-            if login_auth(&username, &password) {
+            if UserInfo::auth(&username, &password) {
                 match nix::unistd::User::from_name(&username) {
                     Ok(Some(user)) => {
                         let uid = user.uid.as_raw();
