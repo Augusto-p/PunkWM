@@ -1,0 +1,75 @@
+{
+    "UI":{
+        "Settings Pannel": "Panel De Configuracion",
+        "Menu":{
+            "User": "Usuario",
+            "Language": "Idioma",
+            "Keyboard Layout": "Distribucion De Teclado",
+            "Keyboard Shortcut": "Atajos de Teclado",
+            "Weather": "Clima",
+            "Google": "Google",
+            "Wallpaers": "Fondos De Pantalla",
+            "Apps": "Aplicaciones",
+            "Pannel & Dock": "Panel y Bara",
+            "Music Folders": "Carpetas de Musica",
+            "Admin Settings": "Administrador"
+        },
+        "User":{
+            "User": "Usuario",
+            "User Name": "Nombre de Usuario"
+        },
+        "Weather":{
+            "Weather": "Clima",
+            "International": "Internacional",
+            "Inperial": "Imperial"
+        },
+        "Google":{
+            "Credentials":"Credenciales",
+            "Maximum number of events viewed":"Maximo de Eventos Vistos",
+            "Scopes":"Alcances",
+            "Search": "Buscar"
+        },
+        "Wallpaers":{
+            "Wallpaers": "Fondos De Pantalla",
+            "Main Wallpaer": "Fondo De Pantalla Pricipal",
+            "Lock Wallpaer": "Fondo De Pantalla Bloqueo"
+        },
+        "Pannel & Dock":{
+            "Dock Width": "Ancho de la Barra",
+            "Pannel Width": "Ancho del Panel"
+        },
+        "Music Folders":{
+            "Music Folders":"Carpetas de Musica",
+            "Add Folder": "Añadir Carpeta"
+        },
+        "Admin Settings":{
+            "Admin Settings": "Configuracion del Administrador",
+            "LockScreen Wallpaer": "Fondo De Panel de Bloqueo"
+        },
+        "Keyboard Shortcut":{
+            "Keyboard Shortcut":"Atajos de Teclado",
+            "Name": "Nombre",
+            "Command": "Comando",
+            "Description": "Descripción",
+            "Shortcut": "Atajo"
+        },
+        
+        "Apps":{
+            "Name": "Nombre",
+            "Command": "Comando",
+            "Delete":"Eliminar",
+            "Save":"Guardar",
+            "App Name": "Nombre de la Aplicacion",
+            "App Command": "Comando de la Aplicacion"
+            
+        }
+    },
+
+    "Keyboard Shortcut":{
+        "Workspace:1":{
+            "Name": "Ir a Espacio De Trabajo 1",
+            "Description": "Cambia el Espacio de Trabajo al 1"
+        }
+
+    }
+}

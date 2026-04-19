@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 490 230" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<marker id="TriangleOutM1" orient="auto" refX="0" refY="0" style="overflow:visible">
+<path d="m 5.77,0 -8.65,5 0,-10 8.65,5 z" fill="#2b2828" transform="scale(0.4,0.4)"/>
+</marker>
+</defs>
+<g id="BG">
+<path d="M 24,0.5957353 H 465 c 12.10574,0 21.41785,8.72759 21.41785,21.3341107 V 208.11845 c 0,11.63677 -9.31211,22.30384 -21.41785,22.30384 H 24.924028 c -13.036952,0 -23.2802711,-10.66707 -23.2802711,-22.30384 V 21.929846 c 0,-12.6065207 10.2433191,-21.3341107 23.2802711,-21.3341107 z" fill="#f5f6f7"/>
+</g>
+<g id="FUNS">
+<g id="ESC">
+<path d="m 26.686384,30.606147 h 20 c 1,0 3,1 3,3 v 18 c 0,1 -2,3 -3,3 h -20 c -2,0 -3,-2 -3,-3 v -18 c 0,-2 1,-3 3,-3 z" fill="#f2c480"/>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;" transform="matrix(0.774557,0,0,0.77345,-279.18362,-103.89315)" x="400" y="194">Esc</text>
+</g>
+<g id="F1">
+<path d="m 85.686388,30.606147 h 19.999992 c 2,0 3,1 3,3 v 18 c 0,1 -1,3 -3,3 H 85.686388 c -1.000003,0 -2.000003,-2 -2.000003,-3 v -18 c 0,-2 1,-3 2.000003,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#000000;fill-rule:evenodd" transform="matrix(0.774557,0,0,0.77345,-218.81062,-102.90475)" x="400" y="194">F1</text>
+</g>
+<g id="F2">
+<path d="m 115.68638,30.606147 h 20 c 2,0 3,1 3,3 v 18 c 0,1 -1,3 -3,3 h -20 c -2,0 -3,-2 -3,-3 v -18 c 0,-2 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#000000;fill-rule:evenodd" transform="matrix(0.774557,0,0,0.77345,-190.10762,-102.90475)" x="400" y="194">F2</text>
+</g>
+<g id="F3">
+<path d="m 145.68638,30.606147 h 20 c 2,0 3,1 3,3 v 18 c 0,1 -1,3 -3,3 h -20 c -1,0 -3,-2 -3,-3 v -18 c 0,-2 2,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#000000;fill-rule:evenodd" transform="matrix(0.774557,0,0,0.77345,-160.41662,-102.90475)" x="400" y="194">F3</text>
+</g>
+<g id="F4">
+<path d="m 175.68638,30.606147 h 19 c 2,0 3,1 3,3 v 18 c 0,1 -1,3 -3,3 h -19 c -1,0 -3,-2 -3,-3 v -18 c 0,-2 2,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#000000" transform="matrix(0.774557,0,0,0.77345,-130.72462,-102.90475)" x="400" y="192">F4</text>
+</g>
+<g id="F5">
+<path d="m 219.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -2,0 -3,-1 -3,-3 v -18 c 0,-1 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-86.186716,-102.90475)" x="400" y="194">F5</text>
+</g>
+<g id="F6">
+<path d="m 249.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -2,0 -3,-1 -3,-3 v -18 c 0,-1 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-56.494816,-102.90475)" x="400" y="192">F6</text>
+</g>
+<g id="F7">
+<path d="m 278.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -1,0 -2,-1 -2,-3 v -18 c 0,-1 1,-3 2,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-26.803026,-102.90475)" x="400" y="192">F7</text>
+</g>
+<g id="F8">
+<path d="m 308.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -2,0 -3,-1 -3,-3 v -18 c 0,-1 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,2.8887839,-102.90475)" x="400" y="192">F8</text>
+</g>
+<g id="F9">
+<path d="m 352.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -2,0 -3,-1 -3,-3 v -18 c 0,-1 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,46.436684,-102.90475)" x="400" y="192">F9</text>
+</g>
+<g id="F10">
+<path d="m 381.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -2,0 -3,-1 -3,-3 v -18 c 0,-1 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,73.159184,-102.90475)" x="400" y="192">F10</text>
+</g>
+<g id="F11">
+<path d="m 411.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -2,0 -3,-1 -3,-3 v -18 c 0,-1 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,103.84038,-102.90475)" x="400" y="192">F11</text>
+</g>
+<g id="F12">
+<path d="m 441.68638,29.606147 h 20 c 1,0 2,2 2,3 v 18 c 0,2 -1,3 -2,3 h -20 c -2,0 -3,-1 -3,-3 v -18 c 0,-1 1,-3 3,-3 z" fill="#ffc1ea"/>
+<text style="font-weight:normal;font-size:13px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,132.54238,-102.90475)" x="400" y="192">F12</text>
+</g>
+</g>
+<g id="MODS">
+<g id="ALTGR">
+<path d="m 324.35694,180.61612 h 27.06409 c 1.12768,0 2.25535,1 2.25535,3 v 18 c 0,1 -1.12767,3 -2.25535,3 h -27.06409 c -1.12768,0 -2.25535,-2 -2.25535,-3 v -18 c 0,-2 1.12767,-3 2.25535,-3 z" fill="#e89fa5"/>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,19.370869,46.433659)" x="400" y="192">Alt Gr</text>
+</g>
+<g id="CTRL">
+<path d="m 429.68638,180.61612 h 33 c 2,0 3,1 3,3 v 18 c 0,2 -1,3 -3,3 h -33 c -2,0 -3,-1 -3,-3 v -18 c 0,-2 1,-3 3,-3 z" fill="#e89fa5"/>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,130.56338,47.422059)" x="400" y="192">Ctrl</text>
+</g>
+<g id="ALT">
+<path d="M 98.625081,180.61612 H 124.6124 c 1.03948,0 2.07898,1 2.07898,3 v 18 c 0,1 -1.0395,3 -2.07898,3 H 98.625081 c -1.03948,0 -2.07898,-2 -2.07898,-3 v -18 c 0,-2 1.0395,-3 2.07898,-3 z" fill="#e89fa5"/>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-203.0839,46.433659)" x="400" y="192">Alt</text>
+</g>
+<g id="CTRL">
+<path d="m 26.6373,180.61612 h 29.509166 c 0.983639,0 1.967277,1 1.967277,3 v 18 c 0,2 -0.983638,3 -1.967277,3 H 26.6373 c -1.967277,0 -2.950916,-1 -2.950916,-3 v -18 c 0,-2 0.983639,-3 2.950916,-3 z" fill="#e89fa5"/>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-274.66283,47.422059)" x="400" y="192">Ctrl</text>
+</g>
+<g id="SHIFT">
+<path d="m 26.684824,153.11035 h 29.509165 c 0.983638,0 1.967278,1 1.967278,3 v 18 c 0,2 -0.98364,3 -1.967278,3 H 26.684824 c -1.967278,0 -2.950917,-1 -2.950917,-3 v -18 c 0,-2 0.983639,-3 2.950917,-3 z" fill="#e89fa5"/>
+<path d="m 412.1436,186.31524 -2.68827,-2.68827 -2.68826,2.68827 h 1.32392 v 5.23486 h 2.72869 v -5.23486 h 1.32392 m -7.82225,1.01062 5.13398,-5.13398 5.13398,5.13398 h -2.75901 v 5.23487 h -4.74994 v -5.23487 h -2.75901" transform="matrix(0.774557,0,0,0.77345,-276.19891,20.184174)"/>
+</g>
+<g id="TAB">
+<path d="m 26.686384,122.60862 c -2,0 -3,-2 -3,-3 v -18 c 0,-1.999999 1,-2.999999 3,-2.999999 h 38 c 2,0 3,1 3,2.999999 v 18 c 0,1 -1,3 -3,3 z" fill="#a8d1b1"/>
+<path d="M 82.102628,127.41927 H 72.09011" style="fill:#2b2828;fill-opacity:1;stroke:#2b2828;stroke-width:1.00025;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutM1)" transform="translate(-20.313616,-22.391349)"/>
+<path d="m 69.086358,125.4168 v 4.00501" style="fill:#2b2828;fill-opacity:1;stroke:#2b2828;stroke-width:1.00025;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-20.313616,-22.391349)"/>
+<path d="M 69.086356,135.42929 H 79.098874" style="fill:#2b2828;fill-opacity:1;fill-rule:evenodd;stroke:#2b2828;stroke-width:1.00025;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleOutM1)" transform="translate(-20.313616,-22.391349)"/>
+<path d="m 82.102628,133.42679 v 4.005" style="fill:#2b2828;fill-opacity:1;fill-rule:evenodd;stroke:#2b2828;stroke-width:1.00025;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" transform="translate(-20.313616,-22.391349)"/>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-283.14262,-40.61515)" x="400" y="192">Tab</text>
+</g>
+<g id="CAPSLOCK">
+<path d="m 26.686384,149.61112 c -1,0 -3,-1 -3,-2 v -19 c 0,-1 2,-2 3,-2 h 45 c 2,0 4,1 4,2 v 19 c 0,1 -2,2 -4,2 z" fill="#cf98cf"/>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-268.29662,-11.927984)" x="400" y="192">Caps</text>
+<text style="font-weight:normal;font-size:9px;line-height:0%;font-family:Arial;fill:#2b2828" transform="matrix(0.774557,0,0,0.77345,-268.29662,-4.0215442)" x="400" y="192">Lock</text>
+</g>
+<g id="SHIFT">
+<path d="m 389.68638,176.61362 c -1,0 -2,-1 -2,-3 v -17 c 0,-1 1,-3 2,-3 h 73 c 2,0 3,2 3,3 v 17 c 0,2 -1,3 -3,3 z" fill="#e89fa5"/>
+<path d="m 412.1436,186.31524 -2.68827,-2.68827 -2.68826,2.68827 h 1.32392 v 5.23486 h 2.72869 v -5.23486 h 1.32392 m -7.82225,1.01062 5.13398,-5.13398 5.13398,5.13398 h -2.75901 v 5.23487 h -4.74994 v -5.23487 h -2.75901" transform="matrix(0.774557,0,0,0.77345,109.53989,20.187444)"/>
+</g>
+</g>
+<g id="BACKINTO">
+<g id="BACKSPACE">
+<path d="m 412.47711,71.736313 c -2.08436,0 -3.12654,1.000003 -3.12654,3.000006 l 0.28632,16.850472 c 0,0.99998 1.04218,2.99998 3.12654,2.99998 l 50.54008,-0.28632 c 1.04218,0 2.08436,-2 2.08436,-2.99998 l -0.28632,-16.850472 c 0,-2.000003 -1.04218,-3.000006 -2.08436,-3.000006 z" fill="#f1ef9e"/>
+<path d="M 433.56255,82.453891 H 418.54376" style="fill:none;fill-rule:evenodd;stroke:#2b2828;stroke-width:1.00125px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM1)"/>
+</g>
+<g id="INTO">
+<path d="m 431.01181,122.51969 h -0.85927 c -1.73372,0 -2.60059,-1 -2.60059,-2 v -19.91107 c 0,-0.999999 0.86687,-1.999999 2.60059,-1.999999 h 32.93325 c 1.73373,0 2.60059,1 2.60059,1.999999 v 46.00424 c 0,2 -0.86686,3 -2.60059,3 H 436.213 c -1.73374,0 -2.6006,-1 -2.6006,-3 v -21.09317 c 0,-2 0,-3 -2.60059,-3 z" fill="#f1ef9e"/>
+<path d="m 453.91888,105.85246 v 6.77317 h -14.76112" style="fill:none;fill-rule:evenodd;stroke:#2b2828;stroke-width:1.00125px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#TriangleOutM1)"/>
+</g>
+<g id="SPACE">
+<path d="m 144.62597,180.61612 h -10.16016 c -1.8473,0 -2.77095,1 -2.77095,3 v 18 c 0,2 0.92365,3 2.77095,3 h 10.16016 155.17334 16.62571 c 0,0 0.92366,-1 0.92366,-3 v -18 c 0,-2 -0.92366,-3 -0.92366,-3 h -16.62571 z" fill="#9fcfe0"/>
+</g>
+</g>
+<g id="ISO">
+<g id="29" transform="translate(26.686384,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P29" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">`</text>
+<text id="S29" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">~</text>
+<text id="AS29" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A29" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="02" transform="translate(56.686384,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P02" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">1</text>
+<text id="S02" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">!</text>
+<text id="AS02" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A02" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="03" transform="translate(85.686388,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P03" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">2</text>
+<text id="S03" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">@</text>
+<text id="AS03" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A03" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="04" transform="translate(115.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P04" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">3</text>
+<text id="S04" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">#</text>
+<text id="AS04" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A04" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="05" transform="translate(145.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P05" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">4</text>
+<text id="S05" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">$</text>
+<text id="AS05" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A05" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="06" transform="translate(175.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P06" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">5</text>
+<text id="S06" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">%</text>
+<text id="AS06" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A06" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="07" transform="translate(204.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P07" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">6</text>
+<text id="S07" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">^</text>
+<text id="AS07" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A07" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="08" transform="translate(234.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P08" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">7</text>
+<text id="S08" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">&amp;</text>
+<text id="AS08" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A08" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="09" transform="translate(264.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P09" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">8</text>
+<text id="S09" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">*</text>
+<text id="AS09" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A09" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="0A" transform="translate(293.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P0A" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">9</text>
+<text id="S0A" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">(</text>
+<text id="AS0A" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A0A" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="0B" transform="translate(323.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P0B" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">0</text>
+<text id="S0B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">)</text>
+<text id="AS0B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A0B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="0C" transform="translate(353.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P0C" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">-</text>
+<text id="S0C" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">_</text>
+<text id="AS0C" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A0C" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="0D" transform="translate(382.68638,71.606153)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P0D" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">=</text>
+<text id="S0D" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">+</text>
+<text id="AS0D" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A0D" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="10" transform="translate(74.686384,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P10" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">Q</text>
+<text id="S10" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS10" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A10" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="11" transform="translate(103.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P11" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">W</text>
+<text id="S11" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS11" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A11" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="12" transform="translate(133.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P12" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">E</text>
+<text id="S12" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS12" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A12" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="13" transform="translate(163.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P13" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">R</text>
+<text id="S13" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS13" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A13" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="14" transform="translate(192.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P14" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">T</text>
+<text id="S14" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS14" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A14" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="15" transform="translate(222.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P15" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">Y</text>
+<text id="S15" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS15" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A15" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="16" transform="translate(252.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P16" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">U</text>
+<text id="S16" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS16" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A16" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="17" transform="translate(281.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P17" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">I</text>
+<text id="S17" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS17" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A17" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="18" transform="translate(311.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P18" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">O</text>
+<text id="S18" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS18" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A18" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="19" transform="translate(341.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P19" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">P</text>
+<text id="S19" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS19" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A19" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="1A" transform="translate(371.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P1A" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">[</text>
+<text id="S1A" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">{</text>
+<text id="AS1A" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A1A" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="1B" transform="translate(400.68638,98.608621)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P1B" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">]</text>
+<text id="S1B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">}</text>
+<text id="AS1B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A1B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="1E" transform="translate(82.686382,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P1E" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">A</text>
+<text id="S1E" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS1E" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A1E" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="1F" transform="translate(111.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P1F" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">S</text>
+<text id="S1F" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS1F" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A1F" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="20" transform="translate(141.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P20" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">D</text>
+<text id="S20" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS20" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A20" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="21" transform="translate(171.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P21" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">F</text>
+<text id="S21" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS21" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A21" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="22" transform="translate(200.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P22" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">G</text>
+<text id="S22" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS22" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A22" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="23" transform="translate(230.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P23" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">H</text>
+<text id="S23" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS23" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A23" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="24" transform="translate(260.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P24" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">J</text>
+<text id="S24" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS24" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A24" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="25" transform="translate(289.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P25" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">K</text>
+<text id="S25" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS25" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A25" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="26" transform="translate(319.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P26" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">L</text>
+<text id="S26" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS26" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A26" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="27" transform="translate(349.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P27" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">;</text>
+<text id="S27" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">:</text>
+<text id="AS27" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A27" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="28" transform="translate(378.68638,126.61112)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P28" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">'</text>
+<text id="S28" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">"</text>
+<text id="AS28" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A28" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="2B" transform="translate(407.06491,126.63078)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P2B" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">\</text>
+<text id="S2B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">|</text>
+<text id="AS2B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A2B" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="56" transform="translate(63.937176,153.61035)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P56" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">&lt;</text>
+<text id="S56" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">&gt;</text>
+<text id="AS56" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20">¦</text>
+<text id="A56" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200">|</text>
+</g>
+<g id="2C" transform="translate(92.686381,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P2C" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">Z</text>
+<text id="S2C" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS2C" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A2C" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="2D" transform="translate(122.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P2D" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">X</text>
+<text id="S2D" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS2D" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A2D" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="2E" transform="translate(152.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P2E" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">C</text>
+<text id="S2E" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS2E" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A2E" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="2F" transform="translate(181.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P2F" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">V</text>
+<text id="S2F" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS2F" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A2F" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="30" transform="translate(212.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P30" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">B</text>
+<text id="S30" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS30" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A30" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="31" transform="translate(242.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P31" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">N</text>
+<text id="S31" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS31" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A31" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="32" transform="translate(272.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P32" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">M</text>
+<text id="S32" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8"></text>
+<text id="AS32" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A32" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="33" transform="translate(301.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P33" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">,</text>
+<text id="S33" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">&lt;</text>
+<text id="AS33" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A33" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="34" transform="translate(331.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P34" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">.</text>
+<text id="S34" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">&gt;</text>
+<text id="AS34" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A34" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+<g id="35" transform="translate(361.68638,153.61362)">
+<path d="m 0,0 h 20 c 1,0 3,1 3,3 v 17 c 0,2 -2,3 -3,3 h -20 c -2,0 -3,-1 -3,-3 v -17 c 0,-2 1,-3 3,-3 z" fill="#9fcfe0"/>
+<text id="P35" style="font-weight:bold;font-size:10px;font-family:Arial;fill:#000000;" x="7" y="15">/</text>
+<text id="S35" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="8">?</text>
+<text id="AS35" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="0" y="20"></text>
+<text id="A35" style="font-weight:normal;font-size:6px;font-family:Arial;fill:#000000" x="16" y="200"></text>
+</g>
+</g>
+<g id="CUSTOM">
+<g id="TUX 2">
+<path d="m 361.92868,180.61612 h 23.30006 c 1.22632,0 2.45264,1 2.45264,3 v 18 c 0,2 -1.22632,3 -2.45264,3 h -23.30006 c -2.45264,0 -3.67895,-1 -3.67895,-3 v -18 c 0,-2 1.22631,-3 3.67895,-3 z" fill="#f2c480"/>
+<path d="m 373.39227,182.42668 c -0.1309,-2.4e-4 -0.2664,0.006 -0.40871,0.0176 -3.59772,0.2896 -2.64329,4.08952 -2.69674,5.36217 -0.0658,0.93079 -0.25541,1.6656 -0.89566,2.57549 -0.7519,0.8942 -1.80998,2.34167 -2.31148,3.84856 -0.23662,0.71104 -0.3502,1.4357 -0.24638,2.12179 -0.0326,0.0292 -0.0622,0.0606 -0.0919,0.0919 -0.2207,0.23591 -0.38538,0.51964 -0.56712,0.71183 -0.16986,0.16965 -0.41054,0.23525 -0.67661,0.33049 -0.26608,0.0955 -0.55807,0.2367 -0.7353,0.57689 l -0.002,0.002 c -0.0834,0.15561 -0.10949,0.32247 -0.10949,0.4928 0,0.15751 0.0234,0.31761 0.0469,0.4713 0.0489,0.31976 0.0971,0.62239 0.0313,0.8272 -0.21048,0.57563 -0.23623,0.97244 -0.088,1.26134 0.14872,0.28936 0.45268,0.41668 0.79787,0.4889 0.69037,0.14396 1.62563,0.11006 2.36232,0.50062 l 0.0645,-0.12124 -0.0626,0.12124 c 0.78873,0.41242 1.58757,0.55828 2.22544,0.41263 0.46278,-0.10546 0.83766,-0.38185 1.03057,-0.8057 0.49889,-0.002 1.0472,-0.21384 1.92429,-0.26204 0.59511,-0.048 1.33915,0.21178 2.19415,0.16426 0.0223,0.0926 0.0536,0.1831 0.0978,0.26792 l 0.002,0.002 c 0.33138,0.66281 0.94713,0.96504 1.60355,0.91325 0.65709,-0.0518 1.35542,-0.43868 1.92038,-1.11076 0.53833,-0.65284 1.43324,-0.9236 2.02597,-1.2809 0.29625,-0.17865 0.53662,-0.40245 0.55539,-0.72747 0.0185,-0.32476 -0.17354,-0.68852 -0.61209,-1.1753 v -0.002 c -0.14418,-0.16274 -0.21362,-0.46471 -0.28748,-0.78614 -0.0737,-0.32119 -0.1548,-0.66724 -0.4185,-0.89174 l -0.002,-0.002 c -0.0523,-0.0456 -0.10643,-0.0833 -0.16036,-0.11538 -0.0541,-0.0321 -0.1094,-0.0576 -0.16426,-0.0782 0.36657,-1.08711 0.22346,-2.17038 -0.14667,-3.14847 -0.45399,-1.20066 -1.24637,-2.24713 -1.85193,-2.96268 -0.67778,-0.85501 -1.34093,-1.66615 -1.32784,-2.86491 0.0202,-1.82951 0.20013,-5.22273 -3.01939,-5.22724 z m 0.42827,2.81993 h 0.008 c 0.18245,0 0.33832,0.052 0.49868,0.16818 0.16273,0.11831 0.28092,0.26656 0.37548,0.47325 0.0926,0.20146 0.13821,0.39812 0.14275,0.63165 0,0.006 -0.002,0.0114 0,0.0176 0.002,0.2397 -0.0381,0.44481 -0.12907,0.65316 -0.0518,0.11878 -0.11232,0.21859 -0.18383,0.30507 -0.0243,-0.0116 -0.0482,-0.0226 -0.0743,-0.0333 -0.0905,-0.0387 -0.17076,-0.0707 -0.24249,-0.0978 -0.0718,-0.0271 -0.12802,-0.0465 -0.18577,-0.0665 0.0418,-0.0506 0.12382,-0.10899 0.15449,-0.18382 0.0466,-0.11284 0.07,-0.22454 0.0743,-0.35591 0,-0.005 0.002,-0.009 0.002,-0.0156 0.003,-0.12591 -0.014,-0.23395 -0.0508,-0.34418 -0.0385,-0.11569 -0.0876,-0.19878 -0.15841,-0.26791 -0.071,-0.0691 -0.14178,-0.0988 -0.22683,-0.10169 -0.004,-2.4e-4 -0.008,-0.002 -0.0117,-0.002 -0.0798,2.4e-4 -0.14921,0.0281 -0.22098,0.088 -0.0753,0.063 -0.13142,0.14404 -0.17796,0.25617 -0.0463,0.11214 -0.0698,0.22383 -0.0743,0.35592 -7.1e-4,0.005 0,0.008 0,0.0137 -0.002,0.0727 0.003,0.14071 0.0137,0.20533 -0.16344,-0.0815 -0.37184,-0.14155 -0.51628,-0.176 -0.008,-0.0625 -0.0142,-0.12613 -0.0156,-0.1936 v -0.0196 c -0.003,-0.23899 0.0371,-0.44309 0.12907,-0.6512 0.0919,-0.20835 0.20561,-0.3592 0.36571,-0.48107 0.16035,-0.12164 0.31805,-0.17606 0.50452,-0.17796 z m -2.52268,0.19751 c 0.0104,-4.7e-4 0.0211,0 0.0313,0 0.1214,2.4e-4 0.22814,0.0415 0.34027,0.13103 0.12164,0.0972 0.21441,0.21994 0.29138,0.39502 0.0772,0.17509 0.11766,0.35066 0.12907,0.55734 v 0.002 c 0.005,0.0867 0.005,0.1673 -0.002,0.24641 -0.024,0.007 -0.0474,0.0156 -0.0704,0.0235 -0.13066,0.0451 -0.23414,0.0941 -0.3344,0.16036 0.01,-0.0694 0.0115,-0.13843 0.004,-0.21707 -7.1e-4,-0.004 0,-0.009 0,-0.0137 -0.0104,-0.10429 -0.0336,-0.19127 -0.0704,-0.27964 -0.0392,-0.0919 -0.0831,-0.1574 -0.14081,-0.20729 -0.0523,-0.0451 -0.10182,-0.065 -0.15646,-0.0645 -0.005,0 -0.01,-4.7e-4 -0.0156,0 -0.0613,0.005 -0.11213,0.0352 -0.16036,0.0939 -0.048,0.0584 -0.0808,0.13235 -0.10365,0.2288 -0.0228,0.0962 -0.029,0.19064 -0.0195,0.2992 0,0.004 0.002,0.007 0.002,0.0117 0.0105,0.10524 0.0309,0.19322 0.0684,0.2816 0.0385,0.091 0.0831,0.15544 0.14081,0.20533 0.01,0.008 0.0198,0.0149 0.0293,0.0215 -0.0599,0.0463 -0.10116,0.0793 -0.15057,0.11538 -0.0316,0.0231 -0.0677,0.0518 -0.11147,0.0841 -0.0953,-0.0893 -0.16957,-0.20204 -0.23467,-0.35004 -0.077,-0.17485 -0.11868,-0.35066 -0.13104,-0.55734 -0.0114,-0.20668 0.01,-0.38519 0.0665,-0.56907 0.057,-0.18388 0.13201,-0.31704 0.24248,-0.42632 0.11023,-0.10951 0.22194,-0.1652 0.35593,-0.17209 z m 1.16747,1.43344 c 0.28176,-10e-4 0.62032,0.0902 1.03059,0.35395 0.25206,0.16393 0.44794,0.17818 0.89955,0.37156 h 0.002 c 0.21714,0.0891 0.34429,0.20619 0.40677,0.32854 0.0622,0.12235 0.064,0.25533 0.0117,0.39502 -0.10427,0.27915 -0.43643,0.57183 -0.90347,0.7177 l -0.002,0.002 c -0.22785,0.0739 -0.4265,0.23586 -0.66098,0.36961 -0.234,0.13398 -0.49835,0.24384 -0.8585,0.22293 -0.15347,-0.009 -0.27634,-0.0411 -0.38134,-0.086 -0.10501,-0.0449 -0.19281,-0.10362 -0.27572,-0.17014 -0.16582,-0.13327 -0.30877,-0.30011 -0.5202,-0.42436 h -0.002 v -0.002 c -0.34068,-0.19267 -0.52652,-0.41504 -0.58473,-0.60818 -0.0584,-0.19315 -0.005,-0.35836 0.16428,-0.48499 0.19005,-0.14254 0.32252,-0.23873 0.41066,-0.30311 0.0874,-0.0641 0.12451,-0.0888 0.15254,-0.11538 0.14278,-0.13517 0.37051,-0.38255 0.7138,-0.50062 0.11807,-0.0409 0.24944,-0.066 0.39697,-0.0665 z m -0.37155,0.32853 c -0.0386,0.002 -0.0772,0.0121 -0.11147,0.0254 -0.0533,0.0208 -0.13651,0.0568 -0.12907,0.11343 0.006,0.0429 0.0741,0.0599 0.11734,0.0587 0.0453,-10e-4 0.077,-0.0477 0.11733,-0.0684 0.0459,-0.0237 0.12544,-0.0152 0.14081,-0.0645 0.005,-0.0161 -0.0107,-0.0348 -0.0254,-0.043 -0.0321,-0.0179 -0.0709,-0.0238 -0.10949,-0.0215 z m 0.70203,0 c -0.0259,0.002 -0.0502,0.009 -0.0723,0.0215 -0.0147,0.008 -0.0304,0.0269 -0.0254,0.043 0.0154,0.0493 0.0949,0.0409 0.14079,0.0645 0.0403,0.0208 0.072,0.0671 0.11733,0.0684 0.0433,0.001 0.11171,-0.0158 0.11734,-0.0587 0.007,-0.0567 -0.0758,-0.0927 -0.12907,-0.11343 -0.045,-0.0175 -0.0991,-0.0294 -0.14863,-0.0254 z m 1.51754,0.73725 c -0.0902,0.003 -0.0928,0.11214 -0.21707,0.20338 -0.1733,0.1272 -0.38657,0.29555 -0.55344,0.38916 -0.29453,0.16522 -0.77755,0.40676 -1.19092,0.40676 -0.41408,0 -0.74347,-0.19074 -0.99149,-0.3872 -0.12401,-0.0984 -0.22726,-0.19729 -0.30898,-0.27378 -0.0604,-0.0565 -0.0742,-0.18358 -0.17012,-0.19556 -0.0572,-0.005 -0.0748,0.15012 0.0645,0.26009 0.0803,0.0751 0.18763,0.17778 0.31877,0.2816 0.26227,0.20787 0.62571,0.4224 1.0873,0.4224 0.46183,0 0.89563,-0.23458 1.26721,-0.42827 0.19478,-0.10153 0.43532,-0.28079 0.58862,-0.41458 0.1533,-0.13379 0.23462,-0.24928 0.12515,-0.26204 -0.007,-8e-4 -0.0135,-0.002 -0.0195,-0.002 z m 0.53191,0.65121 c 0.30694,1.20969 1.02159,2.95682 1.48035,3.80945 0.24399,0.45232 0.72912,1.41343 0.93868,2.57157 0.1328,-0.004 0.27955,0.0166 0.4361,0.0567 0.54807,-1.42089 -0.46563,-2.95107 -0.92889,-3.37727 -0.18696,-0.1815 -0.19654,-0.26389 -0.10365,-0.26009 0.50222,0.44449 1.16218,1.33797 1.40215,2.34669 0.10949,0.4599 0.13301,0.94442 0.0156,1.42169 0.0573,0.0238 0.11686,0.0502 0.17602,0.0782 0.87971,0.42831 1.20449,0.79988 1.04817,1.30827 -0.0516,-0.002 -0.10311,-0.001 -0.15252,0 -0.005,2.4e-4 -0.009,0 -0.0137,0 0.12757,-0.40291 -0.15523,-0.70016 -0.90736,-1.04036 -0.77994,-0.34302 -1.4008,-0.30887 -1.5058,0.3872 -0.007,0.0363 -0.0116,0.0739 -0.0157,0.11147 -0.0584,0.0204 -0.11707,0.0462 -0.17599,0.0782 -0.36609,0.20051 -0.56546,0.5629 -0.67664,1.00908 -0.11094,0.44567 -0.14363,0.98432 -0.17404,1.58988 -0.0188,0.30434 -0.14496,0.71758 -0.27182,1.15378 -1.27764,0.91152 -3.05077,1.30541 -4.55647,0.27769 -0.10192,-0.16131 -0.21788,-0.32137 -0.33832,-0.47911 -0.077,-0.10071 -0.15628,-0.2004 -0.23467,-0.2992 0.15442,2.3e-4 0.28493,-0.0244 0.39113,-0.0724 0.13208,-0.0601 0.22573,-0.15609 0.27182,-0.27965 0.0917,-0.24683 -10e-4,-0.5955 -0.29529,-0.99343 -0.29388,-0.39768 -0.7902,-0.84606 -1.52143,-1.29458 -0.53738,-0.33426 -0.83912,-0.74429 -0.97976,-1.18899 -0.14087,-0.44496 -0.1203,-0.92529 -0.0117,-1.40019 0.20811,-0.91154 0.74225,-1.79812 1.0834,-2.3545 0.0917,-0.0675 0.0321,0.12495 -0.34613,0.8272 -0.33878,0.64193 -0.97101,2.12299 -0.10366,3.27949 0.0233,-0.82295 0.21954,-1.66321 0.54952,-2.44837 0.4806,-1.08925 1.48463,-2.97842 1.56445,-4.48412 0.0413,0.0299 0.18345,0.12644 0.24641,0.16231 0.18435,0.10857 0.32321,0.26647 0.50257,0.41067 0.17984,0.14444 0.40387,0.26971 0.74311,0.28943 0.0326,0.002 0.0647,0.004 0.0958,0.004 0.3497,0 0.62354,-0.1145 0.85066,-0.24445 0.24685,-0.14111 0.4427,-0.29705 0.62969,-0.35787 l 0.002,-0.002 c 0.39508,-0.12354 0.70724,-0.34178 0.88587,-0.59645 z m 1.86364,7.70885 c 0.0321,0.52336 0.291,1.05595 0.74901,1.17139 0.50129,0.13211 1.22421,-0.29641 1.52924,-0.6473 0.061,-0.002 0.12021,-0.006 0.17796,-0.008 0.26774,-0.006 0.49212,0.009 0.72161,0.20925 v 0.002 c 0.17628,0.14943 0.25974,0.43107 0.33243,0.74703 0.0727,0.31623 0.13195,0.66002 0.35006,0.90543 v 0.002 c 0.41909,0.46492 0.55334,0.779 0.5417,0.97974 -0.0114,0.20049 -0.15615,0.34886 -0.42437,0.51041 -0.53597,0.32333 -1.48598,0.60477 -2.09247,1.33956 -0.52695,0.62694 -1.16895,0.97028 -1.73457,1.01494 -0.56563,0.0447 -1.05359,-0.18905 -1.34152,-0.76658 v -0.002 h -0.002 c -0.17868,-0.33973 -0.10344,-0.87587 0.0469,-1.44126 0.15038,-0.56517 0.36605,-1.14568 0.39503,-1.61726 v -0.002 c 0.0304,-0.60435 0.0648,-1.13161 0.16622,-1.53903 0.10168,-0.40743 0.26045,-0.68381 0.54365,-0.83894 0.0133,-0.007 0.028,-0.0131 0.0411,-0.0196 z m -9.20875,0.0391 c 0.003,2.6e-4 0.005,2.6e-4 0.008,0 0.0423,2.6e-4 0.0874,0.004 0.13493,0.0117 0.32072,0.0485 0.60081,0.27213 0.87021,0.63751 l 0.77832,1.41779 c 0.20692,0.43214 0.64459,0.90749 1.01496,1.39237 0.37037,0.48466 0.65721,0.97292 0.61991,1.34543 v 0.002 c -0.0485,0.63526 -0.40802,0.98118 -0.95823,1.10685 -0.54973,0.12568 -1.29512,2.4e-4 -2.03966,-0.38915 -0.82388,-0.43641 -1.80389,-0.39272 -2.43273,-0.5241 -0.31431,-0.0656 -0.51997,-0.16469 -0.61404,-0.34809 -0.0941,-0.18364 -0.0964,-0.50249 0.10365,-1.04818 l 0.002,-0.004 v -0.002 c 0.0991,-0.30527 0.0245,-0.63877 -0.0235,-0.95236 -0.048,-0.31333 -0.07,-0.59924 0.0372,-0.79787 v -0.002 c 0.13708,-0.26417 0.33918,-0.3585 0.58862,-0.44782 0.24968,-0.0896 0.54479,-0.15881 0.77832,-0.39307 l 0.002,-0.002 v -0.002 c 0.21595,-0.22783 0.37925,-0.5131 0.56907,-0.71574 0.16012,-0.17105 0.31965,-0.28385 0.56125,-0.28552 z" fill="#ffffff"/>
+</g>
+<g id="TUX" transform="matrix(0.02375674,0,0,0.02375674,68.581634,182.403)">
+<path d="m 65.33176,180.61612 h 23.382991 c 2.46136,0 3.69205,1 3.69205,3 v 18 c 0,1 -1.23069,3 -3.69205,3 H 65.33176 c -1.230684,0 -3.692052,-2 -3.692052,-3 v -18 c 0,-2 2.461368,-3 3.692052,-3 z" fill="#f2c480" transform="matrix(42.093318,0,0,42.093318,-2886.8285,-7677.9474)"/>
+<path d="M 373.31285 0.97161245 C 367.80285 0.96161245 362.09872 1.2324601 356.10872 1.7124601 C 204.66872 13.90246 244.84439 173.85405 242.59439 227.42405 C 239.82439 266.60405 231.84348 297.53476 204.89348 335.83476 C 173.24348 373.47476 128.70548 434.40345 107.59548 497.83345 C 97.635494 527.76345 92.853615 558.26675 97.223615 587.14675 C 95.853615 588.37675 94.604743 589.69563 93.354743 591.01563 C 84.064743 600.94563 77.132985 612.8888 69.482985 620.9788 C 62.332985 628.1198 52.201508 630.88127 41.001508 634.89027 C 29.801508 638.91127 17.510538 644.85361 10.050538 659.17361 L 9.968222 659.25593 C 6.458222 665.80593 5.3585031 672.82966 5.3585031 679.99966 C 5.3585031 686.62966 6.3440969 693.36892 7.3340969 699.83792 C 9.3940969 713.29792 11.421159 726.03676 8.6511594 734.65776 C -0.20884025 758.88776 -1.2930789 775.59084 4.9469211 787.75184 C 11.206921 799.93184 24.002016 805.29094 38.532016 808.33094 C 67.592016 814.39094 106.96024 812.96394 137.97024 829.40394 L 140.68668 824.30033 L 138.05255 829.40394 C 171.25255 846.76394 204.87863 852.90371 231.72863 846.77271 C 251.20863 842.33371 266.98937 830.69935 275.10937 812.85835 C 296.10937 812.75835 319.18872 803.85695 356.10872 801.82795 C 381.15872 799.80695 412.47773 810.74253 448.46773 808.74253 C 449.40773 812.64253 450.72455 816.44987 452.58355 820.01987 L 452.66586 820.10219 C 466.61486 848.00219 492.53432 860.72395 520.16532 858.54395 C 547.82432 856.36295 577.21903 840.07823 601.00003 811.78823 C 623.66003 784.30823 661.32983 772.91099 686.27983 757.87099 C 698.74983 750.35099 708.86769 740.93028 709.65769 727.24928 C 710.43569 713.57928 702.35266 698.26712 683.89266 677.77712 L 683.89266 677.6948 C 677.82366 670.8448 674.90114 658.13361 671.79214 644.60361 C 668.69114 631.08361 665.27643 616.51733 654.17643 607.06733 L 654.09412 606.98501 C 651.89412 605.06501 649.61417 603.47934 647.34417 602.12834 C 645.06517 600.77834 642.73859 599.70568 640.42959 598.83568 C 655.85959 553.07568 649.83586 507.47727 634.25586 466.30627 C 615.14586 415.76627 581.79222 371.71691 556.30222 341.59691 C 527.77222 305.60691 499.85838 271.46337 500.40938 221.00337 C 501.25838 143.99337 508.83285 1.1616124 373.31285 0.97161245 z M 391.34014 119.67187 L 391.66941 119.67187 C 399.34941 119.67187 405.91009 121.86108 412.66009 126.75108 C 419.51009 131.73108 424.48484 137.97165 428.46484 146.67165 C 432.36484 155.15165 434.28294 163.42985 434.47394 173.25985 C 434.47294 173.51985 434.40394 173.7407 434.47394 174.0007 C 434.55394 184.0907 432.87106 192.72438 429.04106 201.49438 C 426.86106 206.49438 424.31331 210.69574 421.30331 214.33574 C 420.28231 213.84574 419.27629 213.38636 418.17529 212.93636 C 414.36529 211.30636 410.98706 209.96054 407.96806 208.82054 C 404.94706 207.68054 402.579 206.86179 400.148 206.02179 C 401.909 203.89179 405.35999 201.43404 406.65099 198.28404 C 408.61099 193.53404 409.59902 188.83246 409.77902 183.30246 C 409.77902 183.08246 409.86133 182.90393 409.86133 182.64393 C 409.97133 177.34393 409.27111 172.79624 407.72111 168.15624 C 406.10111 163.28624 404.03248 159.78889 401.05348 156.87889 C 398.06348 153.96889 395.08477 152.71844 391.50477 152.59844 C 391.33477 152.58844 391.18088 152.51612 391.01088 152.51612 C 387.65088 152.52612 384.73012 153.70036 381.70912 156.22036 C 378.53912 158.87036 376.17733 162.28381 374.21833 167.00381 C 372.26833 171.72381 371.2813 176.42539 371.0903 181.98539 C 371.0613 182.20539 371.0903 182.34161 371.0903 182.56161 C 371.0203 185.62161 371.19652 188.48483 371.66652 191.20483 C 364.78652 187.77483 356.01499 185.24635 349.93499 183.79635 C 349.58499 181.16635 349.33646 178.48703 349.27646 175.64703 L 349.27646 174.82387 C 349.16646 164.76387 350.83934 156.1725 354.70934 147.4125 C 358.57934 138.6425 363.36351 132.29267 370.10251 127.16267 C 376.85251 122.04267 383.49114 119.75187 391.34014 119.67187 z M 285.15197 127.98583 C 285.59197 127.96583 286.03904 127.98583 286.46904 127.98583 C 291.57904 127.99583 296.07209 129.73103 300.79209 133.50103 C 305.91209 137.59103 309.81724 142.75894 313.05724 150.12894 C 316.30724 157.49894 318.01012 164.88912 318.49012 173.58912 L 318.49012 173.67144 C 318.72012 177.32144 318.6978 180.7133 318.4078 184.0433 C 317.3978 184.3333 316.41441 184.7011 315.44441 185.0311 C 309.94441 186.9311 305.58831 188.99105 301.36831 191.78105 C 301.77831 188.86105 301.85294 185.95393 301.53294 182.64393 C 301.50294 182.46393 301.53294 182.24771 301.53294 182.06771 C 301.09294 177.67771 300.11955 174.01646 298.56955 170.29646 C 296.91955 166.42646 295.07277 163.67092 292.64277 161.57092 C 290.44277 159.67092 288.35745 158.83448 286.05745 158.85448 C 285.82745 158.85448 285.63892 158.83448 285.39892 158.85448 C 282.81892 159.07448 280.67898 160.33567 278.64898 162.80567 C 276.62898 165.26567 275.24621 168.37669 274.28621 172.43669 C 273.32621 176.48669 273.06304 180.4611 273.46304 185.0311 C 273.46304 185.2111 273.54536 185.345 273.54536 185.525 C 273.98536 189.955 274.84644 193.65856 276.42644 197.37856 C 278.04644 201.20856 279.92322 203.92179 282.35322 206.02179 C 282.76322 206.37179 283.18796 206.64727 283.58796 206.92727 C 281.06796 208.87727 279.3296 210.26393 277.2496 211.78393 C 275.9196 212.75393 274.39756 213.96354 272.55756 215.32354 C 268.54756 211.56354 265.41959 206.8189 262.67959 200.5889 C 259.43959 193.2289 257.6844 185.82873 257.1644 177.12873 C 256.6844 168.42873 257.57315 160.91465 259.96315 153.17465 C 262.36315 145.43465 265.52039 139.82967 270.17039 135.22967 C 274.81039 130.61967 279.51197 128.27583 285.15197 127.98583 z M 334.29487 188.32376 C 346.15487 188.27376 360.40562 192.12303 377.67562 203.22303 C 388.28562 210.12303 396.53116 210.72314 415.54116 218.86314 L 415.62348 218.86314 C 424.76348 222.61314 430.11529 227.5423 432.74529 232.6923 C 435.36529 237.8423 435.43919 243.44022 433.23919 249.32022 C 428.85019 261.07022 414.86801 273.39034 395.20901 279.53034 L 395.1267 279.61265 C 385.5357 282.72265 377.17375 289.54046 367.30375 295.17046 C 357.45375 300.81046 346.32685 305.43453 331.16685 304.55453 C 324.70685 304.17453 319.53515 302.8226 315.11515 300.9326 C 310.69515 299.0426 306.99853 296.57108 303.50853 293.77108 C 296.52853 288.16108 290.51237 281.13842 281.61237 275.90842 L 281.53005 275.90842 L 281.53005 275.8261 C 267.19005 267.7161 259.36745 258.3557 256.91745 250.2257 C 254.45745 242.0957 256.72202 235.14123 263.83202 229.81123 C 271.83202 223.81123 277.40847 219.76218 281.11847 217.05218 C 284.79847 214.35218 286.35915 213.31552 287.53915 212.19552 C 293.54915 206.50552 303.13464 196.09252 317.58464 191.12252 C 322.55464 189.40252 328.08487 188.34376 334.29487 188.32376 z M 318.65475 202.15291 C 317.03194 202.24808 315.40506 202.66067 313.96272 203.22303 C 311.721 204.09701 308.21697 205.61175 308.52983 207.99738 C 308.76665 209.8031 311.64839 210.51947 313.46882 210.46687 C 315.37625 210.4118 316.71138 208.45958 318.4078 207.5858 C 320.34108 206.58999 323.68774 206.9456 324.33458 204.86936 C 324.54562 204.192 323.88457 203.40316 323.26447 203.05839 C 321.91146 202.30609 320.27756 202.05774 318.65475 202.15291 z M 348.20634 202.15291 C 347.11537 202.24147 346.09083 202.54118 345.16064 203.05839 C 344.54054 203.40316 343.87948 204.192 344.09052 204.86936 C 344.73736 206.9456 348.08402 206.58999 350.0173 207.5858 C 351.71372 208.45958 353.04886 210.4118 354.95629 210.46687 C 356.77672 210.51947 359.65845 209.8031 359.89527 207.99738 C 360.20813 205.61175 356.70411 204.09701 354.46239 203.22303 C 352.56931 202.48494 350.2891 201.98384 348.20634 202.15291 z M 412.08388 233.1862 C 408.28903 233.30061 408.17868 237.90667 402.94675 241.74711 C 395.65241 247.10143 386.67542 254.18783 379.65121 258.12807 C 367.25295 265.0829 346.92052 275.24988 329.52052 275.24988 C 312.09052 275.24988 298.2261 267.22124 287.7861 258.95124 C 282.5661 254.81124 278.22011 250.64694 274.78011 247.42694 C 272.23692 245.04862 271.65721 239.69948 267.61858 239.1953 C 265.20916 239.00362 264.47068 245.51435 270.33502 250.14338 C 273.71502 253.30338 278.2326 257.62694 283.7526 261.99694 C 294.7926 270.74694 310.09052 279.77729 329.52052 279.77729 C 348.96052 279.77729 367.2208 269.90269 382.86155 261.74999 C 391.06127 257.47591 401.18584 249.9306 407.63879 244.29891 C 414.09173 238.66722 417.5149 233.80557 412.90704 233.26852 C 412.61905 233.23495 412.33687 233.17857 412.08388 233.1862 z M 434.47394 260.59756 C 447.39394 311.51756 477.47646 385.05993 496.78746 420.94993 C 507.05746 439.98993 527.47834 480.446 536.29934 529.196 C 541.88934 529.025 548.06589 529.89418 554.65589 531.58318 C 577.72589 471.77318 535.0556 407.36274 515.5556 389.42274 C 507.6856 381.78274 507.28283 378.31466 511.19283 378.47466 C 532.33283 397.18466 560.1127 434.79435 570.2137 477.25435 C 574.8227 496.61335 575.81323 517.00838 570.87223 537.09838 C 573.28223 538.09838 575.7907 539.21003 578.2807 540.39103 C 615.3107 558.42003 628.9823 574.06071 622.4023 595.46071 C 620.2323 595.38071 618.06162 595.41171 615.98162 595.46071 C 615.79162 595.47071 615.6054 595.46071 615.4054 595.46071 C 620.7754 578.50071 608.87059 565.98838 577.21059 551.66838 C 544.38059 537.22938 518.24696 538.66703 513.82696 567.96703 C 513.54696 569.49703 513.33842 571.07907 513.16842 572.65907 C 510.70842 573.51907 508.23995 574.60172 505.75995 575.95172 C 490.34995 584.39172 481.95847 599.64599 477.27847 618.42699 C 472.60847 637.18699 471.23231 659.86023 469.95231 685.35023 C 469.16231 698.16123 463.85033 715.55591 458.51033 733.91691 C 404.73033 772.28591 330.0931 788.86584 266.7131 745.60584 C 262.4231 738.81584 257.54236 732.07832 252.47236 725.43832 C 249.23236 721.19932 245.89439 717.00291 242.59439 712.84391 C 249.09439 712.85391 254.58767 711.8172 259.05767 709.7982 C 264.61767 707.2682 268.55965 703.22796 270.49965 698.02696 C 274.35965 687.63696 270.43988 672.96022 258.06988 656.21022 C 245.69988 639.47022 224.80771 620.59676 194.02771 601.71676 C 171.40771 587.64676 158.70719 570.38738 152.78719 551.66838 C 146.85719 532.93838 147.72329 512.71983 152.29329 492.72983 C 161.05329 454.35983 183.53658 417.04088 197.89658 393.62088 C 201.75658 390.78088 199.24658 398.88072 183.32658 428.44072 C 169.06658 455.46172 142.45381 517.80434 178.96381 566.48534 C 179.94381 531.84434 188.20472 496.47519 202.09472 463.42519 C 222.32472 417.57519 264.58784 338.05367 267.94784 274.67367 C 269.68784 275.93367 275.66971 279.99593 278.31971 281.50593 C 286.07971 286.07593 291.92503 292.72238 299.47503 298.79238 C 307.04503 304.87238 316.47526 310.14521 330.75526 310.97521 C 332.12526 311.05521 333.47877 311.13984 334.78877 311.13984 C 349.50877 311.13984 361.03641 306.32029 370.59641 300.85029 C 380.98741 294.91029 389.23129 288.34638 397.10229 285.78638 L 397.18461 285.70407 C 413.81461 280.50407 426.95494 271.31756 434.47394 260.59756 z M 512.92148 585.08884 C 514.27248 607.11884 525.16966 629.53737 544.44866 634.39637 C 565.54966 639.95737 595.98009 621.91964 608.82009 607.14964 C 611.38909 607.04864 613.87988 606.88038 616.31088 606.82038 C 627.58088 606.54938 637.02564 607.18823 646.68564 615.62823 L 646.68564 615.71055 C 654.10564 622.00055 657.61943 633.85542 660.67943 647.15542 C 663.74043 660.46642 666.23307 674.93791 675.41407 685.26791 L 675.41407 685.35023 C 693.05507 704.92023 698.70571 718.14075 698.21571 726.59075 C 697.73571 735.02975 691.64305 741.27533 680.35305 748.07533 C 657.79205 761.68533 617.80349 773.53207 592.27449 804.46207 C 570.09349 830.85207 543.06884 845.30429 519.25984 847.18429 C 495.45084 849.06429 474.91078 839.22626 462.79078 814.91626 L 462.79078 814.83394 L 462.70847 814.83394 C 455.18747 800.53394 458.35406 777.96575 464.68406 754.16675 C 471.01406 730.37675 480.09197 705.94108 481.31197 686.09108 L 481.31197 686.00876 C 482.59097 660.56976 484.03987 638.37575 488.30887 621.22575 C 492.58887 604.07575 499.27183 592.44201 511.19283 585.91201 C 511.75283 585.61201 512.37148 585.35884 512.92148 585.08884 z M 125.29351 586.73517 C 125.41351 586.74617 125.50278 586.74617 125.62278 586.73517 C 127.40278 586.74617 129.30261 586.91807 131.30261 587.22907 C 144.80261 589.26907 156.59341 598.68422 167.93341 614.06422 L 200.69534 673.74362 C 209.40534 691.93362 227.82756 711.9429 243.41756 732.3529 C 259.00756 752.7539 271.08186 773.30659 269.51186 788.98659 L 269.51186 789.0689 C 267.47186 815.8089 252.33682 830.36999 229.17682 835.65999 C 206.03682 840.94999 174.6608 835.67003 143.3208 819.27903 C 108.6408 800.90903 67.389191 802.74823 40.919191 797.21823 C 27.689191 794.45823 19.031839 790.28591 15.071839 782.56591 C 11.111839 774.83591 11.014609 761.41431 19.434609 738.44431 L 19.516925 738.27968 L 19.516925 738.19736 C 23.686925 725.34736 20.549128 711.30927 18.529128 698.10927 C 16.509128 684.92027 15.58314 672.88518 20.09314 664.52418 L 20.09314 664.44186 C 25.86314 653.32186 34.370379 649.3514 44.870379 645.5914 C 55.380379 641.8214 67.802309 638.90681 77.632309 629.04581 L 77.714626 628.96349 L 77.714626 628.88117 C 86.804626 619.29117 93.678706 607.28337 101.6687 598.75337 C 108.4087 591.55337 115.12351 586.80517 125.29351 586.73517 z " fill="#ffffff" transform="translate(-1.8461318e-5,4.1759485e-5)"/>
+</g>
+<g id="Menu">
+<path d="m 395.61097,180.61612 h 24.61367 c 1.23071,0 2.46138,1 2.46138,3 v 18 c 0,2 -1.23067,3 -2.46138,3 h -24.61367 c -2.46136,0 -3.69205,-1 -3.69205,-3 v -18 c 0,-2 1.23069,-3 3.69205,-3 z" fill="#f2c480"/>
+<path d="M 399.29209 184.23694 C 398.18271 184.23694 397.28959 185.13006 397.28959 186.23944 C 397.28959 187.34883 398.18271 188.24195 399.29209 188.24195 L 415.31212 188.24195 C 416.4215 188.24195 417.31462 187.34883 417.31462 186.23944 C 417.31462 185.13006 416.4215 184.23694 415.31212 184.23694 L 399.29209 184.23694 z M 399.29209 191.03059 C 398.18271 191.03059 397.28959 191.9237 397.28959 193.03309 C 397.28959 194.14248 398.18271 195.03559 399.29209 195.03559 L 415.31212 195.03559 C 416.4215 195.03559 417.31462 194.14248 417.31462 193.03309 C 417.31462 191.9237 416.4215 191.03059 415.31212 191.03059 L 399.29209 191.03059 z M 399.29209 197.82619 C 398.18271 197.82619 397.28959 198.71931 397.28959 199.8287 C 397.28959 200.93808 398.18271 201.8312 399.29209 201.8312 L 415.31212 201.8312 C 416.4215 201.8312 417.31462 200.93808 417.31462 199.8287 C 417.31462 198.71931 416.4215 197.82619 415.31212 197.82619 L 399.29209 197.82619 z " fill="#ffffff"/>
+</g>
+</g>
+</svg>

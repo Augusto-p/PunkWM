@@ -1,3 +1,172 @@
 body{
-    background-color: pink;
+    background-color: #0B1418;
+    border: none;
+    outline: none;
+    display:grid;
+    position: relative;
+    grid-template-rows: 1fr;
+    font-family: "Roboto", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    height:100vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-rows: 5vh 1fr;
+    grid-template-columns: 10vh 1fr;
+    transition: all 2s ease-in-out;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* fondo */
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+/* barra */
+::-webkit-scrollbar-thumb {
+    background: #484f5a;
+    border-radius: 10px;
+}
+
+/* hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.55);
+}
+
+.window_bar{
+    background-color: #0B1418;
+    grid-column: 1/3;
+    grid-row: 1;
+    height: 5vh;
+    width: 100%;
+    border-bottom: .1vh solid #999;
+    display: grid;
+    grid-template-columns: 5vh 1fr 5vh;
+    grid-template-rows: 100%;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    z-index: 99;
+}
+
+.window_bar #window_bar_name{
+    grid-column: 2;
+    grid-row: 1;
+    color: #999;
+    font-weight: 700;
+}
+
+.window_bar #window_bar_close{
+    grid-column: 3;
+    grid-row: 1;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    fill: #999;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease-in-out;
+}
+
+.window_bar #window_bar_close:hover{
+    fill: #fff;
+}
+.window_bar #window_bar_close svg{
+    width: 70%;
+}
+
+.Menu{
+    background-color: transparent;
+    border-right: .2vh solid #999;
+    grid-column: 1;
+    grid-template-rows: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: 8vh;
+    row-gap: .5vh;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    box-sizing: border-box;
+    padding: 0 1vh;
+}
+
+body:has(.Menu:hover) {
+    grid-template-columns: 25vh 1fr;   
+
+}
+
+.Menu button{
+    position: relative;
+    width: 100%;
+    padding: 0;
+    fill: #fff;
+    border-radius: 1vh;
+    border: none;
+    background-color: transparent;
+    display: grid;
+    grid-template-columns: 8vh 0vh;
+    grid-template-rows: 1fr;
+    
+    box-sizing: border-box;
+    justify-items: center;
+    align-items: center;
+    grid-column: 1;  
+    transition: all 2s linear;
+    background-color: transparent;
+    border-radius: 1vh;
+    overflow: hidden;
+
+}
+
+.Menu button:hover{
+    background-color: #1f333e;
+}
+.Menu button svg{
+    width: 80%;
+}
+.Menu button span{
+    color: #fff;
+    opacity: 0;
+    transition: all 2s ease-in-out;
+    font-size: 1rem;
+    font-weight: 900;
+    width: 0;
+     display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
+}
+
+.Menu:hover button{
+    grid-template-columns: 8vh 1fr;
+}   
+.Menu:hover button span{
+    transition: all 1s ease-in-out;
+    width: 100%;
+    overflow: hidden;
+    opacity: 1;
+}
+
+.main{
+    grid-column: 2;
+    grid-row: 2;
+    height: 100%;
+    width: 100%;
+    position: relative;   
+    box-sizing: border-box;
+    transform: translateY(-100vw);
+    transition: 2s all ease-in-out;
+    z-index: 10;
 }

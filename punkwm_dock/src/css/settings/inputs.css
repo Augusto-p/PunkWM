@@ -1,0 +1,115 @@
+.input-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    border: .6vh solid #777;
+    border-radius: 1vh;
+    grid-template-rows: 100%;
+    box-sizing: border-box;
+}
+
+
+.input-container div.input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #1f333e;
+    overflow: hidden;
+}
+
+
+.input-container input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #1f333e;
+    border: none;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-radius: none;
+    padding: 0;
+    font-size: 5vh;
+    text-align: center;
+    color: #fff;
+    transition: all 0.2s ease-out;
+    -moz-appearance: textfield;
+}
+
+.input-container input[type="text"]{
+    text-align: start;
+    padding-inline-start: 1vw;
+}
+
+.input-container input:focus,
+.input-container input:hover {
+    background-color: #0B1418;
+    outline: none;
+}
+
+.input-container input::-webkit-inner-spin-button,
+.input-container input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.input-container button {
+    position: relative;
+    height: 100%;
+    background-color: #1f333e;
+    border: none;
+    border-radius: none;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    fill: #fff;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+
+.input-container button:hover,
+.input-container button:active {
+    background-color: #0B1418;
+    fill: #777;
+    color: #777;
+}
+
+.input-container button svg {
+    height: 80%;
+}
+
+
+.input-container.Search {
+    grid-template-columns: 90% 10%;   
+}
+.input-container.Text {
+    grid-template-columns: 100%;   
+}
+.input-container.Button {
+    grid-template-columns: 100%;
+    
+}
+
+.input-container.Button button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.input-container span{
+    font-weight: 900;
+    
+}
