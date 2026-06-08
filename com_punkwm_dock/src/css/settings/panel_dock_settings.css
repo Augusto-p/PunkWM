@@ -1,0 +1,122 @@
+.PanelDockSettings{
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 100%;
+}
+
+body[data-mode="Pannel & Dock"] .main[data-mode="Pannel & Dock"]{
+    transform: translateY(0);
+}
+
+.PanelDockSettings .sizes{
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: 5vh 10vh 5vh 10vh 1fr;
+    grid-template-columns: 100%;
+    align-items: center;
+    position: relative;
+    padding: 1vw 2vw;
+    box-sizing: border-box;
+    grid-gap: 2vh;
+}
+
+.PanelDockSettings h2 {
+    margin: 0;
+    color: #fff;
+    grid-row: 1;
+}
+
+
+.PanelDockSettings .sizes .input-container {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+    border: .6vh solid #777;
+    border-radius: 1vh;
+    grid-template-rows: 100%;
+    box-sizing: border-box;
+}
+
+
+.PanelDockSettings .sizes .input-container div.input {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #1f333e;
+    overflow: hidden;
+}
+
+
+.PanelDockSettings .sizes .input-container input {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0px;
+    -moz-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #1f333e;
+    border: none;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-radius: none;
+    padding: 0;
+    font-size: 5vh;
+    text-align: center;
+    color: #fff;
+    transition: all 0.2s ease-out;
+    -moz-appearance: textfield;
+}
+
+.PanelDockSettings .sizes .input-container input[type="text"]{
+    text-align: start;
+    padding-inline-start: 1vw;
+}
+
+.PanelDockSettings .sizes .input-container input:focus,
+.PanelDockSettings .sizes .input-container input:hover {
+    background-color: #0B1418;
+    outline: none;
+}
+
+.PanelDockSettings .sizes .input-container input::-webkit-inner-spin-button,
+.PanelDockSettings .sizes .input-container input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.PanelDockSettings .sizes .input-container button {
+    position: relative;
+    height: 100%;
+    background-color: #1f333e;
+    border: none;
+    border-radius: none;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    fill: #fff;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+
+.PanelDockSettings .sizes .input-container button:hover,
+.PanelDockSettings .sizes .input-container button:active {
+    background-color: #0B1418;
+    fill: #777;
+}
+
+.PanelDockSettings .sizes .input-container button svg {
+    height: 80%;
+}
+
+.PanelDockSettings .sizes h2.panel {
+    grid-row: 3;
+}

@@ -1,0 +1,195 @@
+{
+    "UI": {
+        "Settings Pannel": "Panel De Configuracion",
+        "Menu": {
+            "User": "Usuario",
+            "Language": "Idioma",
+            "Keyboard Layout": "Distribucion De Teclado",
+            "Keyboard Shortcut": "Atajos de Teclado",
+            "Weather": "Clima",
+            "Google": "Google",
+            "Wallpaers": "Fondos De Pantalla",
+            "Apps": "Aplicaciones",
+            "Pannel & Dock": "Panel y Bara",
+            "Music Folders": "Carpetas de Musica",
+            "Admin Settings": "Administrador"
+        },
+        "User": {
+            "User": "Usuario",
+            "User Name": "Nombre de Usuario"
+        },
+        "Weather": {
+            "Weather": "Clima",
+            "International": "Internacional",
+            "Inperial": "Imperial"
+        },
+        "Google": {
+            "Credentials": "Credenciales",
+            "Maximum number of events viewed": "Maximo de Eventos Vistos",
+            "Scopes": "Alcances",
+            "Search": "Buscar"
+        },
+        "Wallpaers": {
+            "Wallpaers": "Fondos De Pantalla",
+            "Main Wallpaer": "Fondo De Pantalla Pricipal",
+            "Lock Wallpaer": "Fondo De Pantalla Bloqueo"
+        },
+        "Pannel & Dock": {
+            "Dock Width": "Ancho de la Barra",
+            "Pannel Width": "Ancho del Panel"
+        },
+        "Music Folders": {
+            "Music Folders": "Carpetas de Musica",
+            "Add Folder": "Añadir Carpeta"
+        },
+        "Admin Settings": {
+            "Admin Settings": "Configuracion del Administrador",
+            "LockScreen Wallpaer": "Fondo De Panel de Bloqueo"
+        },
+        "Keyboard Shortcut": {
+            "Keyboard Shortcut": "Atajos de Teclado",
+            "Name": "Nombre",
+            "Command": "Comando",
+            "Description": "Descripción",
+            "Shortcut": "Atajo"
+        },
+        "Apps": {
+            "Name": "Nombre",
+            "Command": "Comando",
+            "Delete": "Eliminar",
+            "Save": "Guardar",
+            "App Name": "Nombre de la Aplicacion",
+            "App Command": "Comando de la Aplicacion"
+        }
+    },
+    "Keyboard Shortcut": {
+        "Workspace:1": {
+            "Name": "Cambiar al Espacio 1",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 1"
+        },
+        "Workspace:2": {
+            "Name": "Cambiar al Espacio 2",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 2"
+        },
+        "Workspace:3": {
+            "Name": "Cambiar al Espacio 3",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 3"
+        },
+        "Workspace:4": {
+            "Name": "Cambiar al Espacio 4",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 4"
+        },
+        "Workspace:5": {
+            "Name": "Cambiar al Espacio 5",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 5"
+        },
+        "Workspace:6": {
+            "Name": "Cambiar al Espacio 6",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 6"
+        },
+        "Workspace:7": {
+            "Name": "Cambiar al Espacio 7",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 7"
+        },
+        "Workspace:8": {
+            "Name": "Cambiar al Espacio 8",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 8"
+        },
+        "Workspace:9": {
+            "Name": "Cambiar al Espacio 9",
+            "Description": "Cambia el foco actual al Espacio de Trabajo 9"
+        },
+        "Focus:To:Workspace:1": {
+            "Name": "Enviar al Espacio 1",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 1 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:2": {
+            "Name": "Enviar al Espacio 2",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 2 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:3": {
+            "Name": "Enviar al Espacio 3",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 3 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:4": {
+            "Name": "Enviar al Espacio 4",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 4 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:5": {
+            "Name": "Enviar al Espacio 5",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 5 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:6": {
+            "Name": "Enviar al Espacio 6",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 6 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:7": {
+            "Name": "Enviar al Espacio 7",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 7 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:8": {
+            "Name": "Enviar al Espacio 8",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 8 sin cambiar el foco"
+        },
+        "Focus:To:Workspace:9": {
+            "Name": "Enviar al Espacio 9",
+            "Description": "Mueve la ventana activa al Espacio de Trabajo 9 sin cambiar el foco"
+        },
+        "Move:Focus:To:Workspace:1": {
+            "Name": "Mover al Espacio 1 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 1 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:2": {
+            "Name": "Mover al Espacio 2 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 2 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:3": {
+            "Name": "Mover al Espacio 3 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 3 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:4": {
+            "Name": "Mover al Espacio 4 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 4 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:5": {
+            "Name": "Mover al Espacio 5 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 5 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:6": {
+            "Name": "Mover al Espacio 6 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 6 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:7": {
+            "Name": "Mover al Espacio 7 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 7 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:8": {
+            "Name": "Mover al Espacio 8 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 8 y cambia el foco a dicho espacio"
+        },
+        "Move:Focus:To:Workspace:9": {
+            "Name": "Mover al Espacio 9 y Seguir",
+            "Description": "Traslada la ventana activa al Espacio 9 y cambia el foco a dicho espacio"
+        },
+        "Window:Closed:Focused": {
+            "Name": "Cerrar Ventana Activa",
+            "Description": "Finaliza el proceso y cierra la ventana que tiene el foco"
+        },
+        "Window:Focus:Next": {
+            "Name": "Enfocar Ventana Siguiente",
+            "Description": "Desplaza el foco a la siguiente ventana en el espacio actual"
+        },
+        "Window:Focus:Previous": {
+            "Name": "Enfocar Ventana Anterior",
+            "Description": "Desplaza el foco a la ventana anterior en el espacio actual"
+        },
+        "Layout:Toggle": {
+            "Name": "Alternar Diseño",
+            "Description": "Cambia el modo de distribución de ventanas en el espacio de trabajo activo"
+        },
+        "Open:APP": {
+            "Name": "Abrir %APP%",
+            "Description": "Inicia la aplicación %APP% en el espacio de trabajo actual"
+        }
+    }
+}

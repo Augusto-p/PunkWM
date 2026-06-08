@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="c" enable-background="new 0 0 256 256" version="1.1" viewBox="0 0 256 256" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:url(#Border_00000101104235666603682920000002035333013992593321_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:url(#Kodi_00000034792859328757966830000000135640982814228155_);}
+</style>
+<rect id="d" class="st0" width="256" height="256"/>
+<linearGradient id="b" x1="-351.5" x2="-351.5" y1="457.53" y2="341.47" gradientTransform="matrix(2 0 0 -2 831 927)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#FEFEFE" offset="0"/>
+	<stop stop-color="#DFDFDF" offset="1"/>
+</linearGradient>
+<path id="e" d="m17.3 114.9 97.6-97.6c7.2-7.2 19-7.2 26.2 0l97.6 97.6c7.2 7.2 7.2 19 0 26.2l-97.6 97.6c-7.2 7.2-19 7.2-26.2 0l-97.6-97.6c-7.2-7.2-7.2-19 0-26.2z" clip-rule="evenodd" fill="url(#b)" fill-rule="evenodd"/>
+<linearGradient id="a" x1="-351.5" x2="-351.5" y1="450.37" y2="348.63" gradientTransform="matrix(2 0 0 -2 831 927)" gradientUnits="userSpaceOnUse">
+	<stop stop-color="#33ADDD" offset="0"/>
+	<stop stop-color="#148FBF" offset="1"/>
+</linearGradient>
+<path id="f" d="m61.6 96.1c0-4.4-2.1-6.4-4-4.4l-31.3 31.3c-2.8 2.8-2.8 7.3 0 10.1l31.3 31.3c1.9 1.9 4 0 4-4.4v-63.9zm90.9 26.9 33.6-33.6c2.8-2.8 7.3-2.8 10.1 0l33.6 33.6c2.8 2.8 2.8 7.3 0 10.1l-33.6 33.6c-2.8 2.8-7.3 2.8-10.1 0l-33.6-33.7c-2.8-2.7-2.8-7.3 0-10zm-63.1 63.1 33.6-33.6c2.8-2.8 7.3-2.8 10.1 0l33.6 33.6c2.8 2.8 2.8 7.3 0 10.1l-33.7 33.5c-2.8 2.8-7.3 2.8-10.1 0l-33.6-33.6c-2.7-2.7-2.7-7.3 0.1-10zm-0.9-120.3c0-3.5 1-6 3.4-8.5 10.4-10.4 20.7-20.7 31-31.1 2.8-2.8 7.3-2.8 10.1 0l33.6 33.6c2.8 2.8 2.8 7.3 0 10.1l-74.3 74.3c-1.9 1.9-3.8 0-3.8-4.4v-74z" clip-rule="evenodd" fill="url(#a)" fill-rule="evenodd"/>
+</svg>

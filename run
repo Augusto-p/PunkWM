@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+export WEBKIT_DISABLE_DMABUF_RENDERER=1
+export WAYLAND_DISPLAY=wayland-1  # El nombre que salía en tus logs
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+
+
+ROOT="$(pwd)"
+DOCK="$ROOT/com_punkwm_dock/src-tauri"
+
+cd "$DOCK"
+cargo build
+
+cp "$DOOK/target/debug/com_punkwm_dock" "$ROOT/com_punkwm_dock_"
+
+cd "$ROOT"
+cargo run --features tty -- --tty-udev

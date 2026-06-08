@@ -1,0 +1,7 @@
+#Home {
+    grid-row: 1;
+}
+
+#Home>img {
+    height: 80%;
+}

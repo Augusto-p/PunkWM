@@ -1,0 +1,213 @@
+body[data-mode="Google"] .main[data-mode="Google"] {
+    transform: translateY(0);
+}
+
+.Google {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 100%;
+
+}
+
+.Google .Credentials {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: 5vh calc(100% - 5vh);
+    grid-template-columns: 100%;
+    position: relative;
+}
+
+.Google h2 {
+    margin: 0;
+    color: #fff;
+    grid-row: 1;
+}
+
+.Google .pre {
+    grid-row: 2;
+    background: #1e1e1e;
+    padding: 10px;
+    border-radius: 8px;
+    color: white;
+    width: 98%;
+    height: 89vh;
+    font-family: monospace;
+    box-sizing: border-box;
+    max-width: 100%;
+    max-height: 100%;
+    white-space: pre-wrap;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.Google .key {
+    color: #9cdcfe;
+}
+
+.Google .string {
+    color: #ce9178;
+}
+
+.Google .number {
+    color: #b5cea8;
+}
+
+.Google .boolean {
+    color: #569cd6;
+}
+
+.Google .null {
+    color: #808080;
+}
+
+/* llaves por nivel */
+.Google .depth-0 {
+    color: #ffd700;
+}
+
+/* amarillo */
+.Google .depth-1 {
+    color: #da70d6;
+}
+
+/* violeta */
+.Google .depth-2 {
+    color: #179fff;
+}
+
+/* celeste */
+
+.Google #CredentialsInput {
+    position: absolute;
+    grid-row: 2;
+    width: 98%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+
+    background-color: #179fff;
+}
+
+
+.Google .Configs {
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: 5vh 10vh 5vh 10vh 55vh;
+    grid-template-columns: 100%;
+    align-items: center;
+    position: relative;
+    padding: 0 2vw;
+    box-sizing: border-box;
+    grid-gap: 2vh;
+}
+
+h2.Scopes {
+    grid-row: 3;
+}
+
+
+.Google .Configs .autocomplete{
+    grid-row: 4;
+    z-index: 999;
+    left: 2vw;
+    right: 2vw;
+    top: 11vh;
+    background-color: #1f333e;
+    color: #fff;
+    padding: 0 1vw;
+    position: absolute;
+    border: none;
+    border-radius: 1vh;
+    display: grid;
+    grid-auto-rows: 5vh;
+    align-items: center;
+    font-weight: 700;
+    grid-template-columns: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: 1s all ease-in-out;
+    height: 0;
+    opacity: 0;
+}
+
+.input-container.Search:focus-within:has(input:not(:placeholder-shown)) + .autocomplete:has(span) {
+    height: 30vh;
+    border: .6vh solid #777;
+    opacity: 1;
+}
+
+
+.Google .Configs .autocomplete span{
+    border-radius: 10vh;
+    background-color: #00000024;
+    padding: 1vh ;
+    box-sizing: border-box;
+    cursor: pointer;   
+}
+
+.Google .Configs div.Scopes{
+    grid-row: 5;
+    height: 100%;
+    background-color: #1f333e;
+    color: #fff;
+    padding: 1vw;
+    border: .6vh solid #777;
+    border-radius: 1vh;
+    display: grid;
+    grid-auto-rows: 5vh;
+    align-items: center;
+    font-weight: 700;
+    grid-template-columns: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    transition: 1s all ease-in-out;
+    position: relative;
+    
+ grid-gap: 1vh;   
+}
+
+.Google .Configs .Scopes .item{
+ display: grid;
+ grid-template-columns: 1fr 6vh;   
+ height: 100%;
+ width: 100%;
+ align-items: center;
+ background-color: #00000024;
+    border-radius: 10vh;
+    background-color: #00000024;
+    padding-left: 1vh;
+    padding-right: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+
+.Google .Configs .Scopes .item button{
+    overflow: hidden;
+    border: none;
+    background-color: crimson;
+    fill: #fff;
+    outline: none;
+    padding: 0;
+    padding-right: 1vw;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .7s all ease-in-out;
+}
+
+.Google .Configs .Scopes .item button:hover{
+    background-color: #aa1734;
+    fill: #777;
+}
+
+.Google .Configs .Scopes .item button svg{
+    width: 80%;
+}

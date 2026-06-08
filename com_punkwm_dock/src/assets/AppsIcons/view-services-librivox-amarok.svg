@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" width="32" height="32" version="1.0" viewBox="0 0 128 128" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><defs id="c"><filter id="a"><feGaussianBlur id="d" stdDeviation="1.56"/></filter></defs>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<g id="e" transform="matrix(4,0,0,4,-277,-382)"><g id="f" transform="matrix(.28571 0 0 .3125 71.25 97.5)" fill="#000" filter="url(#a)" opacity=".6"><path id="g" d="m-4-6.3e-6c-1.65 0-3 1.35-3 3v90c0 1.65 1.35 3 3 3h106c1.65 0 3-1.35 3-3v-90c0-1.65-1.35-3-3-3h-106z" fill="#000"/></g><path id="h" d="m70.107 97.5c-0.47143 0-0.85714 0.40981-0.85714 0.9107v27.321c0 0.50088 0.38572 0.91069 0.85714 0.91069h30.286c0.47142 0 0.85714-0.40981 0.85714-0.91069v-27.321c0-0.50089-0.38572-0.9107-0.85714-0.9107h-30.286z" fill="#8aadaa"/><path id="i" d="m70.904 98.357c-0.44662 0-0.81203 0.38572-0.81203 0.85713v25.714c0 0.47141 0.36541 0.85712 0.81203 0.85712h28.692c0.4466 0 0.81202-0.38571 0.81202-0.85712v-25.714c0-0.47141-0.36542-0.85713-0.81202-0.85713h-28.692z" fill="#8aadaa"/><rect id="j" x="69.25" y="100.93" width="32" height="22.286" fill="#164a45"/><g id="k" transform="matrix(.32686 0 0 .29388 66.66 99.141)" fill="#164a45"><path id="l" d="m103.25 76c0 1.65-1.332 3-2.9601 3h-86.83c-1.6281 0-2.9601-1.35-2.9601-3v-64c0-1.65 1.332-3 2.9601-3h86.83c1.6281 0 2.9601 1.35 2.9601 3v64z" fill="#164a45"/></g><path id="m" d="m69.25 111.87c13.147-6.4628 25.796-7.964 32-8.2926v-2.1099h-32v10.402z" fill="#fff" opacity=".1"/><rect id="n" x="69.25" y="95.5" width="32" height="32" opacity="0" stroke-width=".6"/><text id="o" x="71" y="120.25" fill="#d7ec89" font-family="Bone" font-size="10px" font-weight="200" stroke-linejoin="miter" stroke-width="1px" style="line-height:125%" xml:space="preserve"><tspan id="p" x="71" y="120.25" fill="#d7ec89" font-family="Sans" font-size="24px" font-weight="bold" style="line-height:125%">LV</tspan></text>
+
+
+
+</g></svg>

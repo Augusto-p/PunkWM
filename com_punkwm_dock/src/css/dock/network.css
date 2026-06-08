@@ -1,0 +1,15 @@
+#Network {
+    grid-row: 5;
+    fill: #fff;
+    --front: #fff;
+    --back: #888;
+}
+
+#Network>svg {
+    width: 70%;
+    box-sizing: border-box;
+    background-color: #0B1418;
+    padding: calc(5 * var(--dock_vw));
+    border-radius: calc(10 * var(--dock_vw));
+    padding: calc(10 * var(--dock_vw));
+}

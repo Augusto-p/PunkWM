@@ -1,0 +1,270 @@
+body[data-panel="Open-WiFi"] #Panel_WiFi {
+    display: grid;
+}
+
+#Panel_WiFi {
+    grid-template-columns: 100%;
+    grid-template-rows: 5vh 94vh;
+    row-gap: 1vh;
+    overflow: hidden;
+    position: relative;
+    padding-right: 0 !important;
+
+}
+
+#Panel_WiFi .header {
+    grid-column: 1;
+    grid-row: 1;
+    width: calc(100% - 5 * var(--panel_vw) );
+    height: 100%;
+    color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 5vh 5vh;
+    grid-template-rows: 100%;
+    column-gap: calc(4 * var(--panel_vw));
+    align-items: center;
+    justify-items: center;
+    margin-right: calc(5 * var(--panel_vw));
+    box-sizing: border-box;
+}
+
+#Panel_WiFi .header button{
+    width: 100%;
+    height: 100%;
+    background-color: #1f333e;
+    border: none;
+    outline: none;
+    fill: #999;
+    border-radius: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#Panel_WiFi .header button:hover{
+    fill: #ffffff;
+    background-color: #0b1418;
+}
+#Panel_WiFi .header button svg{
+    width: 80%;
+}
+#Panel_WiFi .header span{
+    font-size: calc(6.5 * var(--panel_vw));
+    font-weight: 900;
+}
+
+
+
+#Panel_WiFi .share{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 10vw - 10 * var(--panel_vw));
+    height: calc(100 * var(--panel_vw));
+    background-color: #1f333e;
+    margin-left: calc(10vw + 5 * var(--panel_vw));
+    margin-right: calc(5 * var(--panel_vw));
+    border-top-left-radius: calc(5 * var(--panel_vw));   
+    border-top-right-radius: calc(5 * var(--panel_vw));  
+    display: flex;
+    flex-direction: column;
+    padding: calc(10 * var(--panel_vw)) calc(10 * var(--panel_vw)) calc(5 * var(--panel_vw)) calc(10 * var(--panel_vw));
+    box-sizing: border-box; 
+    justify-content:space-around ;
+    align-items: center;
+    transform: translateY(calc(105 * var(--panel_vw)));
+    transition: transform 1s;
+}
+
+#Panel_WiFi .share span{
+    width: 100%;
+    font-size: calc(7 * var(--panel_vw));
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    /* margin-top: calc(5 * var(--panel_vw)) ; */
+}
+#Panel_WiFi .share img{
+   width: 100%;
+}
+
+#Panel_WiFi .share.view{
+    transform: translateY(0);
+}
+
+#Panel_WiFi #Panel_wifi_list{
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    position: relative;
+    box-sizing: border-box;
+    grid-template-columns: 100%;
+    grid-auto-rows: 4vh;
+    row-gap: calc(3 * var(--panel_vw));
+    overflow-y: auto;
+    padding-right: calc(5 * var(--panel_vw));
+}
+
+
+
+
+#Panel_WiFi #Panel_wifi_list .wifi{
+    display: grid;
+    grid-template-columns: 4vh 4vh 1fr 4vh;
+    grid-template-rows: 100%;
+    fill: #ffffff;
+    --front:#ffffff;
+    --back:#999;
+    color: #ffffff;
+    align-items: center;
+    justify-items: center;
+    background-color: #1f333e;
+    border-radius: calc(3 * var(--panel_vw));
+}
+
+#Panel_WiFi #Panel_wifi_list .wifi button{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+}
+#Panel_WiFi #Panel_wifi_list .wifi svg{
+    width: 70%;
+}
+#Panel_WiFi #Panel_wifi_list .wifi button svg {
+    transform: rotateZ(-45deg);
+
+}
+#Panel_WiFi #Panel_wifi_list .wifi.In-Use{
+    background-color: #01602d;
+}
+
+#Panel_WiFi #Panel_wifi_list .wifi button .ulinked{
+    display: none;
+}
+
+#Panel_WiFi #Panel_wifi_list .wifi.In-Use button .ulinked{
+    display: block;
+}
+#Panel_WiFi #Panel_wifi_list .wifi.In-Use button .linked{
+    display: none;
+}
+#Panel_WiFi #Panel_wifi_list .wifi span{
+    text-align: start;
+    width: 100%;
+    position: relative;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div svg.Lock{
+    display: none;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div svg.Unlock{
+    fill: #ff0000;
+    display: block;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div.Lock svg.Lock{
+    fill: #00ff2a;
+    display: block;
+}
+#Panel_WiFi #Panel_wifi_list .wifi div.Lock svg.Unlock{
+    display: none;
+}
+
+#Panel_WiFi .connected{
+    position: absolute;
+    bottom: 0;
+    width: calc(100% - 10vw - 10 * var(--panel_vw));
+    height: calc(50 * var(--panel_vw));
+    background-color: #1f333e;
+    margin-left: calc(10vw + 5 * var(--panel_vw));
+    margin-right: calc(5 * var(--panel_vw));
+    border-top-left-radius: calc(5 * var(--panel_vw));   
+    border-top-right-radius: calc(5 * var(--panel_vw));  
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 1fr 1fr;
+    flex-direction: column;
+    padding: calc(5 * var(--panel_vw)) calc(10 * var(--panel_vw));
+    box-sizing: border-box; 
+    justify-items: center;
+    align-items: center;
+    color: #ffffff;
+    transform: translateY(calc(105 * var(--panel_vw)));
+    transition: transform 1s;
+}
+
+#Panel_WiFi .connected.view{
+    transform: translateY(0);
+}
+
+#Panel_WiFi .connected .password{
+    width: 100%;
+    height: 60%;
+    background-color: #0b1418;
+    color: #ffffff;
+    border-radius: calc(2 * var(--panel_vw));
+    display: grid;
+    grid-template-columns: 1fr calc(15 * var(--panel_vw));
+    grid-template-rows: 100%;
+    align-items: center;
+    justify-items: center;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+#Panel_WiFi .connected .password input{
+    outline: none;
+    border: none;
+    grid-column: 1;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    font-size:  calc(5 * var(--panel_vw));
+    color: #ffffff;
+    padding: 0;
+    margin: 0;
+    padding-left: calc(1 * var(--panel_vw));
+}
+
+#Panel_WiFi .connected .password button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    grid-column: 2;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    padding: calc(4 * var(--panel_vw));;
+    fill: #ffffff;
+}
+#Panel_WiFi .connected .password input[type="text"] ~ button .view{
+    display: none;
+}
+
+#Panel_WiFi .connected .password input[type="text"] ~ button .no-view{
+    display: block;
+}
+
+#Panel_WiFi .connected .password input[type="password"] ~ button .no-view{
+    display: none;
+}
+
+#Panel_WiFi .connected .password input[type="password"] ~ button .view{
+    display: block;
+}

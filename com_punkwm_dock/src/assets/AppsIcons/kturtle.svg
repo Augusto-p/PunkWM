@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="b" version="1.0" viewBox="0 0 256 256" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <defs id="c">
+     
+     <linearGradient id="a" x1="-202" x2="-76" y1="52" y2="248" gradientTransform="translate(298 7)" gradientUnits="userSpaceOnUse"><stop id="d" stop-color="#067a07" offset="0"/><stop id="e" stop-color="#a9eea8" stop-opacity=".75" offset="1"/></linearGradient>
+   </defs>
+   <path id="f" d="m107.53 5.1704v20.472h-20.472v20.472 20.472h20.472v20.472h-20.472v20.472h-20.472v20.472h-20.472v20.472 20.472 20.472h20.472v20.472h20.472v20.472h20.472 20.472 20.472 20.472v-20.472h20.472v-20.472h20.472v-20.472-20.472-20.472h-20.472v-20.472h-20.472v-20.472h-20.472v-20.472h20.472v-20.472-20.472h-20.472v-20.472h-20.472-20.472zm81.886 102.36h20.472v-20.472h20.472v-20.472h-20.472-20.472v20.472 20.472zm0 102.36v20.472 20.472h20.472 20.472v-20.472h-20.472v-20.472h-20.472zm-122.83 0h-20.472v20.472h-20.472v20.472h20.472 20.472v-20.472-20.472zm0-102.36v-20.472-20.472h-20.472-20.472v20.472h20.472v20.472h20.472z" fill="url(#a)" fill-rule="evenodd" stroke="#000" stroke-linecap="square" stroke-linejoin="round" stroke-miterlimit="4" stroke-width="8.5"/>
+</svg>

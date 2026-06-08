@@ -1,0 +1,103 @@
+.main.Language{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    overflow: auto;
+    position: relative;
+}
+
+body[data-mode="Language"] .main[data-mode="Language"]{
+    transform: translateY(0);
+}
+
+.main.Language .scroller{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-auto-rows: 20vh;
+    gap: 1vh;
+    padding: 1vh 1vw;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+.main.Language .lang{
+    position: relative;
+    box-sizing: border-box;
+    border-radius: 1vh;
+    overflow: hidden; /* IMPORTANTE */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    z-index: 11;
+    border: .5vh solid #1f333e;
+}
+
+/* 🔹 Fondo en pseudo-elemento */
+.main.Language .lang::before{
+    content: " ";
+    position: absolute;
+    inset: 0;
+
+    background-image: var(--bg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    transition: filter 0.3s ease, transform 0.3s ease;
+    z-index: 0;
+}
+
+/* 🔹 Blur SOLO al fondo */
+.main.Language .lang:hover::before{
+    filter: blur(5px);
+    transform: scale(1.05); /* opcional, queda mejor */
+}
+
+/* 🔹 Texto arriba */
+.main.Language .lang span{
+    opacity: 0;
+    user-select: none;
+    position: relative;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+.main.Language .lang::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0); /* transparente al inicio */
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+/* al hacer hover oscurece */
+.main.Language .lang:hover::after{
+    background: rgba(0, 0, 0, 0.4); /* ajustá el 0.4 */
+}
+
+.main.Language .lang span.Name{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 900;
+}
+
+.main.Language .lang span.NameEN{
+    margin-top: 2vh;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.main.Language .lang:hover span{
+    opacity: 1;
+}
+
+.main.Language .lang:hover,.main.Language .lang.active{
+    border-color: #4986e7;
+}

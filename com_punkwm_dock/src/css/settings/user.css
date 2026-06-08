@@ -1,0 +1,63 @@
+.User{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+body[data-mode="User"] .main[data-mode="User"]{
+    transform: translateY(0);
+}
+
+.User div#UserImage{
+    width: 20vw;
+    height: 20vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+       transition: all 2s ease-in-out;
+}
+
+.User div>input[type="file"]{
+    width: 300%;
+    height: 300%;
+    position: absolute;
+    opacity: 0;
+    top: -100%;
+    left: -100%;
+    background-color: #000000a6;
+    transition: all 2s ease-in-out;
+}
+
+.User div>input[type="file"]:hover{
+    opacity: 1;
+}
+
+.User .input-container{
+    margin: 5vh;
+    height: 10vh;
+    width: 40vw;
+}
+
+.User>input:focus{
+    border-color: #4986e7;
+}
+
+.User>h2 {
+    position: absolute;
+    top: 5vh;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    font-size: 2.5rem;
+    text-decoration: underline;
+    font-weight: 900;
+}
