@@ -17,6 +17,7 @@ body[data-panel="Open-Home"] #Panel_Home {
     box-sizing: border-box;
     grid-template-columns: repeat(2, calc(50% - 2.5 * var(--panel_vw)));
     grid-template-rows: 100%;
+    overflow:hidden;
 }
 
 #Panel_Home .Up .Left {
@@ -121,7 +122,7 @@ body[data-panel="Open-Home"] #Panel_Home {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: calc(5 * var(--panel_vw));
-    grid-template-rows: calc(20 * var(--panel_vw)) calc(45 * var(--panel_vw)) calc(45 * var(--panel_vw)) 1fr;
+    grid-template-rows: min(calc(20 * var(--panel_vw)), 5vh) min(calc(45 * var(--panel_vw)), 15vh) min(calc(45 * var(--panel_vw)), 13vh) 1fr;
     position: relative;
 
 }
@@ -229,11 +230,12 @@ body[data-panel="Open-Home"] #Panel_Home {
     justify-items: center;
     align-items: center;
     grid-gap: calc(2 * var(--panel_vw));
+    
 }
 
 #Panel_Home .Up .Rigth .quick_asses button {
-    width: calc(100% - 4 * var(--panel_vw));
-    height: calc(100% - 4 * var(--panel_vw));
+    width: min(calc(100% - 4 * var(--panel_vw)), 5vh);
+    height: min(calc(41 * var(--panel_vw)), 5vh);
     padding: calc(2 * var(--panel_vw));
     box-sizing: border-box;
     border-radius: 50vh;
@@ -267,7 +269,6 @@ body[data-panel="Open-Home"] #Panel_Home {
 #Panel_Home .Up .Rigth .quick_asses #LogOut:hover{
     background-color: #088542;
     fill: #fff;
-
 }
 
 #Panel_Home .Up .Rigth .quick_asses button svg {

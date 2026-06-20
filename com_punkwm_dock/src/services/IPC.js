@@ -27,8 +27,8 @@ const handlers = {
   "Panel:Home": {
     "Google:Daily": ({ events }) => Load_Diary(events),
     "System:Stats": ({ cpu, ram, disk, gpu }) => Load_stats(cpu, ram, disk, gpu),
-    "Weather:Load": ({ temp, phrase, icon, wind_direction, wind_speed }) => Load_weather(temp, phrase, icon, wind_direction, wind_speed),
     "Google:Oauth:url": ({ Url }) => set_diary_login_mode(Url),
+    "Weather:Config": ({ City, State, Country, Units, Lang}) => Weather_Load(Lang, City, State, Country, Units),
   },
   "Panel:Notify": {
     "New": ({ app, icon, title, message, now }) => appendNotify(`${app}_${now}`, app, title, message.split("\n").reverse()[0], now, icon,),

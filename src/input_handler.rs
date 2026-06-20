@@ -1301,6 +1301,8 @@ impl AnvilState<UdevData> {
                 self.volume_system_sender(Volume::get());
                 self.glow_system_sender(Brightness::get());
                 self.google_daily_load();
+                let cfg = GLOBAL_CFG.read().expect("No se pudo bloquear para lectura");
+                self.weather_home_pannel_sender(cfg.weather().clone(), cfg.styles().get_lang());
                 //                 notifier_clone.send(CustomEvent::HomePanelLoadWeather());
 
             }

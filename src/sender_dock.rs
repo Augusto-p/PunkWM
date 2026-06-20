@@ -2,6 +2,8 @@ use crate::AnvilState;
 use crate::config::config::GLOBAL_CFG;
 use crate::state::Backend;
 use serde_json::json;
+
+use crate::config::weather::ConfigWeather;
 use crate::ipc::message::{IpcMessage,IpcMode};
 use crate::utils::{
     system_usage::SystemUsage,
@@ -67,4 +69,16 @@ impl<BackendData: Backend + 'static> AnvilState<BackendData> {
         let msg = IpcMessage::new(Some(IpcMode::Bridge),"Panel:Apps","Load:Apps", json!({"Apps": self.apps_manager.search(q)}));
         self.punk_ipc.send(msg);
     }
+
+    pub fn weather_home_pannel_sender(&self, weather:ConfigWeather, lang: String){
+        let msg = IpcMessage::new(Some(IpcMode::Bridge),"Panel:Home","Weather:Config", json!({
+            "City": weather.get_city(),
+            "State": weather.get_state(),
+            "Country": weather.get_country(),
+            "Units": weather.get_units(),
+            "Lang": lang,
+        }));
+        self.punk_ipc.send(msg);
+    }
+
 }

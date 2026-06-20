@@ -12,7 +12,7 @@ DOCK="$ROOT/com_punkwm_dock/src-tauri"
 cd "$DOCK"
 cargo build
 
-cp "$DOOK/target/debug/com_punkwm_dock" "$ROOT/com_punkwm_dock_"
+cp "$DOCK/target/debug/com_punkwm_dock" "$ROOT/com_punkwm_dock_"
 
 cd "$ROOT"
 cargo run --features tty -- --tty-udev

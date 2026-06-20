@@ -92,13 +92,14 @@ body[data-panel="Open-Apps"] #Panel_Apps {
     padding: 0 calc(2 * var(--panel_vw));
     color: #ffffff;
     cursor: pointer;
-
+    user-select: none;   
 }
 
 #Panel_Apps #Apps_grid .app img{
     grid-row: 1;
     grid-column: 1;
     height: 50%;
+    user-select: none;
 }
 
 #Panel_Apps #Apps_grid .app span{

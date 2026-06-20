@@ -35,10 +35,12 @@ impl Config {
         }   
     }
 
-    pub fn weather(&mut self)->&mut ConfigWeather{
+    pub fn weather(&self)->&ConfigWeather{
+        &self.weather
+    }
+    pub fn weather_mut(&mut self)->&mut ConfigWeather{
         &mut self.weather
     }
-
     pub fn google(&self)->&ConfigGoogle{
         &self.google
     }

@@ -1,0 +1,17 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "dock",
+  "description": "Capability for the main window",
+  "windows": ["dock_window"],
+  "remote": {
+    "urls": ["https://accuweather.com/*"]
+  },
+    "permissions": [
+    "core:default",
+    "http:default",
+    {
+      "identifier": "http:allow-fetch",
+      "allow": [{ "url": "https://www.accuweather.com/*" }]
+    }
+  ]
+}

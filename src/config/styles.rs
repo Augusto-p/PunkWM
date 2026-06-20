@@ -22,7 +22,7 @@ impl ConfigStyles {
     
      pub fn get_bg(&self)->&String{&self.bg}
      pub fn get_lock_bg(&self)->&String{&self.lock_bg}
-     pub fn get_lang(&self)->&String{&self.lang}
+     pub fn get_lang(&self)->String{self.lang.clone()}
      pub fn get_keymap(&self)->&String{&self.keymap}
      pub fn get_dock_width(&self)->u16{self.dock_width.clone()}
      pub fn get_pannel_width(&self)->u16{self.pannel_width.clone()}
